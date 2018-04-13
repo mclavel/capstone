@@ -1,7 +1,10 @@
 import csv
 import collections
 import scipy.stats as s
+from equipos import clubes
 
+
+combinaciones = [(i, j) for i in clubes for j in clubes if i != j]
 
 def refresh_odds(results, match, local_goals = None, away_goals = None):
     if (local_goals and away_goals) is not None:
@@ -37,8 +40,19 @@ def load_database():
     with open('chilean_db.csv') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            resultados[(row['LOCAL'], row['VISITA'])].append((int(row["GOLESLOCAL"]),
-                                                         int(row["GOLESVISITA"])))
+            if row['LOCAL'] in clubes and row['VISITA'] in clubes:
+                resultados[(row['LOCAL'], row['VISITA'])].append(
+                    (int(row["GOLESLOCAL"]), int(row["GOLESVISITA"])))
+
+    for i in resultados:
+        if len(resultados[i]) <= 2: #tienen menos de 3 partidos
+            #print i, resultados[i]
+            pass
+
+    for i in combinaciones:
+        if i not in resultados:
+            print i
+
     for partido in resultados:
         prob[partido] = refresh_odds(resultados, partido)[1]
 
@@ -72,8 +86,9 @@ def win_odds(match, odds, winner):
         return 1 - draw_odds(match, odds) - p
 
 
-
 ODDS = load_database()
+
+
 
 
 

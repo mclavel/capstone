@@ -1,9 +1,6 @@
 from gurobipy import *
 from equipos import equipos_santiago
 from equipos import nombres as equipos
-from equipos import EQUIPOS
-from numpy.random import choice
-from prob import ODDS, draw_odds, win_odds
 
 
 fechas = [i for i in range(1, 16)]
@@ -45,14 +42,5 @@ if m.status == GRB.Status.OPTIMAL:
                     print(i, j)
         CALENDARIO.append(f)
 
-def results(match, ODDS): #NO TERMINADO
-    local, away = match.split(",")
-    r = choice(["LW", "D", "AW"], 1, p=[win_odds(match, ODDS, local),
-                                        draw_odds(match, ODDS),
-                                        win_odds(match, ODDS, away)])
-    print r
-
-print ODDS
-results("(CD San Luis, Colo Colo)", ODDS)
 
 

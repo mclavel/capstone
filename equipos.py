@@ -22,11 +22,14 @@ nombre_ciudad = [("U. de Chile", "Santiago"), ("Colo Colo", "Santiago"),
            ("Antofagasta", "Antofagasta"), ("U. La Calera", "La Calera"),
            ("Curico Unido", "Curico"), ("Deportes Temuco", "Temuco")]
 
-equipos_santiago = ["U. de Chile", "Colo Colo", "Palestino", "U. Espanola", "U. Catolica"]
+equipos_santiago = ["U. de Chile", "Colo Colo", "Palestino", "U. Espanola",
+                    "U. Catolica", "A. Italiano"]
 nombres = [equipo[0] for equipo in nombre_ciudad]
 
 EQUIPOS = []
+clubes = []
 
 for equipo in nombre_ciudad:
+    clubes.append(equipo[0])
     e = Equipo(*equipo)
     EQUIPOS.append(e)

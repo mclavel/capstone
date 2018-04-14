@@ -3,14 +3,17 @@ import random
 class Equipo:
     def __init__(self, nombre, localia, puntaje=0):
         self.nombre = nombre
-        self.puntaje = random.randint(0, 20) if puntaje == 0 else puntaje
+        self.puntaje = 0
         self.goles = 0
         self.localia = localia
         self.partidos_local = []
         self.partidos_visita = []
+        self.derrotas = []
+        self.victorias = []
+        self.empates = []
 
     def __repr__(self):
-        return self.nombre + ": {}".format(str(self.puntaje))
+        return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
 
 
 nombre_ciudad = [("U. de Chile", "Santiago"), ("Colo Colo", "Santiago"),

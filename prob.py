@@ -43,16 +43,16 @@ def load_database():
             if row['LOCAL'] in clubes and row['VISITA'] in clubes:
                 resultados[(row['LOCAL'], row['VISITA'])].append(
                     (int(row["GOLESLOCAL"]), int(row["GOLESVISITA"])))
-
+    """
     for i in resultados:
         if len(resultados[i]) <= 2: #tienen menos de 3 partidos
             #print i, resultados[i]
             pass
-
+    
     for i in combinaciones:
         if i not in resultados:
             print i
-
+    """
     for partido in resultados:
         prob[partido] = refresh_odds(resultados, partido)[1]
 
@@ -69,27 +69,29 @@ def load_database():
 def draw_odds(match, odds):
     p = 0
     for i in range(5):
-        p += odds[match][i][i]
-    return p
+        print(i)
+        #p += odds[match][i][i]
+    #return p
 
 
 def win_odds(match, odds, winner):
     matches = match.split(",")
+    print(match)
     p = 0
     if winner in matches[0]: #local
         for i in range(5):
             for j in range(5):
                 if j > i:
-                    p += odds[match][i][j]
+                    try :
+                        p += odds[match][i][j]
+                    except KeyError as err :
+                        print(err)
         return p
     else:
         return 1 - draw_odds(match, odds) - p
 
 
 ODDS = load_database()
-
-
-
 
 
 

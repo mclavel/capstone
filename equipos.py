@@ -3,7 +3,6 @@ import random
 class Equipo:
     def __init__(self, nombre, localia, puntaje=0):
         self.nombre = nombre
-        self.puntaje = 0
         self.goles = 0
         self.localia = localia
         self.partidos_local = []
@@ -12,6 +11,10 @@ class Equipo:
         self.victorias = []
         self.empates = []
 
+    @property
+    def puntaje (self):
+      return len(self.empates) + 3* len(self.victorias)
+      pass
     def __repr__(self):
         return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
 

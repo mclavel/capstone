@@ -1,0 +1,747 @@
+ANO,FASE,FECHA,LOCAL,GOLESLOCAL,GOLESVISITA,VISITA
+2017,clausura,Jornada 1 04 Feb - 15 Mar,Antofagasta,0,2,Everton Vina
+2017,clausura,Jornada 1 04 Feb - 15 Mar,A. Italiano,2,0,Cobresal
+2017,clausura,Jornada 1 04 Feb - 15 Mar,U. Espanola,0,3,Colo Colo
+2017,clausura,Jornada 1 04 Feb - 15 Mar,D. Iquique,2,0,U. de Chile
+2017,clausura,Jornada 1 04 Feb - 15 Mar,Palestino,1,2,U. de Conce
+2017,clausura,Jornada 1 04 Feb - 15 Mar,U. Catolica,1,0,CD San Luis
+2017,clausura,Jornada 1 04 Feb - 15 Mar,Deportes Temuco,1,0,Huachipato
+2017,clausura,Jornada 1 04 Feb - 15 Mar,Wanderers,1,2,O Higgins
+2017,clausura,Jornada 2 10 - 12 Feb,Cobresal,3,1,Antofagasta
+2017,clausura,Jornada 2 10 - 12 Feb,CD San Luis,2,3,D. Iquique
+2017,clausura,Jornada 2 10 - 12 Feb,Huachipato,3,2,Palestino
+2017,clausura,Jornada 2 10 - 12 Feb,O Higgins,2,0,U. Espanola
+2017,clausura,Jornada 2 10 - 12 Feb,U. de Chile,1,0,Deportes Temuco
+2017,clausura,Jornada 2 10 - 12 Feb,Colo Colo,4,0,A. Italiano
+2017,clausura,Jornada 2 10 - 12 Feb,Everton Vina,2,1,U. Catolica
+2017,clausura,Jornada 2 10 - 12 Feb,U. de Conce,1,0,Wanderers
+2017,clausura,Jornada 3 17 - 19 Feb,D. Iquique,3,1,Cobresal
+2017,clausura,Jornada 3 17 - 19 Feb,Huachipato,2,1,U. de Chile
+2017,clausura,Jornada 3 17 - 19 Feb,Colo Colo,2,1,O Higgins
+2017,clausura,Jornada 3 17 - 19 Feb,Palestino,0,2,A. Italiano
+2017,clausura,Jornada 3 17 - 19 Feb,Wanderers,3,0,U. Catolica
+2017,clausura,Jornada 3 17 - 19 Feb,Antofagasta,5,0,U. de Conce
+2017,clausura,Jornada 3 17 - 19 Feb,CD San Luis,1,1,Everton Vina
+2017,clausura,Jornada 3 17 - 19 Feb,U. Espanola,5,2,Deportes Temuco
+2017,clausura,Jornada 4 24 - 26 Feb,U. de Conce,1,1,D. Iquique
+2017,clausura,Jornada 4 24 - 26 Feb,Antofagasta,1,1,Palestino
+2017,clausura,Jornada 4 24 - 26 Feb,A. Italiano,3,2,Huachipato
+2017,clausura,Jornada 4 24 - 26 Feb,O Higgins,4,1,Cobresal
+2017,clausura,Jornada 4 24 - 26 Feb,U. de Chile,0,0,Everton Vina
+2017,clausura,Jornada 4 24 - 26 Feb,Deportes Temuco,2,2,Colo Colo
+2017,clausura,Jornada 4 24 - 26 Feb,Wanderers,0,3,CD San Luis
+2017,clausura,Jornada 4 24 - 26 Feb,U. Catolica,2,3,U. Espanola
+2017,clausura,Jornada 5 03 - 06 Mar,D. Iquique,2,2,A. Italiano
+2017,clausura,Jornada 5 03 - 06 Mar,U. Espanola,3,0,Huachipato
+2017,clausura,Jornada 5 03 - 06 Mar,Cobresal,1,2,Deportes Temuco
+2017,clausura,Jornada 5 03 - 06 Mar,Colo Colo,2,0,U. Catolica
+2017,clausura,Jornada 5 03 - 06 Mar,Everton Vina,2,2,Wanderers
+2017,clausura,Jornada 5 03 - 06 Mar,Palestino,1,3,U. de Chile
+2017,clausura,Jornada 5 03 - 06 Mar,CD San Luis,0,5,Antofagasta
+2017,clausura,Jornada 5 03 - 06 Mar,O Higgins,1,1,U. de Conce
+2017,clausura,Jornada 6 10 - 12 Mar,Deportes Temuco,0,2,Everton Vina
+2017,clausura,Jornada 6 10 - 12 Mar,Palestino,0,2,D. Iquique
+2017,clausura,Jornada 6 10 - 12 Mar,Wanderers,0,2,Colo Colo
+2017,clausura,Jornada 6 10 - 12 Mar,U. Catolica,4,1,Antofagasta
+2017,clausura,Jornada 6 10 - 12 Mar,U. de Conce,3,0,CD San Luis
+2017,clausura,Jornada 6 10 - 12 Mar,A. Italiano,0,3,U. de Chile
+2017,clausura,Jornada 6 10 - 12 Mar,Huachipato,0,2,O Higgins
+2017,clausura,Jornada 6 10 - 12 Mar,U. Espanola,3,0,Cobresal
+2017,clausura,Jornada 7 17 - 20 Mar,CD San Luis,2,2,Palestino
+2017,clausura,Jornada 7 17 - 20 Mar,Antofagasta,1,1,Wanderers
+2017,clausura,Jornada 7 17 - 20 Mar,Colo Colo,0,0,Huachipato
+2017,clausura,Jornada 7 17 - 20 Mar,Everton Vina,2,0,U. de Conce
+2017,clausura,Jornada 7 17 - 20 Mar,Cobresal,1,2,U. Catolica
+2017,clausura,Jornada 7 17 - 20 Mar,U. de Chile,2,1,U. Espanola
+2017,clausura,Jornada 7 17 - 20 Mar,Deportes Temuco,1,1,A. Italiano
+2017,clausura,Jornada 7 17 - 20 Mar,O Higgins,1,1,D. Iquique
+2017,clausura,Jornada 8 31 Mar - 02 Abr,Antofagasta,1,1,U. Espanola
+2017,clausura,Jornada 8 31 Mar - 02 Abr,Cobresal,1,1,Everton Vina
+2017,clausura,Jornada 8 31 Mar - 02 Abr,Wanderers,5,2,Palestino
+2017,clausura,Jornada 8 31 Mar - 02 Abr,U. de Conce,0,0,U. de Chile
+2017,clausura,Jornada 8 31 Mar - 02 Abr,A. Italiano,2,1,O Higgins
+2017,clausura,Jornada 8 31 Mar - 02 Abr,D. Iquique,3,2,Colo Colo
+2017,clausura,Jornada 8 31 Mar - 02 Abr,Huachipato,3,2,CD San Luis
+2017,clausura,Jornada 8 31 Mar - 02 Abr,U. Catolica,2,1,Deportes Temuco
+2017,clausura,Jornada 9 07 - 09 Abr,Everton Vina,0,0,D. Iquique
+2017,clausura,Jornada 9 07 - 09 Abr,Huachipato,0,0,Antofagasta
+2017,clausura,Jornada 9 07 - 09 Abr,Palestino,0,0,U. Catolica
+2017,clausura,Jornada 9 07 - 09 Abr,U. de Chile,2,2,Colo Colo
+2017,clausura,Jornada 9 07 - 09 Abr,Deportes Temuco,2,0,O Higgins
+2017,clausura,Jornada 9 07 - 09 Abr,CD San Luis,1,0,A. Italiano
+2017,clausura,Jornada 9 07 - 09 Abr,U. de Conce,4,0,Cobresal
+2017,clausura,Jornada 9 07 - 09 Abr,U. Espanola,1,0,Wanderers
+2017,clausura,Jornada 10 13 - 16 Abr,Cobresal,1,2,CD San Luis
+2017,clausura,Jornada 10 13 - 16 Abr,Colo Colo,3,0,U. de Conce
+2017,clausura,Jornada 10 13 - 16 Abr,D. Iquique,1,2,Huachipato
+2017,clausura,Jornada 10 13 - 16 Abr,O Higgins,1,0,Everton Vina
+2017,clausura,Jornada 10 13 - 16 Abr,Antofagasta,0,1,U. de Chile
+2017,clausura,Jornada 10 13 - 16 Abr,Wanderers,1,2,Deportes Temuco
+2017,clausura,Jornada 10 13 - 16 Abr,U. Espanola,1,2,Palestino
+2017,clausura,Jornada 10 13 - 16 Abr,A. Italiano,5,2,U. Catolica
+2017,clausura,Jornada 11 21 - 23 Abr,D. Iquique,2,2,U. Espanola
+2017,clausura,Jornada 11 21 - 23 Abr,Deportes Temuco,2,0,Antofagasta
+2017,clausura,Jornada 11 21 - 23 Abr,U. Catolica,5,2,O Higgins
+2017,clausura,Jornada 11 21 - 23 Abr,U. de Chile,2,0,Wanderers
+2017,clausura,Jornada 11 21 - 23 Abr,Everton Vina,2,2,A. Italiano
+2017,clausura,Jornada 11 21 - 23 Abr,Palestino,3,2,Cobresal
+2017,clausura,Jornada 11 21 - 23 Abr,CD San Luis,1,0,Colo Colo
+2017,clausura,Jornada 11 21 - 23 Abr,Huachipato,0,0,U. de Conce
+2017,clausura,Jornada 12 28 - 30 Abr,Cobresal,3,2,Huachipato
+2017,clausura,Jornada 12 28 - 30 Abr,Wanderers,1,1,D. Iquique
+2017,clausura,Jornada 12 28 - 30 Abr,U. Catolica,3,1,U. de Chile
+2017,clausura,Jornada 12 28 - 30 Abr,U. de Conce,1,0,Deportes Temuco
+2017,clausura,Jornada 12 28 - 30 Abr,Antofagasta,1,0,A. Italiano
+2017,clausura,Jornada 12 28 - 30 Abr,Colo Colo,0,0,Palestino
+2017,clausura,Jornada 12 28 - 30 Abr,O Higgins,2,1,CD San Luis
+2017,clausura,Jornada 12 28 - 30 Abr,U. Espanola,2,1,Everton Vina
+2017,clausura,Jornada 13 05 - 07 May,U. de Conce,0,0,U. Espanola
+2017,clausura,Jornada 13 05 - 07 May,A. Italiano,3,0,Wanderers
+2017,clausura,Jornada 13 05 - 07 May,Palestino,1,1,O Higgins
+2017,clausura,Jornada 13 05 - 07 May,CD San Luis,1,1,Deportes Temuco
+2017,clausura,Jornada 13 05 - 07 May,U. de Chile,4,0,Cobresal
+2017,clausura,Jornada 13 05 - 07 May,D. Iquique,2,4,Antofagasta
+2017,clausura,Jornada 13 05 - 07 May,Everton Vina,2,3,Colo Colo
+2017,clausura,Jornada 13 05 - 07 May,Huachipato,2,1,U. Catolica
+2017,clausura,Jornada 14 12 - 14 May,A. Italiano,0,3,U. de Conce
+2017,clausura,Jornada 14 12 - 14 May,Everton Vina,2,0,Huachipato
+2017,clausura,Jornada 14 12 - 14 May,Wanderers,1,1,Cobresal
+2017,clausura,Jornada 14 12 - 14 May,U. Catolica,2,0,D. Iquique
+2017,clausura,Jornada 14 12 - 14 May,Colo Colo,1,1,Antofagasta
+2017,clausura,Jornada 14 12 - 14 May,Deportes Temuco,1,0,Palestino
+2017,clausura,Jornada 14 12 - 14 May,O Higgins,0,3,U. de Chile
+2017,clausura,Jornada 14 12 - 14 May,CD San Luis,3,2,U. Espanola
+2017,clausura,Jornada 15 18 - 21 May,Huachipato,1,4,Wanderers
+2017,clausura,Jornada 15 18 - 21 May,Cobresal,1,3,Colo Colo
+2017,clausura,Jornada 15 18 - 21 May,D. Iquique,0,0,Deportes Temuco
+2017,clausura,Jornada 15 18 - 21 May,U. de Chile,1,0,CD San Luis
+2017,clausura,Jornada 15 18 - 21 May,U. Espanola,1,1,A. Italiano
+2017,clausura,Jornada 15 18 - 21 May,Antofagasta,0,0,O Higgins
+2017,clausura,Jornada 15 18 - 21 May,Palestino,1,0,Everton Vina
+2017,clausura,Jornada 15 18 - 21 May,U. de Conce,0,0,U. Catolica
+2017,apertura,Jornada 1 28 - 30 Jul,A. Italiano,2,1,Palestino
+2017,apertura,Jornada 1 28 - 30 Jul,Curico Unido,0,1,U. de Chile
+2017,apertura,Jornada 1 28 - 30 Jul,D. Iquique,0,1,Everton Vina
+2017,apertura,Jornada 1 28 - 30 Jul,CD San Luis,2,0,Huachipato
+2017,apertura,Jornada 1 28 - 30 Jul,Colo Colo,0,0,Antofagasta
+2017,apertura,Jornada 1 28 - 30 Jul,Deportes Temuco,2,0,O Higgins
+2017,apertura,Jornada 1 28 - 30 Jul,Wanderers,0,0,U. Espanola
+2017,apertura,Jornada 1 28 - 30 Jul,U. Catolica,0,0,U. de Conce
+2017,apertura,Jornada 2 04 - 06 Ago,Palestino,2,1,Curico Unido
+2017,apertura,Jornada 2 04 - 06 Ago,U. de Chile,2,1,Deportes Temuco
+2017,apertura,Jornada 2 04 - 06 Ago,U. de Conce,2,2,Wanderers
+2017,apertura,Jornada 2 04 - 06 Ago,U. Espanola,1,0,U. Catolica
+2017,apertura,Jornada 2 04 - 06 Ago,Antofagasta,0,0,D. Iquique
+2017,apertura,Jornada 2 04 - 06 Ago,Everton Vina,4,0,CD San Luis
+2017,apertura,Jornada 2 04 - 06 Ago,Huachipato,2,1,A. Italiano
+2017,apertura,Jornada 2 04 - 06 Ago,O Higgins,1,3,Colo Colo
+2017,apertura,Jornada 3 11 - 15 Ago,Curico Unido,1,1,Wanderers
+2017,apertura,Jornada 3 11 - 15 Ago,Deportes Temuco,0,0,Huachipato
+2017,apertura,Jornada 3 11 - 15 Ago,O Higgins,0,2,U. Espanola
+2017,apertura,Jornada 3 11 - 15 Ago,U. Catolica,1,1,Everton Vina
+2017,apertura,Jornada 3 11 - 15 Ago,A. Italiano,1,3,D. Iquique
+2017,apertura,Jornada 3 11 - 15 Ago,CD San Luis,2,0,U. de Chile
+2017,apertura,Jornada 3 11 - 15 Ago,U. de Conce,0,0,Antofagasta
+2017,apertura,Jornada 3 11 - 15 Ago,Palestino,1,1,Colo Colo
+2017,apertura,Jornada 4 18 - 20 Ago,Antofagasta,2,1,Palestino
+2017,apertura,Jornada 4 18 - 20 Ago,A. Italiano,2,1,Deportes Temuco
+2017,apertura,Jornada 4 18 - 20 Ago,Wanderers,1,1,U. Catolica
+2017,apertura,Jornada 4 18 - 20 Ago,U. Espanola,1,0,CD San Luis
+2017,apertura,Jornada 4 18 - 20 Ago,Colo Colo,1,2,U. de Conce
+2017,apertura,Jornada 4 18 - 20 Ago,D. Iquique,0,1,Curico Unido
+2017,apertura,Jornada 4 18 - 20 Ago,Everton Vina,1,1,O Higgins
+2017,apertura,Jornada 4 18 - 20 Ago,U. de Chile,3,2,Huachipato
+2017,apertura,Jornada 5 25 - 27 Ago,Deportes Temuco,0,1,Everton Vina
+2017,apertura,Jornada 5 25 - 27 Ago,Palestino,1,3,CD San Luis
+2017,apertura,Jornada 5 25 - 27 Ago,Wanderers,0,0,D. Iquique
+2017,apertura,Jornada 5 25 - 27 Ago,U. Catolica,1,0,Curico Unido
+2017,apertura,Jornada 5 25 - 27 Ago,Colo Colo,4,1,U. de Chile
+2017,apertura,Jornada 5 25 - 27 Ago,Huachipato,0,1,U. Espanola
+2017,apertura,Jornada 5 25 - 27 Ago,O Higgins,0,2,Antofagasta
+2017,apertura,Jornada 5 25 - 27 Ago,U. de Conce,1,1,A. Italiano
+2017,apertura,Jornada 6 08 - 10 Sep,D. Iquique,1,1,Colo Colo
+2017,apertura,Jornada 6 08 - 10 Sep,CD San Luis,0,2,Wanderers
+2017,apertura,Jornada 6 08 - 10 Sep,U. de Chile,2,2,O Higgins
+2017,apertura,Jornada 6 08 - 10 Sep,U. Espanola,1,0,U. de Conce
+2017,apertura,Jornada 6 08 - 10 Sep,Antofagasta,1,0,Huachipato
+2017,apertura,Jornada 6 08 - 10 Sep,A. Italiano,2,2,U. Catolica
+2017,apertura,Jornada 6 08 - 10 Sep,Curico Unido,1,1,Deportes Temuco
+2017,apertura,Jornada 6 08 - 10 Sep,Everton Vina,3,1,Palestino
+2017,apertura,Jornada 7 22 - 24 Sep,Antofagasta,0,0,U. Espanola
+2017,apertura,Jornada 7 22 - 24 Sep,Colo Colo,3,0,CD San Luis
+2017,apertura,Jornada 7 22 - 24 Sep,U. de Chile,2,2,Everton Vina
+2017,apertura,Jornada 7 22 - 24 Sep,Deportes Temuco,1,0,U. Catolica
+2017,apertura,Jornada 7 22 - 24 Sep,O Higgins,2,1,Palestino
+2017,apertura,Jornada 7 22 - 24 Sep,Wanderers,1,3,A. Italiano
+2017,apertura,Jornada 7 22 - 24 Sep,U. de Conce,0,1,Curico Unido
+2017,apertura,Jornada 7 22 - 24 Sep,Huachipato,1,0,D. Iquique
+2017,apertura,Jornada 8 29 Sep - 01 Oct,Curico Unido,0,1,Antofagasta
+2017,apertura,Jornada 8 29 Sep - 01 Oct,D. Iquique,0,4,U. de Conce
+2017,apertura,Jornada 8 29 Sep - 01 Oct,Huachipato,1,0,Wanderers
+2017,apertura,Jornada 8 29 Sep - 01 Oct,U. Espanola,0,0,U. de Chile
+2017,apertura,Jornada 8 29 Sep - 01 Oct,A. Italiano,3,0,Everton Vina
+2017,apertura,Jornada 8 29 Sep - 01 Oct,Palestino,2,2,Deportes Temuco
+2017,apertura,Jornada 8 29 Sep - 01 Oct,CD San Luis,2,1,O Higgins
+2017,apertura,Jornada 8 29 Sep - 01 Oct,U. Catolica,0,1,Colo Colo
+2017,apertura,Jornada 9 13 - 15 Oct,Antofagasta,0,2,U. de Chile
+2017,apertura,Jornada 9 13 - 15 Oct,Deportes Temuco,1,1,CD San Luis
+2017,apertura,Jornada 9 13 - 15 Oct,Everton Vina,1,1,Curico Unido
+2017,apertura,Jornada 9 13 - 15 Oct,Palestino,4,0,U. Espanola
+2017,apertura,Jornada 9 13 - 15 Oct,Colo Colo,2,0,Wanderers
+2017,apertura,Jornada 9 13 - 15 Oct,U. Catolica,2,0,D. Iquique
+2017,apertura,Jornada 9 13 - 15 Oct,U. de Conce,1,0,Huachipato
+2017,apertura,Jornada 9 13 - 15 Oct,O Higgins,1,2,A. Italiano
+2017,apertura,Jornada 10 21 - 22 Oct,A. Italiano,0,3,Colo Colo
+2017,apertura,Jornada 10 21 - 22 Oct,D. Iquique,0,1,Deportes Temuco
+2017,apertura,Jornada 10 21 - 22 Oct,Huachipato,3,1,U. Catolica
+2017,apertura,Jornada 10 21 - 22 Oct,Curico Unido,0,1,U. Espanola
+2017,apertura,Jornada 10 21 - 22 Oct,CD San Luis,1,3,Antofagasta
+2017,apertura,Jornada 10 21 - 22 Oct,Wanderers,3,3,Everton Vina
+2017,apertura,Jornada 10 21 - 22 Oct,U. de Conce,2,2,O Higgins
+2017,apertura,Jornada 10 21 - 22 Oct,U. de Chile,2,1,Palestino
+2017,apertura,Jornada 11 28 - 29 Oct,Deportes Temuco,1,0,Colo Colo
+2017,apertura,Jornada 11 28 - 29 Oct,Palestino,0,1,Huachipato
+2017,apertura,Jornada 11 28 - 29 Oct,U. Espanola,4,2,D. Iquique
+2017,apertura,Jornada 11 28 - 29 Oct,Antofagasta,1,1,A. Italiano
+2017,apertura,Jornada 11 28 - 29 Oct,Curico Unido,1,0,CD San Luis
+2017,apertura,Jornada 11 28 - 29 Oct,Everton Vina,2,1,U. de Conce
+2017,apertura,Jornada 11 28 - 29 Oct,O Higgins,0,3,Wanderers
+2017,apertura,Jornada 11 28 - 29 Oct,U. de Chile,1,0,U. Catolica
+2017,apertura,Jornada 12 03 - 05 Nov,U. de Conce,1,1,Palestino
+2017,apertura,Jornada 12 03 - 05 Nov,A. Italiano,2,0,Curico Unido
+2017,apertura,Jornada 12 03 - 05 Nov,Huachipato,1,2,Everton Vina
+2017,apertura,Jornada 12 03 - 05 Nov,Wanderers,0,1,U. de Chile
+2017,apertura,Jornada 12 03 - 05 Nov,U. Catolica,0,2,CD San Luis
+2017,apertura,Jornada 12 03 - 05 Nov,Colo Colo,5,2,U. Espanola
+2017,apertura,Jornada 12 03 - 05 Nov,D. Iquique,0,1,O Higgins
+2017,apertura,Jornada 12 03 - 05 Nov,Deportes Temuco,1,0,Antofagasta
+2017,apertura,Jornada 13 24 - 26 Nov,CD San Luis,0,0,U. de Conce
+2017,apertura,Jornada 13 24 - 26 Nov,O Higgins,3,1,U. Catolica
+2017,apertura,Jornada 13 24 - 26 Nov,Palestino,1,0,D. Iquique
+2017,apertura,Jornada 13 24 - 26 Nov,U. de Chile,0,3,A. Italiano
+2017,apertura,Jornada 13 24 - 26 Nov,Antofagasta,2,2,Wanderers
+2017,apertura,Jornada 13 24 - 26 Nov,Curico Unido,1,0,Huachipato
+2017,apertura,Jornada 13 24 - 26 Nov,Everton Vina,2,3,Colo Colo
+2017,apertura,Jornada 13 24 - 26 Nov,U. Espanola,1,1,Deportes Temuco
+2017,apertura,Jornada 14 30 Nov - 04 Dic,O Higgins,1,0,Huachipato
+2017,apertura,Jornada 14 30 Nov - 04 Dic,D. Iquique,2,1,CD San Luis
+2017,apertura,Jornada 14 30 Nov - 04 Dic,A. Italiano,0,2,U. Espanola
+2017,apertura,Jornada 14 30 Nov - 04 Dic,Colo Colo,3,2,Curico Unido
+2017,apertura,Jornada 14 30 Nov - 04 Dic,Everton Vina,1,0,Antofagasta
+2017,apertura,Jornada 14 30 Nov - 04 Dic,U. de Conce,1,3,U. de Chile
+2017,apertura,Jornada 14 30 Nov - 04 Dic,Wanderers,1,1,Deportes Temuco
+2017,apertura,Jornada 14 30 Nov - 04 Dic,U. Catolica,4,1,Palestino
+2017,apertura,Jornada 15 09 - 10 Dic,Deportes Temuco,1,1,U. de Conce
+2017,apertura,Jornada 15 09 - 10 Dic,Huachipato,0,3,Colo Colo
+2017,apertura,Jornada 15 09 - 10 Dic,U. de Chile,1,0,D. Iquique
+2017,apertura,Jornada 15 09 - 10 Dic,U. Espanola,2,0,Everton Vina
+2017,apertura,Jornada 15 09 - 10 Dic,Antofagasta,2,4,U. Catolica
+2017,apertura,Jornada 15 09 - 10 Dic,Curico Unido,1,0,O Higgins
+2017,apertura,Jornada 15 09 - 10 Dic,Palestino,0,0,Wanderers
+2017,apertura,Jornada 15 09 - 10 Dic,CD San Luis,1,1,A. Italiano
+2015_2016,clausura,Jornada 1 15 - 18 Ene,Palestino,2,1,A. Italiano
+2015_2016,clausura,Jornada 1 15 - 18 Ene,O Higgins,4,0,U. La Calera
+2015_2016,clausura,Jornada 1 15 - 18 Ene,SM Arica,0,2,Wanderers
+2015_2016,clausura,Jornada 1 15 - 18 Ene,Colo Colo,1,1,U. Espanola
+2015_2016,clausura,Jornada 1 15 - 18 Ene,Huachipato,3,0,U. de Conce
+2015_2016,clausura,Jornada 1 15 - 18 Ene,CD San Luis,0,0,Cobresal
+2015_2016,clausura,Jornada 1 15 - 18 Ene,Antofagasta,1,1,U. de Chile
+2015_2016,clausura,Jornada 1 15 - 18 Ene,U. Catolica,2,2,D. Iquique
+2015_2016,clausura,Jornada 2 22 - 24 Ene,D. Iquique,1,1,Huachipato
+2015_2016,clausura,Jornada 2 22 - 24 Ene,A. Italiano,0,3,Colo Colo
+2015_2016,clausura,Jornada 2 22 - 24 Ene,U. de Conce,2,1,Antofagasta
+2015_2016,clausura,Jornada 2 22 - 24 Ene,Wanderers,3,1,CD San Luis
+2015_2016,clausura,Jornada 2 22 - 24 Ene,U. La Calera,1,4,U. Catolica
+2015_2016,clausura,Jornada 2 22 - 24 Ene,U. de Chile,8,1,O Higgins
+2015_2016,clausura,Jornada 2 22 - 24 Ene,U. Espanola,1,1,Palestino
+2015_2016,clausura,Jornada 2 22 - 24 Ene,Cobresal,0,0,SM Arica
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,Palestino,3,0,U. de Conce
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,CD San Luis,1,1,U. de Chile
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,Antofagasta,1,2,A. Italiano
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,Colo Colo,1,0,Cobresal
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,Huachipato,3,3,U. Espanola
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,SM Arica,0,1,U. La Calera
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,U. Catolica,4,2,Wanderers
+2015_2016,clausura,Jornada 3 27 Ene - 01 Feb,O Higgins,0,0,D. Iquique
+2015_2016,clausura,Jornada 4 05 - 08 Feb,U. La Calera,1,2,Huachipato
+2015_2016,clausura,Jornada 4 05 - 08 Feb,Wanderers,3,1,O Higgins
+2015_2016,clausura,Jornada 4 05 - 08 Feb,A. Italiano,1,0,CD San Luis
+2015_2016,clausura,Jornada 4 05 - 08 Feb,U. de Chile,0,0,SM Arica
+2015_2016,clausura,Jornada 4 05 - 08 Feb,U. de Conce,2,4,U. Catolica
+2015_2016,clausura,Jornada 4 05 - 08 Feb,Cobresal,2,3,Palestino
+2015_2016,clausura,Jornada 4 05 - 08 Feb,D. Iquique,0,0,Colo Colo
+2015_2016,clausura,Jornada 4 05 - 08 Feb,U. Espanola,0,2,Antofagasta
+2015_2016,clausura,Jornada 5 12 - 15 Feb,U. Catolica,4,2,U. Espanola
+2015_2016,clausura,Jornada 5 12 - 15 Feb,Palestino,2,1,U. de Chile
+2015_2016,clausura,Jornada 5 12 - 15 Feb,Cobresal,1,0,U. de Conce
+2015_2016,clausura,Jornada 5 12 - 15 Feb,CD San Luis,3,1,D. Iquique
+2015_2016,clausura,Jornada 5 12 - 15 Feb,Colo Colo,2,1,Antofagasta
+2015_2016,clausura,Jornada 5 12 - 15 Feb,Huachipato,3,2,Wanderers
+2015_2016,clausura,Jornada 5 12 - 15 Feb,SM Arica,0,1,O Higgins
+2015_2016,clausura,Jornada 5 12 - 15 Feb,A. Italiano,0,0,U. La Calera
+2015_2016,clausura,Jornada 6 19 - 22 Feb,O Higgins,4,3,U. Catolica
+2015_2016,clausura,Jornada 6 19 - 22 Feb,U. de Chile,2,2,A. Italiano
+2015_2016,clausura,Jornada 6 19 - 22 Feb,Wanderers,0,0,Palestino
+2015_2016,clausura,Jornada 6 19 - 22 Feb,U. Espanola,3,1,CD San Luis
+2015_2016,clausura,Jornada 6 19 - 22 Feb,U. La Calera,0,1,Colo Colo
+2015_2016,clausura,Jornada 6 19 - 22 Feb,Antofagasta,3,0,Huachipato
+2015_2016,clausura,Jornada 6 19 - 22 Feb,D. Iquique,1,1,Cobresal
+2015_2016,clausura,Jornada 6 19 - 22 Feb,U. de Conce,2,1,SM Arica
+2015_2016,clausura,Jornada 7 26 - 29 Feb,U. de Conce,3,1,U. Espanola
+2015_2016,clausura,Jornada 7 26 - 29 Feb,Colo Colo,2,0,CD San Luis
+2015_2016,clausura,Jornada 7 26 - 29 Feb,Palestino,2,2,D. Iquique
+2015_2016,clausura,Jornada 7 26 - 29 Feb,SM Arica,0,2,Antofagasta
+2015_2016,clausura,Jornada 7 26 - 29 Feb,Cobresal,1,4,U. de Chile
+2015_2016,clausura,Jornada 7 26 - 29 Feb,U. Catolica,2,2,Huachipato
+2015_2016,clausura,Jornada 7 26 - 29 Feb,A. Italiano,2,2,O Higgins
+2015_2016,clausura,Jornada 7 26 - 29 Feb,U. La Calera,3,3,Wanderers
+2015_2016,clausura,Jornada 8 04 - 07 Mar,CD San Luis,2,2,U. de Conce
+2015_2016,clausura,Jornada 8 04 - 07 Mar,U. Espanola,0,0,U. de Chile
+2015_2016,clausura,Jornada 8 04 - 07 Mar,Huachipato,1,1,SM Arica
+2015_2016,clausura,Jornada 8 04 - 07 Mar,Antofagasta,3,1,U. La Calera
+2015_2016,clausura,Jornada 8 04 - 07 Mar,Wanderers,3,1,Cobresal
+2015_2016,clausura,Jornada 8 04 - 07 Mar,Colo Colo,3,0,U. Catolica
+2015_2016,clausura,Jornada 8 04 - 07 Mar,D. Iquique,1,1,A. Italiano
+2015_2016,clausura,Jornada 8 04 - 07 Mar,O Higgins,1,1,Palestino
+2015_2016,clausura,Jornada 9 11 - 14 Mar,Palestino,2,2,CD San Luis
+2015_2016,clausura,Jornada 9 11 - 14 Mar,U. La Calera,2,1,U. Espanola
+2015_2016,clausura,Jornada 9 11 - 14 Mar,D. Iquique,1,2,Wanderers
+2015_2016,clausura,Jornada 9 11 - 14 Mar,A. Italiano,0,1,Cobresal
+2015_2016,clausura,Jornada 9 11 - 14 Mar,U. Catolica,2,1,Antofagasta
+2015_2016,clausura,Jornada 9 11 - 14 Mar,Huachipato,0,1,O Higgins
+2015_2016,clausura,Jornada 9 11 - 14 Mar,SM Arica,1,0,Colo Colo
+2015_2016,clausura,Jornada 9 11 - 14 Mar,U. de Chile,1,3,U. de Conce
+2015_2016,clausura,Jornada 10 18 Mar - 02 Abr,Wanderers,0,0,U. de Chile
+2015_2016,clausura,Jornada 10 18 Mar - 02 Abr,Colo Colo,0,1,Huachipato
+2015_2016,clausura,Jornada 10 18 Mar - 02 Abr,O Higgins,2,3,U. Espanola
+2015_2016,clausura,Jornada 10 18 Mar - 02 Abr,Palestino,2,0,U. Catolica
+2015_2016,clausura,Jornada 10 18 Mar - 02 Abr,Antofagasta,1,1,D. Iquique
+2015_2016,clausura,Jornada 10 18 Mar - 02 Abr,U. de Conce,0,0,A. Italiano
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,U. Catolica,1,0,Cobresal
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,U. de Chile,0,0,Colo Colo
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,D. Iquique,3,1,U. de Conce
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,U. La Calera,1,1,Palestino
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,Antofagasta,0,2,O Higgins
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,U. Espanola,1,1,SM Arica
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,Huachipato,3,3,CD San Luis
+2015_2016,clausura,Jornada 11 20 Mar - 06 Abr,Wanderers,2,2,A. Italiano
+2015_2016,clausura,Jornada 12 08 - 11 Abr,U. de Conce,1,0,Wanderers
+2015_2016,clausura,Jornada 12 08 - 11 Abr,U. de Chile,2,1,D. Iquique
+2015_2016,clausura,Jornada 12 08 - 11 Abr,Palestino,0,2,Antofagasta
+2015_2016,clausura,Jornada 12 08 - 11 Abr,Cobresal,3,2,Huachipato
+2015_2016,clausura,Jornada 12 08 - 11 Abr,O Higgins,3,0,Colo Colo
+2015_2016,clausura,Jornada 12 08 - 11 Abr,CD San Luis,3,1,U. La Calera
+2015_2016,clausura,Jornada 12 08 - 11 Abr,A. Italiano,1,1,U. Espanola
+2015_2016,clausura,Jornada 12 08 - 11 Abr,SM Arica,3,2,U. Catolica
+2015_2016,clausura,Jornada 13 16 - 23 Abr,O Higgins,4,3,CD San Luis
+2015_2016,clausura,Jornada 13 16 - 23 Abr,Antofagasta,2,1,Cobresal
+2015_2016,clausura,Jornada 13 16 - 23 Abr,Huachipato,0,3,A. Italiano
+2015_2016,clausura,Jornada 13 16 - 23 Abr,U. Espanola,2,2,Wanderers
+2015_2016,clausura,Jornada 13 16 - 23 Abr,SM Arica,0,1,D. Iquique
+2015_2016,clausura,Jornada 13 16 - 23 Abr,U. La Calera,1,2,U. de Conce
+2015_2016,clausura,Jornada 13 16 - 23 Abr,Colo Colo,1,3,Palestino
+2015_2016,clausura,Jornada 14 23 - 26 Abr,U. de Chile,2,2,U. La Calera
+2015_2016,clausura,Jornada 14 23 - 26 Abr,CD San Luis,1,0,U. Catolica
+2015_2016,clausura,Jornada 14 23 - 26 Abr,Palestino,1,1,Huachipato
+2015_2016,clausura,Jornada 14 23 - 26 Abr,D. Iquique,2,3,U. Espanola
+2015_2016,clausura,Jornada 14 23 - 26 Abr,A. Italiano,0,0,SM Arica
+2015_2016,clausura,Jornada 14 23 - 26 Abr,Cobresal,2,3,O Higgins
+2015_2016,clausura,Jornada 14 23 - 26 Abr,U. de Conce,0,2,Colo Colo
+2015_2016,clausura,Jornada 14 23 - 26 Abr,Wanderers,1,1,Antofagasta
+2015_2016,clausura,Jornada 15 29 - 30 Abr,Antofagasta,1,1,CD San Luis
+2015_2016,clausura,Jornada 15 29 - 30 Abr,U. Espanola,1,1,Cobresal
+2015_2016,clausura,Jornada 15 29 - 30 Abr,SM Arica,2,3,Palestino
+2015_2016,clausura,Jornada 15 29 - 30 Abr,U. Catolica,2,1,A. Italiano
+2015_2016,clausura,Jornada 15 29 - 30 Abr,O Higgins,1,2,U. de Conce
+2015_2016,clausura,Jornada 15 29 - 30 Abr,Colo Colo,2,1,Wanderers
+2015_2016,clausura,Jornada 15 29 - 30 Abr,U. La Calera,2,4,D. Iquique
+2015_2016,clausura,Jornada 15 29 - 30 Abr,Huachipato,4,2,U. de Chile
+2015_2016,apertura,Jornada 1 25 - 27 Jul,U. La Calera,1,0,O Higgins
+2015_2016,apertura,Jornada 1 25 - 27 Jul,U. de Conce,2,0,Huachipato
+2015_2016,apertura,Jornada 1 25 - 27 Jul,D. Iquique,0,2,U. Catolica
+2015_2016,apertura,Jornada 1 25 - 27 Jul,U. Espanola,1,2,Colo Colo
+2015_2016,apertura,Jornada 1 25 - 27 Jul,Cobresal,1,1,CD San Luis
+2015_2016,apertura,Jornada 1 25 - 27 Jul,Wanderers,1,1,SM Arica
+2015_2016,apertura,Jornada 1 25 - 27 Jul,U. de Chile,1,1,Antofagasta
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,Antofagasta,1,4,U. de Conce
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,U. Catolica,3,1,U. La Calera
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,Huachipato,2,1,D. Iquique
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,SM Arica,1,2,Cobresal
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,CD San Luis,0,1,Wanderers
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,Colo Colo,4,1,A. Italiano
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,Palestino,2,1,U. Espanola
+2015_2016,apertura,Jornada 2 07 Ago - 06 Sep,O Higgins,2,2,U. de Chile
+2015_2016,apertura,Jornada 3 14 - 17 Ago,U. de Conce,1,0,Palestino
+2015_2016,apertura,Jornada 3 14 - 17 Ago,D. Iquique,2,5,O Higgins
+2015_2016,apertura,Jornada 3 14 - 17 Ago,U. Espanola,2,2,Huachipato
+2015_2016,apertura,Jornada 3 14 - 17 Ago,Wanderers,2,2,U. Catolica
+2015_2016,apertura,Jornada 3 14 - 17 Ago,U. La Calera,1,4,SM Arica
+2015_2016,apertura,Jornada 3 14 - 17 Ago,A. Italiano,0,0,Antofagasta
+2015_2016,apertura,Jornada 3 14 - 17 Ago,Cobresal,2,3,Colo Colo
+2015_2016,apertura,Jornada 3 14 - 17 Ago,U. de Chile,4,2,CD San Luis
+2015_2016,apertura,Jornada 4 22 - 24 Ago,Antofagasta,0,2,U. Espanola
+2015_2016,apertura,Jornada 4 22 - 24 Ago,Palestino,3,1,Cobresal
+2015_2016,apertura,Jornada 4 22 - 24 Ago,Huachipato,1,1,U. La Calera
+2015_2016,apertura,Jornada 4 22 - 24 Ago,O Higgins,1,0,Wanderers
+2015_2016,apertura,Jornada 4 22 - 24 Ago,CD San Luis,0,0,A. Italiano
+2015_2016,apertura,Jornada 4 22 - 24 Ago,SM Arica,0,1,U. de Chile
+2015_2016,apertura,Jornada 4 22 - 24 Ago,Colo Colo,1,0,D. Iquique
+2015_2016,apertura,Jornada 4 22 - 24 Ago,U. Catolica,2,1,U. de Conce
+2015_2016,apertura,Jornada 5 28 - 31 Ago,O Higgins,3,1,SM Arica
+2015_2016,apertura,Jornada 5 28 - 31 Ago,Wanderers,3,1,Huachipato
+2015_2016,apertura,Jornada 5 28 - 31 Ago,U. de Conce,3,1,Cobresal
+2015_2016,apertura,Jornada 5 28 - 31 Ago,U. La Calera,1,2,A. Italiano
+2015_2016,apertura,Jornada 5 28 - 31 Ago,D. Iquique,2,1,CD San Luis
+2015_2016,apertura,Jornada 5 28 - 31 Ago,Antofagasta,0,1,Colo Colo
+2015_2016,apertura,Jornada 5 28 - 31 Ago,U. de Chile,4,4,Palestino
+2015_2016,apertura,Jornada 5 28 - 31 Ago,U. Espanola,2,0,U. Catolica
+2015_2016,apertura,Jornada 6 12 - 15 Sep,A. Italiano,3,1,U. de Chile
+2015_2016,apertura,Jornada 6 12 - 15 Sep,Cobresal,1,2,D. Iquique
+2015_2016,apertura,Jornada 6 12 - 15 Sep,Huachipato,1,0,Antofagasta
+2015_2016,apertura,Jornada 6 12 - 15 Sep,U. Catolica,5,0,O Higgins
+2015_2016,apertura,Jornada 6 12 - 15 Sep,CD San Luis,0,4,U. Espanola
+2015_2016,apertura,Jornada 6 12 - 15 Sep,Palestino,2,0,Wanderers
+2015_2016,apertura,Jornada 6 12 - 15 Sep,Colo Colo,3,1,U. La Calera
+2015_2016,apertura,Jornada 6 12 - 15 Sep,SM Arica,4,1,U. de Conce
+2015_2016,apertura,Jornada 7 23 - 28 Sep,O Higgins,3,2,A. Italiano
+2015_2016,apertura,Jornada 7 23 - 28 Sep,U. de Chile,2,1,Cobresal
+2015_2016,apertura,Jornada 7 23 - 28 Sep,D. Iquique,0,2,Palestino
+2015_2016,apertura,Jornada 7 23 - 28 Sep,U. Espanola,2,4,U. de Conce
+2015_2016,apertura,Jornada 7 23 - 28 Sep,Huachipato,0,1,U. Catolica
+2015_2016,apertura,Jornada 7 23 - 28 Sep,Wanderers,1,0,U. La Calera
+2015_2016,apertura,Jornada 7 23 - 28 Sep,Antofagasta,0,1,SM Arica
+2015_2016,apertura,Jornada 7 23 - 28 Sep,CD San Luis,0,1,Colo Colo
+2015_2016,apertura,Jornada 8 02 - 04 Oct,A. Italiano,2,1,D. Iquique
+2015_2016,apertura,Jornada 8 02 - 04 Oct,SM Arica,2,0,Huachipato
+2015_2016,apertura,Jornada 8 02 - 04 Oct,Palestino,1,0,O Higgins
+2015_2016,apertura,Jornada 8 02 - 04 Oct,U. de Conce,1,0,CD San Luis
+2015_2016,apertura,Jornada 8 02 - 04 Oct,U. de Chile,1,1,U. Espanola
+2015_2016,apertura,Jornada 8 02 - 04 Oct,U. Catolica,2,1,Colo Colo
+2015_2016,apertura,Jornada 8 02 - 04 Oct,Cobresal,2,0,Wanderers
+2015_2016,apertura,Jornada 8 02 - 04 Oct,U. La Calera,2,0,Antofagasta
+2015_2016,apertura,Jornada 9 15 - 19 Oct,U. Espanola,4,0,U. La Calera
+2015_2016,apertura,Jornada 9 15 - 19 Oct,Cobresal,1,2,A. Italiano
+2015_2016,apertura,Jornada 9 15 - 19 Oct,O Higgins,1,0,Huachipato
+2015_2016,apertura,Jornada 9 15 - 19 Oct,CD San Luis,6,2,Palestino
+2015_2016,apertura,Jornada 9 15 - 19 Oct,Antofagasta,2,1,U. Catolica
+2015_2016,apertura,Jornada 9 15 - 19 Oct,Wanderers,2,2,D. Iquique
+2015_2016,apertura,Jornada 9 15 - 19 Oct,U. de Conce,4,1,U. de Chile
+2015_2016,apertura,Jornada 9 15 - 19 Oct,Colo Colo,0,1,SM Arica
+2015_2016,apertura,Jornada 10 24 - 26 Oct,U. La Calera,0,2,Cobresal
+2015_2016,apertura,Jornada 10 24 - 26 Oct,SM Arica,0,1,CD San Luis
+2015_2016,apertura,Jornada 10 24 - 26 Oct,Huachipato,1,2,Colo Colo
+2015_2016,apertura,Jornada 10 24 - 26 Oct,U. Catolica,2,0,Palestino
+2015_2016,apertura,Jornada 10 24 - 26 Oct,U. Espanola,1,2,O Higgins
+2015_2016,apertura,Jornada 10 24 - 26 Oct,D. Iquique,1,1,Antofagasta
+2015_2016,apertura,Jornada 10 24 - 26 Oct,U. de Chile,0,1,Wanderers
+2015_2016,apertura,Jornada 10 24 - 26 Oct,A. Italiano,2,1,U. de Conce
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,CD San Luis,2,3,Huachipato
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,SM Arica,1,1,U. Espanola
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,Colo Colo,2,0,U. de Chile
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,U. de Conce,1,1,D. Iquique
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,O Higgins,1,1,Antofagasta
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,Palestino,1,1,U. La Calera
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,Cobresal,2,5,U. Catolica
+2015_2016,apertura,Jornada 11 30 Oct - 02 Nov,A. Italiano,1,1,Wanderers
+2015_2016,apertura,Jornada 12 06 - 09 Nov,U. Espanola,3,2,A. Italiano
+2015_2016,apertura,Jornada 12 06 - 09 Nov,Antofagasta,0,2,Palestino
+2015_2016,apertura,Jornada 12 06 - 09 Nov,U. Catolica,5,1,SM Arica
+2015_2016,apertura,Jornada 12 06 - 09 Nov,D. Iquique,5,3,U. de Chile
+2015_2016,apertura,Jornada 12 06 - 09 Nov,U. La Calera,0,2,CD San Luis
+2015_2016,apertura,Jornada 12 06 - 09 Nov,Colo Colo,2,1,O Higgins
+2015_2016,apertura,Jornada 12 06 - 09 Nov,Huachipato,2,0,Cobresal
+2015_2016,apertura,Jornada 12 06 - 09 Nov,Wanderers,1,2,U. de Conce
+2015_2016,apertura,Jornada 13 20 - 23 Nov,CD San Luis,2,1,O Higgins
+2015_2016,apertura,Jornada 13 20 - 23 Nov,U. de Conce,1,2,U. La Calera
+2015_2016,apertura,Jornada 13 20 - 23 Nov,A. Italiano,2,2,Huachipato
+2015_2016,apertura,Jornada 13 20 - 23 Nov,Cobresal,3,1,Antofagasta
+2015_2016,apertura,Jornada 13 20 - 23 Nov,Palestino,2,0,Colo Colo
+2015_2016,apertura,Jornada 13 20 - 23 Nov,Wanderers,1,2,U. Espanola
+2015_2016,apertura,Jornada 13 20 - 23 Nov,U. de Chile,2,2,U. Catolica
+2015_2016,apertura,Jornada 13 20 - 23 Nov,D. Iquique,2,1,SM Arica
+2015_2016,apertura,Jornada 14 26 - 30 Nov,Colo Colo,1,0,U. de Conce
+2015_2016,apertura,Jornada 14 26 - 30 Nov,U. Catolica,1,0,CD San Luis
+2015_2016,apertura,Jornada 14 26 - 30 Nov,U. La Calera,1,0,U. de Chile
+2015_2016,apertura,Jornada 14 26 - 30 Nov,Antofagasta,2,2,Wanderers
+2015_2016,apertura,Jornada 14 26 - 30 Nov,SM Arica,0,1,A. Italiano
+2015_2016,apertura,Jornada 14 26 - 30 Nov,U. Espanola,3,0,D. Iquique
+2015_2016,apertura,Jornada 14 26 - 30 Nov,Huachipato,0,0,Palestino
+2015_2016,apertura,Jornada 14 26 - 30 Nov,O Higgins,2,0,Cobresal
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,Wanderers,2,1,Colo Colo
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,CD San Luis,1,2,Antofagasta
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,Cobresal,3,1,U. Espanola
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,U. de Conce,3,1,O Higgins
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,Palestino,1,0,SM Arica
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,U. de Chile,2,1,Huachipato
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,D. Iquique,1,1,U. La Calera
+2015_2016,apertura,Jornada 15 03 Dic - 11 Ene,A. Italiano,1,0,U. Catolica
+2014_2015,clausura,Jornada 1 02 - 07 Ene,Cobreloa,3,0,Palestino
+2014_2015,clausura,Jornada 1 02 - 07 Ene,O Higgins,2,1,U. La Calera
+2014_2015,clausura,Jornada 1 02 - 07 Ene,Cobresal,1,1,U. de Chile
+2014_2015,clausura,Jornada 1 02 - 07 Ene,Nublense,3,1,Huachipato
+2014_2015,clausura,Jornada 1 02 - 07 Ene,Antofagasta,2,3,U. Catolica
+2014_2015,clausura,Jornada 1 02 - 07 Ene,U. de Conce,3,1,D. Iquique
+2014_2015,clausura,Jornada 1 02 - 07 Ene,Colo Colo,0,1,SM Arica
+2014_2015,clausura,Jornada 1 02 - 07 Ene,U. Espanola,0,2,A. Italiano
+2014_2015,clausura,Jornada 1 02 - 07 Ene,Barnechea,0,2,Wanderers
+2014_2015,clausura,Jornada 2 09 - 11 Ene,Wanderers,0,1,Cobreloa
+2014_2015,clausura,Jornada 2 09 - 11 Ene,Huachipato,1,2,U. de Conce
+2014_2015,clausura,Jornada 2 09 - 11 Ene,A. Italiano,1,1,Antofagasta
+2014_2015,clausura,Jornada 2 09 - 11 Ene,U. de Chile,3,0,O Higgins
+2014_2015,clausura,Jornada 2 09 - 11 Ene,U. La Calera,3,0,Barnechea
+2014_2015,clausura,Jornada 2 09 - 11 Ene,SM Arica,0,0,Nublense
+2014_2015,clausura,Jornada 2 09 - 11 Ene,D. Iquique,3,2,Colo Colo
+2014_2015,clausura,Jornada 2 09 - 11 Ene,Palestino,0,1,Cobresal
+2014_2015,clausura,Jornada 2 09 - 11 Ene,U. Catolica,0,0,U. Espanola
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Barnechea,0,0,A. Italiano
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Cobreloa,1,3,U. Catolica
+2014_2015,clausura,Jornada 3 16 - 19 Ene,U. de Conce,2,1,O Higgins
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Wanderers,3,2,U. de Chile
+2014_2015,clausura,Jornada 3 16 - 19 Ene,U. Espanola,1,2,SM Arica
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Cobresal,4,2,D. Iquique
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Nublense,0,3,Palestino
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Antofagasta,3,4,U. La Calera
+2014_2015,clausura,Jornada 3 16 - 19 Ene,Colo Colo,2,2,Huachipato
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,A. Italiano,1,2,Palestino
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,SM Arica,0,0,Barnechea
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,O Higgins,0,2,Colo Colo
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,U. Catolica,2,1,Nublense
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,Huachipato,2,1,Cobresal
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,D. Iquique,2,1,Wanderers
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,U. La Calera,2,0,U. Espanola
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,U. de Conce,3,2,Cobreloa
+2014_2015,clausura,Jornada 4 30 Ene - 01 Feb,U. de Chile,1,3,Antofagasta
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Palestino,1,1,Huachipato
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,U. de Chile,2,3,D. Iquique
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Barnechea,1,2,U. de Conce
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Cobresal,3,1,A. Italiano
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Antofagasta,0,2,SM Arica
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,U. Espanola,1,3,Colo Colo
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Wanderers,2,0,U. Catolica
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Cobreloa,0,0,O Higgins
+2014_2015,clausura,Jornada 5 03 Feb - 25 Mar,Nublense,1,2,U. La Calera
+2014_2015,clausura,Jornada 6 07 - 09 Feb,U. Catolica,3,2,Palestino
+2014_2015,clausura,Jornada 6 07 - 09 Feb,Huachipato,2,2,U. de Chile
+2014_2015,clausura,Jornada 6 07 - 09 Feb,Colo Colo,4,1,Barnechea
+2014_2015,clausura,Jornada 6 07 - 09 Feb,A. Italiano,2,1,Wanderers
+2014_2015,clausura,Jornada 6 07 - 09 Feb,SM Arica,1,1,Cobresal
+2014_2015,clausura,Jornada 6 07 - 09 Feb,U. de Conce,1,2,U. Espanola
+2014_2015,clausura,Jornada 6 07 - 09 Feb,D. Iquique,1,2,Antofagasta
+2014_2015,clausura,Jornada 6 07 - 09 Feb,U. La Calera,0,0,Cobreloa
+2014_2015,clausura,Jornada 6 07 - 09 Feb,O Higgins,1,0,Nublense
+2014_2015,clausura,Jornada 7 13 - 15 Feb,Wanderers,0,1,Huachipato
+2014_2015,clausura,Jornada 7 13 - 15 Feb,Barnechea,1,0,D. Iquique
+2014_2015,clausura,Jornada 7 13 - 15 Feb,U. de Chile,1,2,U. Espanola
+2014_2015,clausura,Jornada 7 13 - 15 Feb,Antofagasta,1,2,Colo Colo
+2014_2015,clausura,Jornada 7 13 - 15 Feb,U. La Calera,2,0,U. de Conce
+2014_2015,clausura,Jornada 7 13 - 15 Feb,Cobreloa,1,3,Cobresal
+2014_2015,clausura,Jornada 7 13 - 15 Feb,Nublense,1,0,A. Italiano
+2014_2015,clausura,Jornada 7 13 - 15 Feb,Palestino,0,4,SM Arica
+2014_2015,clausura,Jornada 7 13 - 15 Feb,O Higgins,1,1,U. Catolica
+2014_2015,clausura,Jornada 8 20 - 22 Feb,A. Italiano,1,0,Cobreloa
+2014_2015,clausura,Jornada 8 20 - 22 Feb,D. Iquique,2,1,U. La Calera
+2014_2015,clausura,Jornada 8 20 - 22 Feb,Barnechea,1,3,Nublense
+2014_2015,clausura,Jornada 8 20 - 22 Feb,SM Arica,3,3,U. Catolica
+2014_2015,clausura,Jornada 8 20 - 22 Feb,Huachipato,2,0,Antofagasta
+2014_2015,clausura,Jornada 8 20 - 22 Feb,U. Espanola,1,2,O Higgins
+2014_2015,clausura,Jornada 8 20 - 22 Feb,U. de Conce,1,2,U. de Chile
+2014_2015,clausura,Jornada 8 20 - 22 Feb,Cobresal,1,0,Wanderers
+2014_2015,clausura,Jornada 8 20 - 22 Feb,Colo Colo,1,1,Palestino
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,U. de Chile,2,3,A. Italiano
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,Wanderers,0,0,U. de Conce
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,O Higgins,3,1,Barnechea
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,U. Catolica,2,4,Cobresal
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,Palestino,2,2,D. Iquique
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,Cobreloa,1,0,SM Arica
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,Nublense,0,1,Colo Colo
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,Antofagasta,1,2,U. Espanola
+2014_2015,clausura,Jornada 9 27 Feb - 02 Mar,U. La Calera,0,1,Huachipato
+2014_2015,clausura,Jornada 10 06 - 08 Mar,Barnechea,0,1,Cobreloa
+2014_2015,clausura,Jornada 10 06 - 08 Mar,Palestino,3,3,O Higgins
+2014_2015,clausura,Jornada 10 06 - 08 Mar,Huachipato,3,5,U. Catolica
+2014_2015,clausura,Jornada 10 06 - 08 Mar,U. Espanola,2,2,Wanderers
+2014_2015,clausura,Jornada 10 06 - 08 Mar,D. Iquique,3,2,A. Italiano
+2014_2015,clausura,Jornada 10 06 - 08 Mar,SM Arica,0,1,U. de Chile
+2014_2015,clausura,Jornada 10 06 - 08 Mar,Cobresal,1,1,U. La Calera
+2014_2015,clausura,Jornada 10 06 - 08 Mar,Nublense,0,1,Antofagasta
+2014_2015,clausura,Jornada 10 06 - 08 Mar,Colo Colo,3,0,U. de Conce
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,Wanderers,0,3,Palestino
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,U. de Conce,2,2,Nublense
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,O Higgins,1,0,D. Iquique
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,U. de Chile,1,2,Colo Colo
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,Antofagasta,2,0,Cobresal
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,Cobreloa,1,1,U. Espanola
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,U. Catolica,5,0,Barnechea
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,A. Italiano,2,2,Huachipato
+2014_2015,clausura,Jornada 11 13 Mar - 01 Abr,U. La Calera,1,4,SM Arica
+2014_2015,clausura,Jornada 12 20 - 22 Mar,SM Arica,3,3,Wanderers
+2014_2015,clausura,Jornada 12 20 - 22 Mar,D. Iquique,0,0,Cobreloa
+2014_2015,clausura,Jornada 12 20 - 22 Mar,Palestino,1,3,U. de Chile
+2014_2015,clausura,Jornada 12 20 - 22 Mar,Cobresal,2,1,U. de Conce
+2014_2015,clausura,Jornada 12 20 - 22 Mar,A. Italiano,1,1,U. Catolica
+2014_2015,clausura,Jornada 12 20 - 22 Mar,Barnechea,1,3,Antofagasta
+2014_2015,clausura,Jornada 12 20 - 22 Mar,Huachipato,3,2,O Higgins
+2014_2015,clausura,Jornada 12 20 - 22 Mar,U. Espanola,1,1,Nublense
+2014_2015,clausura,Jornada 12 20 - 22 Mar,Colo Colo,1,4,U. La Calera
+2014_2015,clausura,Jornada 13 03 - 05 Abr,U. Espanola,2,1,Barnechea
+2014_2015,clausura,Jornada 13 03 - 05 Abr,U. Catolica,2,4,U. de Chile
+2014_2015,clausura,Jornada 13 03 - 05 Abr,Cobreloa,6,0,Huachipato
+2014_2015,clausura,Jornada 13 03 - 05 Abr,U. de Conce,3,2,SM Arica
+2014_2015,clausura,Jornada 13 03 - 05 Abr,Colo Colo,1,2,Cobresal
+2014_2015,clausura,Jornada 13 03 - 05 Abr,Nublense,2,0,D. Iquique
+2014_2015,clausura,Jornada 13 03 - 05 Abr,O Higgins,1,1,Wanderers
+2014_2015,clausura,Jornada 13 03 - 05 Abr,Antofagasta,1,2,Palestino
+2014_2015,clausura,Jornada 13 03 - 05 Abr,U. La Calera,2,2,A. Italiano
+2014_2015,clausura,Jornada 14 10 - 12 Abr,U. Catolica,4,2,U. La Calera
+2014_2015,clausura,Jornada 14 10 - 12 Abr,Palestino,3,2,U. de Conce
+2014_2015,clausura,Jornada 14 10 - 12 Abr,Wanderers,0,2,Antofagasta
+2014_2015,clausura,Jornada 14 10 - 12 Abr,U. de Chile,4,0,Cobreloa
+2014_2015,clausura,Jornada 14 10 - 12 Abr,Cobresal,1,0,Nublense
+2014_2015,clausura,Jornada 14 10 - 12 Abr,SM Arica,0,0,O Higgins
+2014_2015,clausura,Jornada 14 10 - 12 Abr,A. Italiano,0,1,Colo Colo
+2014_2015,clausura,Jornada 14 10 - 12 Abr,D. Iquique,0,1,U. Espanola
+2014_2015,clausura,Jornada 14 10 - 12 Abr,Huachipato,4,1,Barnechea
+2014_2015,clausura,Jornada 15 17 - 19 Abr,O Higgins,2,0,Cobresal
+2014_2015,clausura,Jornada 15 17 - 19 Abr,Colo Colo,0,3,U. Catolica
+2014_2015,clausura,Jornada 15 17 - 19 Abr,Cobreloa,3,1,Antofagasta
+2014_2015,clausura,Jornada 15 17 - 19 Abr,U. Espanola,0,1,Huachipato
+2014_2015,clausura,Jornada 15 17 - 19 Abr,Nublense,1,1,Wanderers
+2014_2015,clausura,Jornada 15 17 - 19 Abr,U. de Conce,2,2,A. Italiano
+2014_2015,clausura,Jornada 15 17 - 19 Abr,D. Iquique,4,1,SM Arica
+2014_2015,clausura,Jornada 15 17 - 19 Abr,Barnechea,1,4,U. de Chile
+2014_2015,clausura,Jornada 15 17 - 19 Abr,U. La Calera,4,0,Palestino
+2014_2015,apertura,Jornada 1 19 - 20 Jul,SM Arica,1,1,Colo Colo
+2014_2015,apertura,Jornada 1 19 - 20 Jul,U. Catolica,1,0,Antofagasta
+2014_2015,apertura,Jornada 1 19 - 20 Jul,Wanderers,3,0,Barnechea
+2014_2015,apertura,Jornada 1 19 - 20 Jul,A. Italiano,0,1,U. Espanola
+2014_2015,apertura,Jornada 1 19 - 20 Jul,Palestino,1,2,Cobreloa
+2014_2015,apertura,Jornada 1 19 - 20 Jul,Huachipato,3,0,Nublense
+2014_2015,apertura,Jornada 1 19 - 20 Jul,D. Iquique,1,1,U. de Conce
+2014_2015,apertura,Jornada 1 19 - 20 Jul,U. La Calera,1,2,O Higgins
+2014_2015,apertura,Jornada 1 19 - 20 Jul,U. de Chile,3,1,Cobresal
+2014_2015,apertura,Jornada 2 25 - 27 Jul,Antofagasta,0,0,A. Italiano
+2014_2015,apertura,Jornada 2 25 - 27 Jul,U. de Conce,0,1,Huachipato
+2014_2015,apertura,Jornada 2 25 - 27 Jul,O Higgins,1,3,U. de Chile
+2014_2015,apertura,Jornada 2 25 - 27 Jul,Barnechea,0,3,U. La Calera
+2014_2015,apertura,Jornada 2 25 - 27 Jul,U. Espanola,1,0,U. Catolica
+2014_2015,apertura,Jornada 2 25 - 27 Jul,Nublense,2,1,SM Arica
+2014_2015,apertura,Jornada 2 25 - 27 Jul,Cobreloa,1,2,Wanderers
+2014_2015,apertura,Jornada 2 25 - 27 Jul,Cobresal,0,1,Palestino
+2014_2015,apertura,Jornada 2 25 - 27 Jul,Colo Colo,2,0,D. Iquique
+2014_2015,apertura,Jornada 3 01 - 03 Ago,U. La Calera,3,1,Antofagasta
+2014_2015,apertura,Jornada 3 01 - 03 Ago,Palestino,2,2,Nublense
+2014_2015,apertura,Jornada 3 01 - 03 Ago,U. de Chile,3,2,Wanderers
+2014_2015,apertura,Jornada 3 01 - 03 Ago,U. Catolica,5,1,Cobreloa
+2014_2015,apertura,Jornada 3 01 - 03 Ago,O Higgins,2,2,U. de Conce
+2014_2015,apertura,Jornada 3 01 - 03 Ago,SM Arica,2,1,U. Espanola
+2014_2015,apertura,Jornada 3 01 - 03 Ago,D. Iquique,2,2,Cobresal
+2014_2015,apertura,Jornada 3 01 - 03 Ago,Huachipato,1,3,Colo Colo
+2014_2015,apertura,Jornada 3 01 - 03 Ago,A. Italiano,3,1,Barnechea
+2014_2015,apertura,Jornada 4 08 - 10 Ago,U. Espanola,2,0,U. La Calera
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Palestino,1,0,A. Italiano
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Nublense,2,1,U. Catolica
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Antofagasta,0,3,U. de Chile
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Wanderers,2,0,D. Iquique
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Colo Colo,2,3,O Higgins
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Cobreloa,0,2,U. de Conce
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Cobresal,2,2,Huachipato
+2014_2015,apertura,Jornada 4 08 - 10 Ago,Barnechea,1,0,SM Arica
+2014_2015,apertura,Jornada 5 15 - 17 Ago,D. Iquique,2,2,U. de Chile
+2014_2015,apertura,Jornada 5 15 - 17 Ago,Huachipato,2,0,Palestino
+2014_2015,apertura,Jornada 5 15 - 17 Ago,A. Italiano,2,2,Cobresal
+2014_2015,apertura,Jornada 5 15 - 17 Ago,U. de Conce,3,2,Barnechea
+2014_2015,apertura,Jornada 5 15 - 17 Ago,U. La Calera,3,2,Nublense
+2014_2015,apertura,Jornada 5 15 - 17 Ago,O Higgins,4,1,Cobreloa
+2014_2015,apertura,Jornada 5 15 - 17 Ago,SM Arica,1,0,Antofagasta
+2014_2015,apertura,Jornada 5 15 - 17 Ago,Colo Colo,2,0,U. Espanola
+2014_2015,apertura,Jornada 5 15 - 17 Ago,U. Catolica,0,1,Wanderers
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Wanderers,2,2,A. Italiano
+2014_2015,apertura,Jornada 6 22 - 24 Ago,U. de Chile,2,1,Huachipato
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Nublense,1,1,O Higgins
+2014_2015,apertura,Jornada 6 22 - 24 Ago,U. Espanola,0,0,U. de Conce
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Antofagasta,1,0,D. Iquique
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Barnechea,0,3,Colo Colo
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Cobreloa,1,1,U. La Calera
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Cobresal,0,0,SM Arica
+2014_2015,apertura,Jornada 6 22 - 24 Ago,Palestino,2,1,U. Catolica
+2014_2015,apertura,Jornada 7 28 - 31 Ago,U. Espanola,0,1,U. de Chile
+2014_2015,apertura,Jornada 7 28 - 31 Ago,SM Arica,1,0,Palestino
+2014_2015,apertura,Jornada 7 28 - 31 Ago,Colo Colo,4,0,Antofagasta
+2014_2015,apertura,Jornada 7 28 - 31 Ago,Huachipato,4,0,Wanderers
+2014_2015,apertura,Jornada 7 28 - 31 Ago,U. Catolica,2,2,O Higgins
+2014_2015,apertura,Jornada 7 28 - 31 Ago,U. de Conce,1,1,U. La Calera
+2014_2015,apertura,Jornada 7 28 - 31 Ago,D. Iquique,1,0,Barnechea
+2014_2015,apertura,Jornada 7 28 - 31 Ago,Cobresal,2,1,Cobreloa
+2014_2015,apertura,Jornada 7 28 - 31 Ago,A. Italiano,0,1,Nublense
+2014_2015,apertura,Jornada 8 12 - 14 Sep,U. La Calera,1,1,D. Iquique
+2014_2015,apertura,Jornada 8 12 - 14 Sep,Wanderers,4,1,Cobresal
+2014_2015,apertura,Jornada 8 12 - 14 Sep,U. Catolica,2,0,SM Arica
+2014_2015,apertura,Jornada 8 12 - 14 Sep,O Higgins,1,3,U. Espanola
+2014_2015,apertura,Jornada 8 12 - 14 Sep,Palestino,1,3,Colo Colo
+2014_2015,apertura,Jornada 8 12 - 14 Sep,Cobreloa,0,1,A. Italiano
+2014_2015,apertura,Jornada 8 12 - 14 Sep,Nublense,0,1,Barnechea
+2014_2015,apertura,Jornada 8 12 - 14 Sep,Antofagasta,2,2,Huachipato
+2014_2015,apertura,Jornada 8 12 - 14 Sep,U. de Chile,1,0,U. de Conce
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,Huachipato,0,4,U. La Calera
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,U. de Conce,1,3,Wanderers
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,A. Italiano,2,3,U. de Chile
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,Barnechea,1,2,O Higgins
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,U. Espanola,1,0,Antofagasta
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,SM Arica,0,1,Cobreloa
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,Cobresal,0,1,U. Catolica
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,D. Iquique,2,4,Palestino
+2014_2015,apertura,Jornada 9 27 Sep - 11 Oct,Colo Colo,0,0,Nublense
+2014_2015,apertura,Jornada 10 03 - 12 Oct,Wanderers,1,0,U. Espanola
+2014_2015,apertura,Jornada 10 03 - 12 Oct,A. Italiano,2,1,D. Iquique
+2014_2015,apertura,Jornada 10 03 - 12 Oct,U. La Calera,2,1,Cobresal
+2014_2015,apertura,Jornada 10 03 - 12 Oct,O Higgins,0,1,Palestino
+2014_2015,apertura,Jornada 10 03 - 12 Oct,U. Catolica,0,3,Huachipato
+2014_2015,apertura,Jornada 10 03 - 12 Oct,Antofagasta,2,0,Nublense
+2014_2015,apertura,Jornada 10 03 - 12 Oct,Cobreloa,1,2,Barnechea
+2014_2015,apertura,Jornada 10 03 - 12 Oct,U. de Conce,0,1,Colo Colo
+2014_2015,apertura,Jornada 10 03 - 12 Oct,U. de Chile,2,0,SM Arica
+2014_2015,apertura,Jornada 11 18 - 20 Oct,Huachipato,1,2,A. Italiano
+2014_2015,apertura,Jornada 11 18 - 20 Oct,Palestino,0,1,Wanderers
+2014_2015,apertura,Jornada 11 18 - 20 Oct,Nublense,2,1,U. de Conce
+2014_2015,apertura,Jornada 11 18 - 20 Oct,Barnechea,1,0,U. Catolica
+2014_2015,apertura,Jornada 11 18 - 20 Oct,D. Iquique,0,0,O Higgins
+2014_2015,apertura,Jornada 11 18 - 20 Oct,SM Arica,2,1,U. La Calera
+2014_2015,apertura,Jornada 11 18 - 20 Oct,Colo Colo,2,0,U. de Chile
+2014_2015,apertura,Jornada 11 18 - 20 Oct,Cobresal,1,1,Antofagasta
+2014_2015,apertura,Jornada 11 18 - 20 Oct,U. Espanola,2,1,Cobreloa
+2014_2015,apertura,Jornada 12 24 - 26 Oct,O Higgins,3,0,Huachipato
+2014_2015,apertura,Jornada 12 24 - 26 Oct,U. La Calera,0,2,Colo Colo
+2014_2015,apertura,Jornada 12 24 - 26 Oct,Antofagasta,1,1,Barnechea
+2014_2015,apertura,Jornada 12 24 - 26 Oct,Cobreloa,3,3,D. Iquique
+2014_2015,apertura,Jornada 12 24 - 26 Oct,U. de Chile,2,1,Palestino
+2014_2015,apertura,Jornada 12 24 - 26 Oct,Nublense,3,1,U. Espanola
+2014_2015,apertura,Jornada 12 24 - 26 Oct,U. de Conce,3,2,Cobresal
+2014_2015,apertura,Jornada 12 24 - 26 Oct,Wanderers,2,1,SM Arica
+2014_2015,apertura,Jornada 12 24 - 26 Oct,U. Catolica,2,1,A. Italiano
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,Barnechea,1,0,U. Espanola
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,SM Arica,0,0,U. de Conce
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,Cobresal,0,1,Colo Colo
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,D. Iquique,1,1,Nublense
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,A. Italiano,2,2,U. La Calera
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,Wanderers,1,0,O Higgins
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,U. de Chile,3,0,U. Catolica
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,Palestino,3,1,Antofagasta
+2014_2015,apertura,Jornada 13 31 Oct - 02 Nov,Huachipato,2,0,Cobreloa
+2014_2015,apertura,Jornada 14 07 - 09 Nov,Barnechea,3,0,Huachipato
+2014_2015,apertura,Jornada 14 07 - 09 Nov,U. de Conce,0,1,Palestino
+2014_2015,apertura,Jornada 14 07 - 09 Nov,Antofagasta,0,2,Wanderers
+2014_2015,apertura,Jornada 14 07 - 09 Nov,Nublense,2,3,Cobresal
+2014_2015,apertura,Jornada 14 07 - 09 Nov,Colo Colo,2,1,A. Italiano
+2014_2015,apertura,Jornada 14 07 - 09 Nov,O Higgins,3,1,SM Arica
+2014_2015,apertura,Jornada 14 07 - 09 Nov,U. Espanola,2,5,D. Iquique
+2014_2015,apertura,Jornada 14 07 - 09 Nov,Cobreloa,0,4,U. de Chile
+2014_2015,apertura,Jornada 14 07 - 09 Nov,U. La Calera,1,0,U. Catolica
+2014_2015,apertura,Jornada 15 21 - 23 Nov,Palestino,3,2,U. La Calera
+2014_2015,apertura,Jornada 15 21 - 23 Nov,U. Catolica,1,2,Colo Colo
+2014_2015,apertura,Jornada 15 21 - 23 Nov,Cobresal,3,1,O Higgins
+2014_2015,apertura,Jornada 15 21 - 23 Nov,A. Italiano,4,1,U. de Conce
+2014_2015,apertura,Jornada 15 21 - 23 Nov,Antofagasta,2,1,Cobreloa
+2014_2015,apertura,Jornada 15 21 - 23 Nov,Huachipato,1,3,U. Espanola
+2014_2015,apertura,Jornada 15 21 - 23 Nov,U. de Chile,1,1,Barnechea
+2014_2015,apertura,Jornada 15 21 - 23 Nov,SM Arica,0,0,D. Iquique
+2014_2015,apertura,Jornada 15 21 - 23 Nov,Wanderers,2,1,Nublense

@@ -1,5 +1,6 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import os
 __author__ = 'cilopez'
 
 
@@ -29,7 +30,9 @@ def reader(url, year, fase):
             i += 1
 
 if __name__ == '__main__':
-    with open("chilean_db.csv","w") as db :
+    b_path = os.getcwd()
+    path = os.path.join(b_path,'data','chilean_db.csv')
+    with open(path,"w") as db :
                 db.write("AÑO,FASE,FECHA,,LOCAL,GOLESLOCAL,GOLESVIS,VISITA\n")
     fase = ['clausura','apertura']
     years = ['2017','2015_2016','2014_2015']

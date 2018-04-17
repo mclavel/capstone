@@ -2,6 +2,7 @@ import csv
 import collections
 import scipy.stats as s
 from equipos import clubes
+import os
 
 
 combinaciones = [(i, j) for i in clubes for j in clubes if i != j]
@@ -37,7 +38,9 @@ def get_matrix(match, odds):
 def load_database():
     resultados = collections.defaultdict(list)
     prob = {}
-    with open('chilean_db.csv') as csvfile:
+    b_path = os.getcwd()
+    path = os.path.join(b_path,'data','chilean_db.csv')
+    with open(path) as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             if row['LOCAL'] in clubes and row['VISITA'] in clubes:

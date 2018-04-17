@@ -8,6 +8,7 @@ import random
 from numpy.random import choice
 
 
+
 class Simulacion:
     def __init__(self, calendario,odds,equipos):
         self.calendario = calendario
@@ -38,7 +39,6 @@ class Simulacion:
         n_partidos = len([keys for keys in self._results])
         #Tengo que arreglar aca ya que es el numero de partidos ganados como local
         #Esto se debe arreglar
-        print(len(A.victorias)/n_partidos)
         return max(0.5, len(A.victorias)/n_partidos)
 
     def p_betha (self,A,B):
@@ -98,6 +98,6 @@ class Simulacion:
 
 
 if __name__ == "__main__":
-	print("Empieza la simulación")
-	s = Simulacion(CALENDARIO,ODDS,EQUIPOS)
-	s.run()
+   print("Empieza la simulación")
+   s = Simulacion(CALENDARIO,ODDS,EQUIPOS)
+   s.run()

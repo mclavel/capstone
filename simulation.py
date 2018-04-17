@@ -27,11 +27,9 @@ class Simulacion:
     def p_empate(self):
         if self.fecha == 0:
             return self._pdraw
-        # falta agregar el numero de empates actuales
-        #lo estoy calculando mal
-        n_empates_actuales = 0
-        n_partidos = len([keys for keys in self._results])
-        return min(self._pdraw - 0.05 , max(self._pdraw - 0.05, 
+        n_empates_actuales = sum([len(x.empates) for x in self.equipos])/2
+        n_partidos = len([keys for keys in self._results])*8
+        return max(self._pdraw - 0.05 , min(self._pdraw + 0.05, 
             n_empates_actuales / n_partidos  ))
 
     def p_alpha (self,A):
@@ -40,7 +38,8 @@ class Simulacion:
         n_partidos = len([keys for keys in self._results])
         #Tengo que arreglar aca ya que es el numero de partidos ganados como local
         #Esto se debe arreglar
-        return max(0.5, len(A.partidos_local)/n_partidos)
+        print(len(A.victorias)/n_partidos)
+        return max(0.5, len(A.victorias)/n_partidos)
 
     def p_betha (self,A,B):
         if self.fecha == 0:

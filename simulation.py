@@ -26,21 +26,21 @@ class Simulacion:
 
     def p_empate(self):
         if self.fecha == 0:
-            #En la primera fecha no tiene sentido realizar este calculo
             return self._pdraw
         # falta agregar el numero de empates actuales
         #lo estoy calculando mal
-        n_empates_actuales = len([keys for keys in self._results 
-                                  if self._results[keys] == "D"])
+        n_empates_actuales = 0
         n_partidos = len([keys for keys in self._results])
         return min(self._pdraw - 0.05 , max(self._pdraw - 0.05, 
             n_empates_actuales / n_partidos  ))
 
-    def p_alpha (self):
+    def p_alpha (self,A):
         if self.fecha == 0:
             return 0.5
         n_partidos = len([keys for keys in self._results])
-        return max(0.5, 1/n_partidos)
+        #Tengo que arreglar aca ya que es el numero de partidos ganados como local
+        #Esto se debe arreglar
+        return max(0.5, len(A.partidos_local)/n_partidos)
 
     def p_betha (self,A,B):
         if self.fecha == 0:
@@ -51,7 +51,7 @@ class Simulacion:
         return (A.ranking/(A.ranking + B.ranking))
 
     def p_local(self,A,B):
-        factor = 2 * self.p_alpha() * self.p_betha(A,B) + self.p_gamma(A,B)
+        factor = (2 * self.p_alpha(A) * self.p_betha(A,B)) + self.p_gamma(A,B)
         return (1-self.p_empate())* factor * self.epsilon
 
 
@@ -70,11 +70,14 @@ class Simulacion:
         r = self.match_ending(victoria_local,empate)
         if r == "LW":
             self.add_victoria(local,visita)
+            return "LW"
         elif r == "AW":
             self.add_victoria(visita,local)
+            return "AW"
         else:
             local.empates.append(visita)
             visita.empates.append(local)
+            return "D"
            
            
     def results(self,match):
@@ -82,6 +85,7 @@ class Simulacion:
         eqlocal = [x for x in self.equipos if x.nombre == local.strip()]
         eqvis = [x for x in self.equipos if x.nombre == away.strip()]
         resultado = self.evento(*eqlocal,*eqvis)
+        return resultado
     
     def run(self):
         for fechas in self.calendario:

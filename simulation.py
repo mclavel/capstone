@@ -13,25 +13,65 @@ class Simulacion:
         self.calendario = calendario
         self.tabla = []
         self.equipos = equipos
+        self.fecha = 0
         self._results = {}
         self.odds = odds
+        self._pdraw = 0.26 #Dato historico de empates
+        self._localwin = 0.4396 #Probabilidad de que un equipo local gane
+        self.epsilon = 1 #Factor que le da mas chances de ganar a A
 
-    def victoria(self,a,b):
+    def add_victoria(self,a,b):
         a.victorias.append(b)
         b.derrotas.append(a)
 
-    def match_ending(self):
+    def p_empate(self):
+        if self.fecha == 0:
+            #En la primera fecha no tiene sentido realizar este calculo
+            return self._pdraw
+        # falta agregar el numero de empates actuales
+        #lo estoy calculando mal
+        n_empates_actuales = len([keys for keys in self._results 
+                                  if self._results[keys] == "D"])
+        n_partidos = len([keys for keys in self._results])
+        return min(self._pdraw - 0.05 , max(self._pdraw - 0.05, 
+            n_empates_actuales / n_partidos  ))
+
+    def p_alpha (self):
+        if self.fecha == 0:
+            return 0.5
+        n_partidos = len([keys for keys in self._results])
+        return max(0.5, 1/n_partidos)
+
+    def p_betha (self,A,B):
+        if self.fecha == 0:
+            return 0.5
+        return (A.rendimiento /(A.rendimiento + B.rendimiento))
+
+    def p_gamma (self,A,B):
+        return (A.ranking/(A.ranking + B.ranking))
+
+    def p_local(self,A,B):
+        factor = 2 * self.p_alpha() * self.p_betha(A,B) + self.p_gamma(A,B)
+        return (1-self.p_empate())* factor * self.epsilon
+
+
+    def match_ending(self, victory, draw):
         x = random.uniform(0,1)
-        y = random.uniform(0, 1-x)
-        final = choice(["LW", "D", "AW"], 1, p=[x,y,1-x-y])
-        return final
+        if x <= victory:
+            return "LW"
+        elif x > victory and x < (draw + victory):
+            return "D"
+        else:
+            return "AW" 
 
     def evento(self,local,visita):
-        r = self.match_ending()
+        empate = self.p_empate()
+        victoria_local = self.p_local(local,visita)
+        r = self.match_ending(victoria_local,empate)
         if r == "LW":
-            self.victoria(local,visita)
+            self.add_victoria(local,visita)
         elif r == "AW":
-            self.victoria(visita,local)
+            self.add_victoria(visita,local)
         else:
             local.empates.append(visita)
             visita.empates.append(local)
@@ -45,6 +85,7 @@ class Simulacion:
     
     def run(self):
         for fechas in self.calendario:
+            self.fecha += 1
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))

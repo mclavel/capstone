@@ -10,11 +10,19 @@ class Equipo:
         self.derrotas = []
         self.victorias = []
         self.empates = []
+        self.ranking = 50
 
     @property
     def puntaje (self):
       return len(self.empates) + 3* len(self.victorias)
-      pass
+  
+    @property
+    def rendimiento(self):
+      if len(self.partidos_local) == 0 and len(self.partidos_visita) == 0:
+          return 1
+      return self.puntaje/ len(self.partidos_local)+len(self.partidos_visita)
+
+      
     def __repr__(self):
         return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
 

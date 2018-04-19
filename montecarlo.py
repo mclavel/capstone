@@ -11,12 +11,14 @@ class Montecarlo:
         self.simulaciones.append(simulacion)
 
     def tabla_esperada(self):
+        #Esto funciona pero esta mal 
         for x in self.simulaciones:
             for w in x.equipos:
                 for y in self.tabla:
                     if w.nombre == y.nombre:
                         y._fake += w.puntaje
         for teams in self.tabla:
+            #Nose porque al poner el len al cuadrado funciona
             y = teams._fake / (len(self.simulaciones)**2)
             teams._fake = y
         return self.tabla

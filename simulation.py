@@ -55,8 +55,8 @@ class Simulacion:
 
     def p_local(self,A,B):
         factor = (2 * (self.p_alpha(A) + self.p_betha(A,B))) 
-        factor += ((self.p_gamma(A,B)+ 5*self.p_delta(A,B)))
-        return (1-self.p_empate())* (factor/9) * self.epsilon
+        factor += ((2*self.p_gamma(A,B)+ self.p_delta(A,B))/3)
+        return (1-self.p_empate())* (factor/5) * self.epsilon
 
 
     def match_ending(self, victory, draw):

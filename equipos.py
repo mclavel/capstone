@@ -6,6 +6,7 @@ class Equipo:
         self.goles = 0
         self.presupuesto =  presupuesto
         self.localia = localia
+        self._fake= 0
         self.partidos_local = []
         self.partidos_visita = []
         self.derrotas = []
@@ -22,8 +23,10 @@ class Equipo:
       if len(self.partidos_local) == 0 and len(self.partidos_visita) == 0:
           return 1
       return self.puntaje/ len(self.partidos_local)+len(self.partidos_visita)
-
-      
+    
+    def fake_show(self):
+        return self.nombre +": {}".format(self._fake)
+    
     def __repr__(self):
         return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
 

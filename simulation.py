@@ -55,8 +55,8 @@ class Simulacion:
 
     def p_local(self,A,B):
         factor = (2 * (self.p_alpha(A) + self.p_betha(A,B))) 
-        factor += ((2*self.p_gamma(A,B)+ self.p_delta(A,B))/3)
-        return (1-self.p_empate())* (factor/5) * self.epsilon
+        factor += ((self.p_gamma(A,B)+ 5*self.p_delta(A,B)))
+        return (1-self.p_empate())* (factor/9) * self.epsilon
 
 
     def match_ending(self, victory, draw):
@@ -92,21 +92,25 @@ class Simulacion:
         return resultado
     
     def run(self):
-        for fechas in self.calendario[:9]:
+        for fechas in self.calendario:
             self.fecha += 1
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
         self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+        
+        
+    def show_results(self):
         for x in self.equipos:
             print(x)
             #print x
         print("-"*50)
         #print "-"*50 
         potencialmente_interesante(self.equipos)
+        return self.equipos
 
 
 if __name__ == "__main__":
-   print("Empieza la simulación")
    s = Simulacion(CALENDARIO,ODDS,EQUIPOS)
    s.run()
+   #s.show_results()

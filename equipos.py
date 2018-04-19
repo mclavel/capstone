@@ -1,9 +1,10 @@
 import random
 
 class Equipo:
-    def __init__(self, nombre, localia, ranking, puntaje=0):
+    def __init__(self, nombre, localia, ranking, presupuesto , puntaje=0):
         self.nombre = nombre
         self.goles = 0
+        self.presupuesto =  presupuesto
         self.localia = localia
         self.partidos_local = []
         self.partidos_visita = []
@@ -27,14 +28,14 @@ class Equipo:
         return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
 
 
-nombre_ciudad = [("U. de Chile", "Santiago", 50), ("Colo Colo", "Santiago", 137),
-           ("CD San Luis", "Quillota", 50), ("O Higgins", "Rancagua", 165),
-           ("Huachipato", "Talcahuano", 50), ("Palestino", "Santiago", 50),
-           ("A. Italiano", "Santiago", 50), ("Everton Vina", "Vina del Mar", 219),
-           ("U. Espanola", "Santiago", 447), ("U. de Conce", "Concepcion", 50),
-           ("D. Iquique", "Iquique", 1010), ("U. Catolica", "Santiago", 928),
-           ("Antofagasta", "Antofagasta", 50), ("U. La Calera", "La Calera", 50),
-           ("Curico Unido", "Curico", 50), ("Deportes Temuco", "Temuco", 50)]
+nombre_ciudad = [("U. de Chile", "Santiago", 50,500), ("Colo Colo", "Santiago", 137,500),
+           ("CD San Luis", "Quillota", 50,87), ("O Higgins", "Rancagua", 165,82),
+           ("Huachipato", "Talcahuano", 50,85), ("Palestino", "Santiago", 50,87),
+           ("A. Italiano", "Santiago", 50,95), ("Everton Vina", "Vina del Mar", 219,125),
+           ("U. Espanola", "Santiago", 447,125), ("U. de Conce", "Concepcion", 50,95),
+           ("D. Iquique", "Iquique", 1010,80), ("U. Catolica", "Santiago", 928,350),
+           ("Antofagasta", "Antofagasta", 50,100), ("U. La Calera", "La Calera", 50,70),
+           ("Curico Unido", "Curico", 50,70), ("Deportes Temuco", "Temuco", 50,80)]
 
 equipos_santiago = ["U. de Chile", "Colo Colo", "Palestino", "U. Espanola",
                     "U. Catolica", "A. Italiano"]
@@ -45,7 +46,6 @@ equipos_grandes = ["U. de Chile", "Colo Colo", "U. Catolica"]
 
 
 nombres = [equipo[0] for equipo in nombre_ciudad]
-
 EQUIPOS = []
 clubes = []
 

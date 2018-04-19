@@ -3,6 +3,7 @@ from equipos import equipos_santiago
 from equipos import EQUIPOS
 from equipos import nombres as equipos
 from prob import ODDS
+from algorithm import potencialmente_interesante
 from schedueling import CALENDARIO
 import random
 from numpy.random import choice
@@ -45,13 +46,17 @@ class Simulacion:
         if self.fecha == 0:
             return 0.5
         return (A.rendimiento /(A.rendimiento + B.rendimiento))
+    
+    def p_delta(self,A,B):
+        return  (A.presupuesto /(A.presupuesto + B.presupuesto))
 
     def p_gamma (self,A,B):
         return (A.ranking/(A.ranking + B.ranking))
 
     def p_local(self,A,B):
-        factor = (2 * self.p_alpha(A) * self.p_betha(A,B)) + self.p_gamma(A,B)
-        return (1-self.p_empate())* factor * self.epsilon
+        factor = (2 * (self.p_alpha(A) + self.p_betha(A,B))) 
+        factor += ((2*self.p_gamma(A,B)+ self.p_delta(A,B))/3)
+        return (1-self.p_empate())* (factor/5) * self.epsilon
 
 
     def match_ending(self, victory, draw):
@@ -87,7 +92,7 @@ class Simulacion:
         return resultado
     
     def run(self):
-        for fechas in self.calendario:
+        for fechas in self.calendario[:9]:
             self.fecha += 1
             self._results[fechas.numero]= []
             for x in fechas.partidos:
@@ -95,6 +100,10 @@ class Simulacion:
         self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
         for x in self.equipos:
             print(x)
+            #print x
+        print("-"*50)
+        #print "-"*50 
+        potencialmente_interesante(self.equipos)
 
 
 if __name__ == "__main__":

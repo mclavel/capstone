@@ -42,15 +42,3 @@ def potencialmente_interesante(a):
                 "El partido de {} es interesante porque si empata o gana puede salir de posicion de descenso".format(
                     a[j].nombre))
 
-def results(match):
-    print ODDS
-    p = ODDS[match]
-    for i in p:
-        print i
-    w1 = [sum(i) for i in p]
-    print("w1", w1)
-    a = choice(4, 1, w1) #selecciona una fila de la matriz
-    b = choice(4, 1, p[a]) #selecciona una columna de la fila
-    print(int(a), int(b))
-
-results(('U. de Chile', 'Palestino'))

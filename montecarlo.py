@@ -19,7 +19,7 @@ class Montecarlo:
                         y._fake += w.puntaje
         for teams in self.tabla:
             #Nose porque al poner el len al cuadrado funciona
-            y = teams._fake / (len(self.simulaciones)**2)
+            y = teams._fake / (len(self.simulaciones))
             teams._fake = y
         return self.tabla
 
@@ -32,6 +32,6 @@ if __name__ == "__main__":
         s.run()
         m.agregar_simulacion(s)
     final = (m.tabla_esperada())
-    final.sort(key=lambda x: x.puntaje, reverse = True)
+    final.sort(key=lambda x: x._fake, reverse = True)
     for teams in final:
         print(teams.fake_show())

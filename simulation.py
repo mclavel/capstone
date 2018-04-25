@@ -7,6 +7,7 @@ from algorithm import potencialmente_interesante
 from schedueling import CALENDARIO
 import random
 from numpy.random import choice
+import copy
 
 
 
@@ -14,7 +15,7 @@ class Simulacion:
     def __init__(self, calendario,odds,equipos):
         self.calendario = calendario
         self.tabla = []
-        self.equipos = equipos
+        self.equipos = copy.deepcopy(equipos)
         self.fecha = 0
         self._results = {}
         self.odds = odds
@@ -104,6 +105,7 @@ class Simulacion:
             self.fecha += 1
             if self.fecha > 15:
                 self.first_leg = False
+                pass
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))

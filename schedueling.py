@@ -17,7 +17,7 @@ class Fecha:
         return str(self.numero)
 
 
-fechas = [i for i in range(1, 16)]
+fechas = [i for i in range(1, 31)]
 U = [0, 1, 2]
 
 m = Model("Tournament")

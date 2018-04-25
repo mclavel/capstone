@@ -18,6 +18,7 @@ class Simulacion:
         self.fecha = 0
         self._results = {}
         self.odds = odds
+        self.first_leg = True
         self._pdraw = 0.26 #Dato historico de empates
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
@@ -27,7 +28,7 @@ class Simulacion:
         b.derrotas.append(a)
 
     def p_empate(self):
-        if self.fecha == 0:
+        if self.first_leg:
             return self._pdraw
         n_empates_actuales = sum([len(x.empates) for x in self.equipos])/2
         n_partidos = len([keys for keys in self._results])*8
@@ -35,7 +36,7 @@ class Simulacion:
             n_empates_actuales / n_partidos  ))
 
     def p_alpha (self,A):
-        if self.fecha == 0:
+        if self.first_leg:
             return 0.5
         n_partidos = len([keys for keys in self._results])
         #Tengo que arreglar aca ya que es el numero de partidos ganados como local
@@ -43,7 +44,7 @@ class Simulacion:
         return max(0.5, len(A.victorias)/n_partidos)
 
     def p_betha (self,A,B):
-        if self.fecha == 0:
+        if self.first_leg:
             return 0.5
         return (A.rendimiento /(A.rendimiento + B.rendimiento))
     
@@ -54,9 +55,16 @@ class Simulacion:
         return (A.ranking/(A.ranking + B.ranking))
 
     def p_local(self,A,B):
-        factor = (2 * (self.p_alpha(A) + self.p_betha(A,B))) 
-        factor += ((2*self.p_gamma(A,B)+ self.p_delta(A,B))/3)
-        return (1-self.p_empate())* (factor/5) * self.epsilon
+        if self.first_leg:
+            factor = self.p_gamma(A,B)+ self.p_delta(A,B)
+            p = factor / 2
+
+        else:
+            factor = (2 * (self.p_alpha(A) + self.p_betha(A,B)))
+            factor += (self.p_gamma(A,B)+ self.p_delta(A,B))
+            p = factor / 5
+
+        return (1-self.p_empate())* p * self.epsilon
 
 
     def match_ending(self, victory, draw):
@@ -94,6 +102,8 @@ class Simulacion:
     def run(self):
         for fechas in self.calendario:
             self.fecha += 1
+            if self.fecha > 15:
+                self.first_leg = False
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
@@ -113,4 +123,4 @@ class Simulacion:
 if __name__ == "__main__":
    s = Simulacion(CALENDARIO,ODDS,EQUIPOS)
    s.run()
-   #s.show_results()
+   s.show_results()

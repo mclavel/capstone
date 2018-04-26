@@ -61,9 +61,9 @@ class Simulacion:
             p = factor / 2
 
         else:
-            factor = (2 * (self.p_alpha(A) + self.p_betha(A,B)))
+            factor = 2*(self.p_alpha(A) + self.p_betha(A,B))
             factor += (self.p_gamma(A,B)+ self.p_delta(A,B))
-            p = factor / 5
+            p = factor / 6
 
         return (1-self.p_empate())* p * self.epsilon
 
@@ -91,6 +91,11 @@ class Simulacion:
             local.empates.append(visita)
             visita.empates.append(local)
             return "D"
+    
+    def publico(self,local,visita):
+        return round(min(local.capacidad*1000
+                   ,(local.espectadores + min(0.3*local.capacidad*1000
+                                         ,visita.espectadores))))
            
            
     def results(self,match):
@@ -98,18 +103,20 @@ class Simulacion:
         eqlocal = [x for x in self.equipos if x.nombre == local.strip()]
         eqvis = [x for x in self.equipos if x.nombre == away.strip()]
         resultado = self.evento(*eqlocal,*eqvis)
+        publico = print(self.publico(*eqlocal,*eqvis))
         return resultado
     
     def run(self):
         for fechas in self.calendario:
             self.fecha += 1
-            if self.fecha > 15:
+            if self.fecha == 16:
                 self.first_leg = False
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
         self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
         
+
         
     def show_results(self):
         for x in self.equipos:

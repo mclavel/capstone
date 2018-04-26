@@ -21,7 +21,7 @@ fechas = [i for i in range(1, 31)]
 U = [0, 1, 2]
 
 m = Model("Tournament")
-
+m.setParam( 'OutputFlag', False ) 
 #1 si juega el equipo i de local contra j en la fecha k
 match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
 

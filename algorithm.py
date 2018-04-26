@@ -4,7 +4,6 @@ from numpy.random import choice
 
 
 ORD = sorted(EQUIPOS, key=lambda x: x.puntaje, reverse=True)
-print(ORD)
 
 def potencialmente_interesante(a):
     interesantes = 0

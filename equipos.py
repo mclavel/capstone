@@ -5,11 +5,14 @@ import os
 
 
 class Equipo:
-    def __init__(self, nombre, localia, presupuesto, ranking):
+    def __init__(self, nombre, localia, presupuesto, ranking, capacidad,
+                 espectadores):
         self.nombre = nombre
         self.goles = 0
         self.presupuesto =  presupuesto
         self.localia = localia
+        self.capacidad = capacidad
+        self.espectadores = espectadores
         self._fake= 0
         self._fake_victorias = []
         self._fake_derrotas = []
@@ -31,11 +34,11 @@ class Equipo:
           return 1
       return self.puntaje/ len(self.partidos_local)+len(self.partidos_visita)
     
-    def fake_show(self):
+    def fake_show(self,n_simulation):
         return self.nombre +": {} |W:{}|D:{}|L:{}".format(self._fake,
-                               (len(self._fake_victorias)/2000)
-                               ,(len(self._fake_empates)/2000),
-                               (len(self._fake_derrotas)/2000))
+                               (len(self._fake_victorias)/n_simulation)
+                               ,(len(self._fake_empates)/n_simulation),
+                               (len(self._fake_derrotas)/n_simulation))
     
     def __repr__(self):
         return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
@@ -55,12 +58,21 @@ equipos_santiago = ["U. de Chile", "Colo Colo", "Palestino", "U. Espanola",
 equipos_valparaiso = ["Everton Vina", "CD San Luis", "U. La Calera"]
 equipos_biobio = ["Huachipato", "U. de Conce"]
 equipos_grandes = ["U. de Chile", "Colo Colo", "U. Catolica"]
-ranking = {}
-path = os.path.join(os.getcwd(),"data","puntajes.csv")
-with open(path) as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-        ranking[row['Equipo']]= row['Puntaje total']
+
+
+def reader(file,row1,column1):
+    data = {}   
+    path = os.path.join(os.getcwd(),"data",file)
+    with open(path) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            data[row[row1]]= row[column1]
+    return data
+
+ranking = reader("puntajes.csv",'Equipo','Puntaje total')
+espectators = reader("espectadores.csv","Equipo","Espectadores")
+capacity = reader("capacidad.csv","Equipo","Capacidad")
+
 
 
 nombres = [equipo[0] for equipo in nombre_ciudad]
@@ -69,6 +81,8 @@ clubes = []
 
 for equipo in nombre_ciudad:
     clubes.append(equipo[0])
-    e = Equipo(ranking=float(ranking[equipo[0]]), *equipo)
+    e = Equipo(ranking=float(ranking[equipo[0]]),
+    espectadores=float(espectators[equipo[0]]),
+    capacidad=float(capacity[equipo[0]]), *equipo)
     #print(e.__dict__)
     EQUIPOS.append(e)

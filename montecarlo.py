@@ -1,6 +1,7 @@
 from equipos import EQUIPOS
 import simulation
 from schedueling import CALENDARIO
+import copy
 
 class Montecarlo:
     def __init__(self):
@@ -17,16 +18,19 @@ class Montecarlo:
                 for y in self.tabla:
                     if w.nombre == y.nombre:
                         y._fake += w.puntaje
+                        [y._fake_victorias.append(x) for x in w.victorias[:]]
+                        [y._fake_empates.append(x) for x in w.empates[:]]
+                        [y._fake_derrotas.append(x) for x in w.derrotas[:]]
         for teams in self.tabla:
             #Nose porque al poner el len al cuadrado funciona
-            y = teams._fake / (len(self.simulaciones))
+            y = round(teams._fake / (len(self.simulaciones)))
             teams._fake = y
         return self.tabla
 
 	
 if __name__ == "__main__":
     m = Montecarlo()
-    for x in range(1000):
+    for x in range(2000):
         s = None
         s = simulation.Simulacion(CALENDARIO,None,EQUIPOS)
         s.run()

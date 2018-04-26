@@ -11,6 +11,9 @@ class Equipo:
         self.presupuesto =  presupuesto
         self.localia = localia
         self._fake= 0
+        self._fake_victorias = []
+        self._fake_derrotas = []
+        self._fake_empates= []
         self.partidos_local = []
         self.partidos_visita = []
         self.derrotas = []
@@ -29,7 +32,10 @@ class Equipo:
       return self.puntaje/ len(self.partidos_local)+len(self.partidos_visita)
     
     def fake_show(self):
-        return self.nombre +": {}".format(self._fake)
+        return self.nombre +": {} |W:{}|D:{}|L:{}".format(self._fake,
+                               (len(self._fake_victorias)/2000)
+                               ,(len(self._fake_empates)/2000),
+                               (len(self._fake_derrotas)/2000))
     
     def __repr__(self):
         return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))

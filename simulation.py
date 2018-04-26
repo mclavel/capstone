@@ -20,7 +20,7 @@ class Simulacion:
         self._results = {}
         self.odds = odds
         self.first_leg = True
-        self._pdraw = 0.26 #Dato historico de empates
+        self._pdraw = 0.26 #Dato historico de empates | analisis sensibilidad
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
 
@@ -105,7 +105,6 @@ class Simulacion:
             self.fecha += 1
             if self.fecha > 15:
                 self.first_leg = False
-                pass
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))

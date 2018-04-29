@@ -1,10 +1,7 @@
 from gurobipy import *
-from equipos import equipos_santiago
-from equipos import EQUIPOS
+from equipos import equipos_santiago, equipos_biobio, equipos_valparaiso, \
+    equipos_grandes
 from equipos import nombres as equipos
-from prob import ODDS
-import random
-from numpy.random import choice
 
 
 class Fecha:
@@ -16,44 +13,81 @@ class Fecha:
     def __repr__(self):
         return str(self.numero)
 
+def calendarizacion(n_fechas, inicial=None, tabla=None):
+    fechas = [i for i in range(1, n_fechas + 1)]
 
-fechas = [i for i in range(1, 31)]
-U = [0, 1, 2]
+    m = Model("Tournament")
 
-m = Model("Tournament")
-m.setParam( 'OutputFlag', False ) 
-#1 si juega el equipo i de local contra j en la fecha k
-match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
+    #1 si juega el equipo i de local contra j en la fecha k
+    match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
 
-#Todos jueguen con todos y solo una vez en cada fecha
-m.addConstrs((quicksum(match[i, j, k] + match[j, i, k] for j in equipos) == 1 for i in equipos for k in fechas))
+    #Todos jueguen con todos y solo una vez en cada fecha
+    m.addConstrs((quicksum(match[i, j, k] + match[j, i, k] for j in equipos) ==
+                  1 for i in equipos for k in fechas))
 
-#No jueguen contra si mismos
-m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
+    #No jueguen contra si mismos
+    m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
 
-#No mas de 2 partidos consecutivos de local o visita
-m.addConstrs((quicksum(match[i, j, k + l] for j in equipos for l in U) <= 2 for i in equipos for k in fechas[:13]))
+    #No mas de 2 partidos consecutivos de local o visita
+    m.addConstrs((quicksum(match[i, j, k + l] for j in equipos for l in [0, 1,
+                 2]) <= 2 for i in equipos for k in fechas[:n_fechas - 2]))
 
-#No mas de 3 en Santiago, ya que no es posible tope en otra ciudad
-m.addConstrs((quicksum(match[i, j, k] for i in equipos_santiago) <= 3 for j in equipos for k in fechas))
+    #No mas de 3 en Santiago
+    m.addConstrs((quicksum(match[i, j, k] for i in equipos_santiago) <= 3 for j
+                  in equipos for k in fechas))
 
-#La funcion objetivo no es de importancia pero cuenta que esten todas las fechas
-m.setObjective(quicksum(match[i, j, k] for i in equipos for j in equipos for k in fechas), GRB.MINIMIZE)
+    # No mas de 1 en Valparaiso
+    m.addConstrs(
+        (quicksum(match[i, j, k] for i in equipos_valparaiso) <= 1 for j in
+         equipos for k in fechas))
 
-m.optimize()
+    # No mas de 1 en BioBio
+    m.addConstrs(
+        (quicksum(match[i, j, k] for i in equipos_biobio) <= 1 for j in equipos for
+         k in fechas))
 
-CALENDARIO = [] #Calendario Inicial factible
-# Print solution
-if m.status == GRB.Status.OPTIMAL:
-    solution = m.getAttr('x', match)
-    for k in fechas:
-        f = []
-        for i in equipos:
-            for j in equipos:
-                if solution[i, j, k] > 0:
-                    f.append("{}, {}".format(i,j))
-        fecha = Fecha(k,f)
-        CALENDARIO.append(fecha)
+    if inicial is not None:
+        primera_vuelta = []
+        for fecha in inicial:
+            for partido in fecha.partidos:
+                primera_vuelta.append([partido.split(",")[0], partido.split(",")[1][1:]])
+
+        m.addConstrs((quicksum(match[i, j, k] for i, j in primera_vuelta) == 0 for k in fechas))
+
+    if tabla is not None:
+        # No pueden jugarse los clasicos
+        m.addConstrs((quicksum(match[i, j, k] for i in equipos_grandes for j in
+                      equipos_grandes) == 0 for k in fechas))
+
+
+        # No jueguen contra equipos del mismo cluster
+        m.addConstrs(match[i, j, k] == 0 for k in fechas for
+                     i in tabla[0:8] for j in tabla[0:8])
+
+        m.addConstrs(match[i, j, k] == 0 for k in fechas for
+                     i in tabla[8:] for j in tabla[8:])
+
+
+    m.setObjective(quicksum(match[i, j, k] for i in equipos for j in equipos for
+                   k in fechas), GRB.MINIMIZE)
+
+    m.optimize()
+
+    CALENDARIO = [] #Calendario inicial factible
+    # Print solution
+    if m.status == GRB.Status.OPTIMAL:
+        solution = m.getAttr('x', match)
+        for k in fechas:
+            print "Fecha", k
+            f = []
+            for i in equipos:
+                for j in equipos:
+                    if solution[i, j, k] > 0:
+                        f.append("{}, {}".format(i, j))
+                        print i, "-", j
+            fecha = Fecha(k,f)
+            CALENDARIO.append(fecha)
+    return CALENDARIO
 
 
 

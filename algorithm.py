@@ -1,9 +1,5 @@
-from prob import get_matrix, refresh_odds, ODDS, draw_odds, win_odds
-from equipos import EQUIPOS
-from numpy.random import choice
-
-
-ORD = sorted(EQUIPOS, key=lambda x: x.puntaje, reverse=True)
+from schedueling import *
+from montecarlo import simulacion_montecarlo
 
 def potencialmente_interesante(a):
     interesantes = 0
@@ -40,4 +36,12 @@ def potencialmente_interesante(a):
             print(
                 "El partido de {} es interesante porque si empata o gana puede salir de posicion de descenso".format(
                     a[j].nombre))
+
+def modelo():
+    primeras_15_fechas = calendarizacion(15)
+    sim1 = simulacion_montecarlo(primeras_15_fechas)
+    segundas_7_fechas = calendarizacion(7, primeras_15_fechas, sim1)
+
+modelo()
+
 

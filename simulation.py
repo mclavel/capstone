@@ -1,12 +1,4 @@
-from gurobipy import *
-from equipos import equipos_santiago
-from equipos import EQUIPOS
-from equipos import nombres as equipos
-from prob import ODDS
-from algorithm import potencialmente_interesante
-from schedueling import CALENDARIO
 import random
-from numpy.random import choice
 import copy
 
 
@@ -102,8 +94,8 @@ class Simulacion:
         local, away = match.split(",")
         eqlocal = [x for x in self.equipos if x.nombre == local.strip()]
         eqvis = [x for x in self.equipos if x.nombre == away.strip()]
-        resultado = self.evento(*eqlocal,*eqvis)
-        publico = print(self.publico(*eqlocal,*eqvis))
+        resultado = self.evento(*(eqlocal + eqvis))
+        publico = self.publico(*(eqlocal + eqvis))
         return resultado
     
     def run(self):
@@ -124,11 +116,6 @@ class Simulacion:
             #print x
         print("-"*50)
         #print "-"*50 
-        potencialmente_interesante(self.equipos)
+        #potencialmente_interesante(self.equipos)
         return self.equipos
 
-
-if __name__ == "__main__":
-   s = Simulacion(CALENDARIO,ODDS,EQUIPOS)
-   s.run()
-   s.show_results()

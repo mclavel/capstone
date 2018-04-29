@@ -1,6 +1,5 @@
 from equipos import EQUIPOS
 import simulation
-from schedueling import CALENDARIO
 import time
 
 
@@ -28,19 +27,20 @@ class Montecarlo:
             teams._fake = y
         return self.tabla
 
-	
-if __name__ == "__main__":
+def simulacion_montecarlo(calendario):
     m = Montecarlo()
     start_time = time.time()
     n = 1000
     for x in range(n):
         s = None
-        s = simulation.Simulacion(CALENDARIO,None,EQUIPOS)
+        s = simulation.Simulacion(calendario, None, EQUIPOS)
         s.run()
         m.agregar_simulacion(s)
     final = (m.tabla_esperada())
-    final.sort(key=lambda x: x._fake, reverse = True)
-    print("{} seconds to {} simulations".format(round(time.time()-start_time,2),n))
+    tabla = []
+    final.sort(key=lambda x: x._fake, reverse=True)
+    print("\n {} seconds to {} simulations".format(round(time.time()-start_time, 2), n))
     for teams in final:
+        tabla.append(teams.nombre)
         print(teams.fake_show(n))
-        
+    return tabla

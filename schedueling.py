@@ -61,13 +61,13 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
         m.addConstrs((quicksum(match[i, j, k] for i in equipos_grandes for j in
                       equipos_grandes) == 0 for k in fechas))
 
-
+        print([x for x in tabla][8:])
         # No jueguen contra equipos del mismo cluster
         m.addConstrs(match[i, j, k] == 0 for k in fechas for
-                     i in tabla[0:8] for j in tabla[0:8])
+                     i in [x for x in tabla][:8] for j in [x for x in tabla][:8])
 
         m.addConstrs(match[i, j, k] == 0 for k in fechas for
-                     i in tabla[8:] for j in tabla[8:])
+                     i in [x for x in tabla][8:] for j in [x for x in tabla][8:])
 
 
     m.setObjective(quicksum(match[i, j, k] for i in equipos for j in equipos for
@@ -80,13 +80,15 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
     if m.status == GRB.Status.OPTIMAL:
         solution = m.getAttr('x', match)
         for k in fechas:
-            print "Fecha", k
+            print("Fecha", k)
+            #print "Fecha", k
             f = []
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
                         f.append("{}, {}".format(i, j))
-                        print i, "-", j
+                        print( i, "-", j)
+                        #print i, "-", j
             fecha = Fecha(k,f)
             CALENDARIO.append(fecha)
     return CALENDARIO

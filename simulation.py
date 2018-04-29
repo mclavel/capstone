@@ -15,6 +15,10 @@ class Simulacion:
         self._pdraw = 0.26 #Dato historico de empates | analisis sensibilidad
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
+    
+    def agregar_fechas(self,fechas):
+        for x in fechas:
+            self.calendario.append(x)
 
     def add_victoria(self,a,b):
         a.victorias.append(b)
@@ -99,7 +103,8 @@ class Simulacion:
         return resultado
     
     def run(self):
-        for fechas in self.calendario:
+        x = int(self.fecha)
+        for fechas in self.calendario[x:]:
             self.fecha += 1
             if self.fecha == 16:
                 self.first_leg = False
@@ -118,4 +123,19 @@ class Simulacion:
         #print "-"*50 
         #potencialmente_interesante(self.equipos)
         return self.equipos
+
+
+def simulacion_unica(calendario,odds,equipos,simulation):
+    if simulation is None:
+        simulation = Simulacion(calendario,odds,equipos)
+    simulation.run()
+    simulation.show_results
+    result_dict = {}
+    for teams in simulation.equipos:
+        result_dict[teams.nombre] = teams.puntaje
+    return result_dict, simulation
+    
+
+
+
 

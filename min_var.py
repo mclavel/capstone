@@ -39,9 +39,9 @@ e = {
 
 
 def min_var(n_fechas, jugados, puntaje_inicial):
-    print "\n Minimizando la varianza a lo loco"
+    #print "\n Minimizando la varianza a lo loco"
     p0 = puntaje_inicial
-    print p0
+    #print p0
     fechas = [i for i in range(1, n_fechas + 1)]
     m = Model("Tournament")
 
@@ -98,26 +98,26 @@ def min_var(n_fechas, jugados, puntaje_inicial):
             CALENDARIO.append(fecha)
         for k in fechas:
             f = []
-            print "\n Fecha", k
+            print ("\n Fecha", k)
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
-                        print i, j
+                        print (i, j)
                         f.append("{}, {}".format(j, i))
-                        print "LW:", x[i, k].X, " D:", y[i, k].X
+                        print ("LW:", x[i, k].X, " D:", y[i, k].X)
             fecha = Fecha(k + 15, f)
             CALENDARIO.append(fecha)
-        print "\n PUNTAJES"
+        print ("\n PUNTAJES")
         for i in equipos:
-            print i, "{}".format(p[i].X)
-        print a.X, b.X
+            print (i, "{}".format(p[i].X))
+        print (a.X, b.X)
 
         for i in equipos:
             for k in fechas:
                 if x[i, k].X == 1:
-                    print "W", i, k
+                    print ("W", i, k)
                 if y[i, k].X == 1:
-                    print "D", i, k
+                    print ("D", i, k)
         return CALENDARIO
 
 

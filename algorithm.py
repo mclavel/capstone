@@ -1,5 +1,6 @@
 from schedueling import *
 from montecarlo import simulacion_montecarlo
+from min_var import min_var
 
 def potencialmente_interesante(a):
     interesantes = 0
@@ -39,8 +40,11 @@ def potencialmente_interesante(a):
 
 def modelo():
     primeras_15_fechas = calendarizacion(15)
-    sim1 = simulacion_montecarlo(primeras_15_fechas)
-    segundas_7_fechas = calendarizacion(7, primeras_15_fechas, sim1)
+    sim1 = simulacion_montecarlo(primeras_15_fechas, True)
+    #segundas_7_fechas = calendarizacion(7, primeras_15_fechas, sim1)
+    #terceras_5_fechas = min_var(5, primeras_15_fechas, sim1)
+
+
 
 modelo()
 

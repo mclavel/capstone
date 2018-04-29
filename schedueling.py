@@ -13,7 +13,14 @@ class Fecha:
     def __repr__(self):
         return str(self.numero)
 
-def calendarizacion(n_fechas, inicial=None, tabla=None):
+def aux(jugados): #funcion sin importancia
+    p_jugados = []
+    for fecha in jugados:
+        for partido in fecha.partidos:
+            p_jugados.append([partido.split(",")[0], partido.split(",")[1][1:]])
+    return p_jugados
+
+def calendarizacion(n_fechas, jugados=None, tabla=None):
     fechas = [i for i in range(1, n_fechas + 1)]
 
     m = Model("Tournament")
@@ -46,13 +53,8 @@ def calendarizacion(n_fechas, inicial=None, tabla=None):
         (quicksum(match[i, j, k] for i in equipos_biobio) <= 1 for j in equipos for
          k in fechas))
 
-    if inicial is not None:
-        primera_vuelta = []
-        for fecha in inicial:
-            for partido in fecha.partidos:
-                primera_vuelta.append([partido.split(",")[0], partido.split(",")[1][1:]])
-
-        m.addConstrs((quicksum(match[i, j, k] for i, j in primera_vuelta) == 0 for k in fechas))
+    if jugados is not None:
+        m.addConstrs((quicksum(match[i, j, k] for i, j in aux(jugados)) == 0 for k in fechas))
 
     if tabla is not None:
         # No pueden jugarse los clasicos

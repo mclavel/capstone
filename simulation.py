@@ -19,6 +19,24 @@ class Simulacion:
     def agregar_fechas(self,fechas):
         for x in fechas:
             self.calendario.append(x)
+            
+    def buscar_equipo(self,name):    
+        for x in self.equipos:
+            if x.nombre == name:
+                return x
+            
+    def no_jugados(self,team):
+        e_local = self.equipos[:]
+        e_visita = self.equipos[:]
+        for x in team.partidos_local:
+            for y in e_local:
+                if x.nombre == y.nombre or team.nombre == y.nombre:
+                    e_local.remove(y)
+        for x in team.partidos_visita:
+                for y in e_visita:
+                    if x.nombre == y.nombre or team.nombre == y.nombre:
+                        e_visita.remove(y)
+        return e_local, e_visita
 
     def add_victoria(self,a,b):
         a.victorias.append(b)
@@ -99,6 +117,8 @@ class Simulacion:
         eqlocal = [x for x in self.equipos if x.nombre == local.strip()]
         eqvis = [x for x in self.equipos if x.nombre == away.strip()]
         resultado = self.evento(*(eqlocal + eqvis))
+        eqlocal[0].partidos_local.append(*eqvis)
+        eqvis[0].partidos_visita.append(*eqlocal)
         publico = self.publico(*(eqlocal + eqvis))
         return resultado
     
@@ -129,7 +149,7 @@ def simulacion_unica(calendario,odds,equipos,simulation):
     if simulation is None:
         simulation = Simulacion(calendario,odds,equipos)
     simulation.run()
-    simulation.show_results
+    simulation.show_results()
     result_dict = {}
     for teams in simulation.equipos:
         result_dict[teams.nombre] = teams.puntaje

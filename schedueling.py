@@ -61,7 +61,6 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
         m.addConstrs((quicksum(match[i, j, k] for i in equipos_grandes for j in
                       equipos_grandes) == 0 for k in fechas))
 
-        print([x for x in tabla][8:])
         # No jueguen contra equipos del mismo cluster
         m.addConstrs(match[i, j, k] == 0 for k in fechas for
                      i in [x for x in tabla][:8] for j in [x for x in tabla][:8])

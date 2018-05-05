@@ -22,6 +22,10 @@ class Equipo:
         self.victorias = []
         self.empates = []
         self.ranking = ranking
+        
+    @property
+    def jugados(self):
+      return self.victorias + self.empates + self.derrotas
 
     @property
     def puntaje (self):
@@ -40,7 +44,10 @@ class Equipo:
                                (len(self._fake_derrotas)/n_simulation))
     
     def __repr__(self):
-        return self.nombre + ": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
+        return self.nombre 
+    
+    def __str__(self):
+        return self.nombre+": {} |W{} |D{} |L{} ".format(str(self.puntaje),len(self.victorias),len(self.empates),len(self.derrotas))
 
 
 nombre_ciudad = [("U. de Chile", "Santiago",500), ("Colo Colo", "Santiago",500),

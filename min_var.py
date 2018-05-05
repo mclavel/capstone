@@ -99,25 +99,31 @@ def min_var(n_fechas, jugados, puntaje_inicial):
         for k in fechas:
             f = []
             print ("\n Fecha", k)
+            #print "\n Fecha", k
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
                         print (i, j)
+                        #print i, j
                         f.append("{}, {}".format(j, i))
                         print ("LW:", x[i, k].X, " D:", y[i, k].X)
+                        #print "LW:", x[i, k].X, " D:", y[i, k].X
             fecha = Fecha(k + 15, f)
             CALENDARIO.append(fecha)
         print ("\n PUNTAJES")
+        #print "\n PUNTAJES"
         for i in equipos:
             print (i, "{}".format(p[i].X))
         print (a.X, b.X)
-
+        #print a.X, b.X
         for i in equipos:
             for k in fechas:
                 if x[i, k].X == 1:
                     print ("W", i, k)
+                    #print "W", i, k
                 if y[i, k].X == 1:
                     print ("D", i, k)
+                    #print "D", i, k
         return CALENDARIO
 
 

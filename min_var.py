@@ -79,9 +79,13 @@ def min_var(n_fechas, jugados, puntaje_inicial):
 
     m.addConstrs(y[i, k] - y[j, k] <= 1 - match[i, j, k] for i in equipos for j in equipos if i != j for k in fechas)
 
+    m.addConstrs(
+        y[j, k] - y[i, k] <= 1 - match[i, j, k] for i in equipos for j in
+        equipos if i != j for k in fechas)
     #m.addConstrs(f[i, j] >= 0.2 * x[i, k] for i in equipos for j in equipos for k in fechas)
     #m.addConstrs(e[i, j] >= 0.2 * y[i, k] for i in equipos for j in equipos for k in fechas)
 
+    m.params.MIPGap = 0.3 #Aceptamos una solucion con gap de 0.3
     m.optimize()
 
     CALENDARIO = []
@@ -98,32 +102,26 @@ def min_var(n_fechas, jugados, puntaje_inicial):
             CALENDARIO.append(fecha)
         for k in fechas:
             f = []
-            print ("\n Fecha", k)
+            print "\n", "Fecha", k
             #print "\n Fecha", k
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
-                        print (i, j)
+                        print i,"-", j, " -> ", "LW" if x[i, k].X == 1 else "D" if y[i, k].X == 1 else "AW"
                         #print i, j
                         f.append("{}, {}".format(j, i))
-                        print ("LW:", x[i, k].X, " D:", y[i, k].X, "AW", x[j, k].X)
                         #print "LW:", x[i, k].X, " D:", y[i, k].X
             fecha = Fecha(k + 15, f)
             CALENDARIO.append(fecha)
         print ("\n PUNTAJES")
         #print "\n PUNTAJES"
+        dic = {}
         for i in equipos:
-            print (i, "{}".format(p[i].X))
-        print (a.X, b.X)
-        #print a.X, b.X
-        for i in equipos:
-            for k in fechas:
-                if x[i, k].X == 1:
-                    print ("W", i, k)
-                    #print "W", i, k
-                if y[i, k].X == 1:
-                    print ("D", i, k)
-                    #print "D", i, k
+            dic[i] = int(p[i].X)
+        dic_sorted = sorted(dic.items(), key=operator.itemgetter(1),
+                              reverse=True)
+        for i in dic_sorted:
+            print i
         return CALENDARIO
 
 

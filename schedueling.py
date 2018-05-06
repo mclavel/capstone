@@ -2,6 +2,7 @@ from gurobipy import *
 from equipos import equipos_santiago, equipos_biobio, equipos_valparaiso, \
     equipos_grandes
 from equipos import nombres as equipos
+import operator
 
 
 class Fecha:
@@ -28,9 +29,13 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
     #1 si juega el equipo i de local contra j en la fecha k
     match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
 
-    #Todos jueguen con todos y solo una vez en cada fecha
-    m.addConstrs((quicksum(match[i, j, k] + match[j, i, k] for j in equipos) ==
-                  1 for i in equipos for k in fechas))
+    if jugados is None:
+        #Todos jueguen con todos y solo una vez en cada fecha
+        m.addConstrs((quicksum(match[i, j, k] + match[j, i, k] for j in equipos)
+                      == 1 for i in equipos for k in fechas))
+
+        m.addConstrs(quicksum(match[i, j, k] + match[j, i, k] for k in fechas)
+                 == 1 for i in equipos for j in equipos if i != j)
 
     #No jueguen contra si mismos
     m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
@@ -54,19 +59,24 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
          k in fechas))
 
     if jugados is not None:
-        m.addConstrs((quicksum(match[i, j, k] for i, j in aux(jugados)) == 0 for k in fechas))
+        m.addConstrs(quicksum(match[i, j, k] for i, j in aux(jugados)) == 0 for k in fechas)
+        m.addConstrs(quicksum(match[i, j, k] + match[j, i, k] for j in equipos)
+                      == 1 for i in equipos for k in fechas)
+        m.addConstrs(quicksum(match[i, j, k] for k in fechas)
+                     <= 1 for i in equipos for j in equipos if i != j)
+
+
 
     if tabla is not None:
         # No pueden jugarse los clasicos
         m.addConstrs((quicksum(match[i, j, k] for i in equipos_grandes for j in
                       equipos_grandes) == 0 for k in fechas))
-
         # No jueguen contra equipos del mismo cluster
         m.addConstrs(match[i, j, k] == 0 for k in fechas for
-                     i in [x for x in tabla][:8] for j in [x for x in tabla][:8])
+                     i in [x[0] for x in tabla][:8] for j in [x[0] for x in tabla][:8])
 
         m.addConstrs(match[i, j, k] == 0 for k in fechas for
-                     i in [x for x in tabla][8:] for j in [x for x in tabla][8:])
+                     i in [x[0] for x in tabla][8:] for j in [x[0] for x in tabla][8:])
 
 
     m.setObjective(quicksum(match[i, j, k] for i in equipos for j in equipos for

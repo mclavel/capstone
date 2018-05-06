@@ -10,7 +10,7 @@ from equipos import EQUIPOS, nombres
 def prob_matrix(simulation):
     prob_matrix = {}
     for team in simulation.equipos:
-        prob_matrix[team.nombre] = smatch_probs(team)
+        prob_matrix[team.nombre] = match_probs(team)
     return prob_matrix
         
 def potencialmente_interesante(a):
@@ -52,19 +52,21 @@ def potencialmente_interesante(a):
 def modelo():
     primeras_15_fechas = calendarizacion(15)
     sim_m = simulacion_montecarlo(primeras_15_fechas, True)
-    sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,None)
-    segundas_7_fechas = calendarizacion(7, primeras_15_fechas, sim_m)
+    print "Simulacion unica:"
+    sim2, s = simulacion_unica(primeras_15_fechas, None,EQUIPOS,None)
+    sim_2_sorted = sorted(sim2.items(), key=operator.itemgetter(1), reverse=True)
+    segundas_7_fechas = calendarizacion(7, primeras_15_fechas, sim_2_sorted)
     s.agregar_fechas(segundas_7_fechas)
     sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,s)
     #print(s.p_local(s.buscar_equipo('U. La Calera'),s.buscar_equipo('Colo Colo')))
     #print(s.p_local(s.buscar_equipo('Colo Colo'),s.buscar_equipo('U. La Calera')))
-    print(s.buscar_equipo('Colo Colo').jugados)
-    print(s.buscar_equipo('Colo Colo').partidos_visita)
-    print(s.buscar_equipo('Colo Colo').partidos_local)
+    #print(s.buscar_equipo('Colo Colo').jugados)
+    #print(s.buscar_equipo('Colo Colo').partidos_visita)
+    #print(s.buscar_equipo('Colo Colo').partidos_local)
     #print(s.no_jugados(s.buscar_equipo('Colo Colo')))
 
     #problems here Houston
-    #terceras_5_fechas = min_var(5,s.calendario, sim2)
+    terceras_5_fechas = min_var(5, s.calendario, sim2)
 
 
 if __name__ == "__main__" :

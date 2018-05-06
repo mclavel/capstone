@@ -73,7 +73,7 @@ def min_var(n_fechas, jugados, puntaje_inicial):
 
     m.addConstrs(p[i] == p0[i] + quicksum(3 * x[i, k] + y[i, k] for k in fechas) for i in equipos)
 
-    m.addConstrs(match[i, j, k] <= x[i, k] + y[i, k] + x[j, k] + y[j, k] for i in equipos for j in equipos if i != j for k in fechas)
+    m.addConstrs(match[i, j, k] <= (x[i, k] + y[i, k] + x[j, k] + y[j, k])  for i in equipos for j in equipos if i != j for k in fechas)
 
     m.addConstrs(x[i, k] + y[i, k] <= 1 for i in equipos for k in fechas)
 
@@ -106,7 +106,7 @@ def min_var(n_fechas, jugados, puntaje_inicial):
                         print (i, j)
                         #print i, j
                         f.append("{}, {}".format(j, i))
-                        print ("LW:", x[i, k].X, " D:", y[i, k].X)
+                        print ("LW:", x[i, k].X, " D:", y[i, k].X, "AW", x[j, k].X)
                         #print "LW:", x[i, k].X, " D:", y[i, k].X
             fecha = Fecha(k + 15, f)
             CALENDARIO.append(fecha)

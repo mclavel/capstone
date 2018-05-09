@@ -22,6 +22,7 @@ class Equipo:
         self.victorias = []
         self.empates = []
         self.ranking = ranking
+        self.posicion = None
         
     @property
     def jugados(self):

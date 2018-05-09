@@ -29,7 +29,7 @@ class Montecarlo:
 def simulacion_montecarlo(calendario, puntajes=False):
     m = Montecarlo()
     start_time = time.time()
-    n = 1000
+    n = 100
     for x in range(n):
         s = None
         s = simulation.Simulacion(calendario, None, EQUIPOS)

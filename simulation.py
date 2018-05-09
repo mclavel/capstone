@@ -2,6 +2,34 @@ import random
 import copy
 
 
+def potencialmente_interesante(a):
+    interesantes = []
+    for j in range(1, len(a)):
+        if 1 < a[0].puntaje - a[j].puntaje <= 3:
+            interesantes.append((a[j],"campeonato"))
+            #print("El partido de {} es interesante porque si gana puede quedar primero".format(a[j].nombre))
+
+        elif a[0].puntaje - a[j].puntaje == 1:
+            interesantes.append((a[j],"campeonato"))
+            #print("El partido de {} es interesante porque si empata o gana puede quedar primero".format(a[j].nombre))
+
+        elif 1 < a[5].puntaje - a[j].puntaje <= 3:
+            interesantes.append((a[j],"internacional"))
+            #print("El partido de {} es interesante porque si gana puede quedar en zona de clasificacion a torneo internacional".format(a[j].nombre))
+
+        elif a[5].puntaje - a[j].puntaje == 1:
+            interesantes.append((a[j],"internacional"))
+            #print("El partido de {} es interesante porque si empata o gana  puede quedar en zona de clasificacion a torneo internacional".format(a[j].nombre))
+
+        elif 1 < a[13].puntaje - a[j].puntaje <= 3:
+            interesantes.append((a[j],"descenso"))
+            #print("El partido de {} es interesante porque si gana puede salir de posicion de descenso".format(a[j].nombre))
+
+        elif a[13].puntaje - a[j].puntaje == 1:
+            interesantes.append((a[j],"descenso"))
+            #print("El partido de {} es interesante porque si empata o gana puede salir de posicion de descenso".format(a[j].nombre))
+    return interesantes
+
 
 class Simulacion:
     def __init__(self, calendario,odds,equipos):
@@ -15,7 +43,23 @@ class Simulacion:
         self._pdraw = 0.26 #Dato historico de empates | analisis sensibilidad
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
+        
+    def attr_funcion(self,tipo,num):
+        data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
+        if tipo in data_dic:
+            return data_dic[tipo]*num
+        else:
+            return 0
     
+    def atractividad(self):
+        self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+        interesantes = potencialmente_interesante(self.equipos)
+        #n =sum(self.attr_funcion(x[1],self.fecha) for x in interesantes)
+        a  = 0
+        for x in interesantes:
+            a += self.attr_funcion(x[1],self.fecha)
+        return a
+        
     def agregar_fechas(self,fechas):
         for x in fechas:
             self.calendario.append(x)
@@ -131,7 +175,9 @@ class Simulacion:
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
-        self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+        print(self.atractividad())
+        #self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+        
         
 
         

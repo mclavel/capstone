@@ -2,44 +2,10 @@ from gurobipy import *
 from equipos import nombres as equipos
 from schedueling import Fecha, aux
 
-f = {
-  ('U. de Chile', 'Colo Colo'): 0.4,
-  ('CD San Luis', 'O Higgins'): 0.3,
-  ('Colo Colo', 'O Higgins'): 0.4,
-  ('O Higgins', 'Colo Colo'): 0.3,
-  ('O Higgins', 'U. de Chile'): 0.25,
-  ('O Higgins', 'CD San Luis'): 0.4,
-  ('Colo Colo', 'CD San Luis'):  0.4,
-  ('Colo Colo',  'U. de Chile'): 0.7,
-  ('CD San Luis', 'U. de Chile'): 0.3,
-  ('CD San Luis', 'Colo Colo'): 0.1,
-  ('U. de Chile', 'CD San Luis'): 0.4,
-  ('U. de Chile',  'O Higgins'): 0.3,
-  ('O Higgins', 'O Higgins'): 0,
-  ('CD San Luis', 'CD San Luis'): 0,
-  ('Colo Colo', 'Colo Colo'): 0,
-  ('U. de Chile', 'U. de Chile'): 0}
-e = {
-  ('U. de Chile', 'Colo Colo'): 0,
-  ('CD San Luis', 'O Higgins'):   0,
-  ('Colo Colo', 'O Higgins'):  0,
-  ('O Higgins', 'Colo Colo'): 0,
-  ('O Higgins', 'U. de Chile'): 0,
-  ('O Higgins', 'CD San Luis'): 0,
-  ('Colo Colo', 'CD San Luis'):  0,
-  ('Colo Colo',  'U. de Chile'): 0,
-  ('CD San Luis', 'U. de Chile'): 0,
-  ('CD San Luis', 'Colo Colo'): 0,
-  ('U. de Chile', 'CD San Luis'): 0,
-  ('U. de Chile',  'O Higgins'): 0,
-  ('O Higgins', 'O Higgins'): 0,
-  ('CD San Luis', 'CD San Luis'): 0,
-  ('Colo Colo', 'Colo Colo'): 0,
-  ('U. de Chile', 'U. de Chile'): 0}
 
-
-def min_var(n_fechas, jugados, puntaje_inicial):
+def min_var(n_fechas, jugados, puntaje_inicial,matriz_p):
     #print "\n Minimizando la varianza a lo loco"
+    #Varguitas la mama
     p0 = puntaje_inicial
     #print p0
     fechas = [i for i in range(1, n_fechas + 1)]
@@ -82,9 +48,10 @@ def min_var(n_fechas, jugados, puntaje_inicial):
     m.addConstrs(
         y[j, k] - y[i, k] <= 1 - match[i, j, k] for i in equipos for j in
         equipos if i != j for k in fechas)
-    #m.addConstrs(f[i, j] >= 0.2 * x[i, k] for i in equipos for j in equipos for k in fechas)
-    #m.addConstrs(e[i, j] >= 0.2 * y[i, k] for i in equipos for j in equipos for k in fechas)
-
+    m.addConstrs(matriz_p[i][j] >= 0.32 * x[i, k] for i in matriz_p for j in matriz_p[i] for k in fechas)
+    #m.addConstrs(matriz_p[i][j] >= 0.30 * y[i, k] for i in matriz_p for j in matriz_p[i] for k in fechas)
+    # Si agregas la restriccion de arriba se hace infactible
+    
     m.params.MIPGap = 0.3 #Aceptamos una solucion con gap de 0.3
     m.optimize()
 
@@ -102,18 +69,18 @@ def min_var(n_fechas, jugados, puntaje_inicial):
             CALENDARIO.append(fecha)
         for k in fechas:
             f = []
-            print "\n", "Fecha", k
+            print ("\n", "Fecha", k)
             #print "\n Fecha", k
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
-                        print i,"-", j, " -> ", "LW" if x[i, k].X == 1 else "D" if y[i, k].X == 1 else "AW"
+                        print (i,"-", j, " -> ", "LW" if x[i, k].X == 1 else "D" if y[i, k].X == 1 else "AW")
                         #print i, j
                         f.append("{}, {}".format(j, i))
                         #print "LW:", x[i, k].X, " D:", y[i, k].X
             fecha = Fecha(k + 15, f)
             CALENDARIO.append(fecha)
-        print ("\n PUNTAJES")
+        print ("\n PUNTAJES teoricos")
         #print "\n PUNTAJES"
         dic = {}
         for i in equipos:
@@ -121,7 +88,7 @@ def min_var(n_fechas, jugados, puntaje_inicial):
         dic_sorted = sorted(dic.items(), key=operator.itemgetter(1),
                               reverse=True)
         for i in dic_sorted:
-            print i
+            print (i)
         return CALENDARIO
 
 

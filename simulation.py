@@ -1,6 +1,14 @@
 import random
 import copy
+import numpy as np
+import matplotlib.pyplot as plt
 
+def sigma_dispersion(tabla):
+    sigma = np.mean([(tabla[x].puntaje - tabla[x+1].puntaje) for x in range(1,len(tabla)-2)])
+    #maxs = np.mean([((tabla[x].puntaje - tabla[x+1].puntaje)-mean)**2 for x in range(1,len(tabla)-2)])
+    return sigma
+    #return 1/ sum([(tabla[x].puntaje - tabla[x+1].puntaje)/maxs for x in range(1,len(tabla)-2)])
+        
 
 def potencialmente_interesante(a):
     interesantes = []
@@ -32,17 +40,17 @@ def potencialmente_interesante(a):
 
 
 class Simulacion:
-    def __init__(self, calendario,odds,equipos):
+    def __init__(self, calendario,equipos):
         self.calendario = calendario
         self.tabla = []
         self.equipos = copy.deepcopy(equipos)
         self.fecha = 0
         self._results = {}
-        self.odds = odds
         self.first_leg = True
         self._pdraw = 0.26 #Dato historico de empates | analisis sensibilidad
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
+        self.plot = []
         
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
@@ -175,8 +183,16 @@ class Simulacion:
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
-        print(self.atractividad())
-        #self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+            self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+            y = np.float((sigma_dispersion(self.equipos)))
+            x = np.int(self.fecha)
+            self.plot.append((x, y))
+        #If simulation finishes then we plot a nice graph
+        if self.fecha == 30:
+            for elems in self.plot:
+               plt.scatter(*elems)
+            plt.show()
+
         
         
 
@@ -189,11 +205,17 @@ class Simulacion:
         #print "-"*50 
         #potencialmente_interesante(self.equipos)
         return self.equipos
+    
+def crear_simulacion(calendario,equipos):
+    simulation = Simulacion(calendario,equipos)
+    simulation.run()
+    simulation.show_results()
+    result_dict = {}
+    for teams in simulation.equipos:
+        result_dict[teams.nombre] = teams.puntaje
+    return result_dict, simulation
 
-
-def simulacion_unica(calendario,odds,equipos,simulation):
-    if simulation is None:
-        simulation = Simulacion(calendario,odds,equipos)
+def simulacion_unica(simulation):
     simulation.run()
     simulation.show_results()
     result_dict = {}
@@ -201,7 +223,6 @@ def simulacion_unica(calendario,odds,equipos,simulation):
         result_dict[teams.nombre] = teams.puntaje
     return result_dict, simulation
     
-
 
 
 

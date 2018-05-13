@@ -29,10 +29,10 @@ class Montecarlo:
 def simulacion_montecarlo(calendario, puntajes=False):
     m = Montecarlo()
     start_time = time.time()
-    n = 100
+    n = 1000
     for x in range(n):
         s = None
-        s = simulation.Simulacion(calendario, None, EQUIPOS)
+        s = simulation.Simulacion(calendario,EQUIPOS)
         s.run()
         m.agregar_simulacion(s)
     final = (m.tabla_esperada())

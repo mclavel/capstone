@@ -1,8 +1,9 @@
 from schedueling import *
 from montecarlo import simulacion_montecarlo
 from min_var import min_var
-from simulation import simulacion_unica
+from simulation import simulacion_unica,crear_simulacion
 from equipos import EQUIPOS, nombres
+import copy
 
 
 def match_probs(s,team):
@@ -22,23 +23,57 @@ def prob_matrix(simulation):
         
 
 def modelo():
-    primeras_15_fechas = calendarizacion(15)
+    primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
     #sim_m = simulacion_montecarlo(primeras_15_fechas, True)
-    sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,None)
-    segundas_7_fechas = calendarizacion(7, primeras_15_fechas, sim2)
-    s.agregar_fechas(segundas_7_fechas)
-    sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,s)
-    #print(s.p_local(s.buscar_equipo('U. La Calera'),s.buscar_equipo('Colo Colo')))
-    #print(s.p_local(s.buscar_equipo('Colo Colo'),s.buscar_equipo('U. La Calera')))
-    #print(s.buscar_equipo('Colo Colo').jugados)
-    #print(s.buscar_equipo('Colo Colo').partidos_visita)
-    #print(s.buscar_equipo('Colo Colo').partidos_local)
- 
-
-    #problems here Houston
-    terceras_5_fechas = min_var(3, s.calendario, sim2, prob_matrix(s))
-    s.agregar_fechas(terceras_5_fechas)
-    sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,s)
+    resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS)
+    instancia = copy.deepcopy(instancia_inicial)
+    fechas_15_22 = calendarizacion(7, primeras_15_fechas, resultados)
+    instancia.agregar_fechas(fechas_15_22[:5])
+    fechas_21_22 = fechas_15_22[5:]
+    resultados, instancia = simulacion_unica(instancia)
+    fechas_23_25 = min_var(3, instancia.calendario, resultados,
+                           prob_matrix(instancia))
+    fechas_23_24 = fechas_23_25[:2]
+    instancia.agregar_fechas(fechas_21_22+fechas_23_24)
+    resultados, instancia = simulacion_unica(instancia)
+    fechas_26_28 = min_var(3, instancia.calendario, resultados,
+                           prob_matrix(instancia))
+    fechas_25_27 = fechas_23_25[2:] + fechas_26_28[:2]
+    instancia.agregar_fechas(fechas_25_27)
+    resultados, instancia = simulacion_unica(instancia)
+    fechas_29_30 = min_var(2, instancia.calendario, resultados,
+                           prob_matrix(instancia),0.03)
+    fechas_28_30 = fechas_26_28[2:] + fechas_29_30 
+    instancia.agregar_fechas(fechas_28_30)
+    resultados, instancia = simulacion_unica(instancia)
+    #Comparo
+    instancia_inicial.agregar_fechas(calendario_16_30)
+    resultadosG, instanciaG = simulacion_unica(instancia_inicial)
+    
+    
+    
+    """
+    fechas_15_22 = calendarizacion(7, primeras_15_fechas, resultados)
+    instancia.agregar_fechas(fechas_15_22)
+    
+    fechas_22_25 = min_var(3, instancia2.calendario, resultados,
+                           prob_matrix(instancia2))
+    instancia2.agregar_fechas(fechas_22_25)
+    resultados, instancia3 = simulacion_unica(instancia2)
+    fechas_25_28 = min_var(3, instancia3.calendario, resultados, prob_matrix(instancia3))
+    instancia3.agregar_fechas(fechas_25_28)
+    print(instancia3.no_jugados(instancia3.buscar_equipo('Colo Colo')))
+    fdfdf
+    #Chequear por que uso [2:]
+    resultados, instancia4 = simulacion_unica(instancia3)
+    fechas_28_30 = min_var(2, instancia.calendario, resultados, prob_matrix(instancia4))
+    instancia.agregar_fechas(fechas_28_30[3:])
+    resultados, instancia = simulacion_unica(instancia)"""
+  
+    
+    #tercerae_3_fechas = min_var(3, s.calendario, sim2, prob_matrix(s))
+    #s.agregar_fechas(terceras_5_fechas)
+    #sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,s)
 
 
 if __name__ == "__main__" :

@@ -3,10 +3,8 @@ from equipos import nombres as equipos
 from schedueling import Fecha, aux
 p = 10
 
-def min_var(n_fechas, jugados, puntaje_inicial,matriz_p):
-    print matriz_p
+def min_var(n_fechas, jugados, puntaje_inicial,matriz_p, gap = None):
     #print "\n Minimizando la varianza a lo loco"
-    #Varguitas la mama
     p0 = puntaje_inicial
     #print p0
     fechas = [i for i in range(1, n_fechas + 1)]
@@ -54,36 +52,29 @@ def min_var(n_fechas, jugados, puntaje_inicial,matriz_p):
 
     m.addConstr(quicksum(y[i, k] for i in equipos for k in fechas) / 2 >= n_fechas * 8 * 0.15)
 
-    
-    #m.params.MIPGap = 0.3 #Aceptamos una solucion con gap de 0.3
+    #m.params.MIPGap = 0.04
+    if gap is not None:
+        m.params.MIPGap = gap
     m.optimize()
 
     CALENDARIO = []
     # Print solution
     if m.status == GRB.Status.OPTIMAL:
         solution = m.getAttr('x', match)
-        print "Amplitud:", a.X - b.X
-        print "Prob:", sum(list(p_x[k].X for k in fechas))
+        print ("Amplitud:", a.X - b.X)
+        print ("Prob:", sum(list(p_x[k].X for k in fechas)))
         for k in fechas:
             f = []
-            for i in equipos:
-                for j in equipos:
-                    if solution[i, j, k] > 0:
-                        f.append("{}, {}".format(i,j))
-            fecha = Fecha(k,f)
-            CALENDARIO.append(fecha)
-        for k in fechas:
-            f = []
-            print "\n", "Fecha", k
+            print ("\n", "Fecha", k)
             #print "\n Fecha", k
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
-                        print i,"-", j, " -> ", "LW" if x[i, k].X == 1 else "D" if y[i, k].X == 1 else "AW", matriz_p[i][j], matriz_p[j][i]
+                        print (i,"-", j, " -> ", "LW" if x[i, k].X == 1 else "D" if y[i, k].X == 1 else "AW", matriz_p[i][j], matriz_p[j][i])
                         #print i, j
                         f.append("{}, {}".format(j, i))
                         #print "LW:", x[i, k].X, " D:", y[i, k].X
-            fecha = Fecha(k + 15, f)
+            fecha = Fecha(k + 22, f)
             CALENDARIO.append(fecha)
         print ("\n PUNTAJES teoricos")
         #print "\n PUNTAJES"

@@ -27,7 +27,7 @@ def aux(jugados): #funcion sin importancia
             p_jugados.append([partido.split(",")[0], partido.split(",")[1][1:]])
     return p_jugados
 
-def calendarizacion(n_fechas, jugados=None, tabla=None):
+def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
     fechas = [i for i in range(1, n_fechas + 1)]
 
     m = Model("Tournament")
@@ -74,6 +74,7 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
 
 
     if tabla is not None:
+        print(tabla)
         # No pueden jugarse los clasicos
         #m.addConstrs((quicksum(match[i, j, k] for i in equipos_grandes for j in
                       #equipos_grandes) == 0 for k in fechas))
@@ -91,22 +92,37 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
 
     m.optimize()
 
-    CALENDARIO = [] #Calendario inicial factible
+    CALENDARIO = []
+    CALENDARIO_INV = []#Calendario inicial factible
     # Print solution
     if m.status == GRB.Status.OPTIMAL:
         solution = m.getAttr('x', match)
         for k in fechas:
-            print "\n", "Fecha", k
+            print ("\n", "Fecha", k)
             #print "Fecha", k
             f = []
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
                         f.append("{}, {}".format(i, j))
-                        print i, "-", j
+                        print (i, "-", j)
                         #print i, "-", j
             fecha = Fecha(k,f)
             CALENDARIO.append(fecha)
+        if invertir is not None:    
+            for k in fechas:
+                print ("\n", "Fecha", k+15)
+                #print "Fecha", k
+                f = []
+                for i in equipos:
+                    for j in equipos:
+                        if solution[i, j, k] > 0:
+                                f.append("{}, {}".format(j, i))
+                                print (j, "-", i)
+                            #print i, "-", j
+                fecha = Fecha(k+15,f)
+                CALENDARIO_INV.append(fecha)
+            return CALENDARIO, CALENDARIO_INV
     return CALENDARIO
 
 

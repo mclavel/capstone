@@ -96,14 +96,14 @@ def calendarizacion(n_fechas, jugados=None, tabla=None):
     if m.status == GRB.Status.OPTIMAL:
         solution = m.getAttr('x', match)
         for k in fechas:
-            print ("\n", "Fecha", k)
+            print "\n", "Fecha", k
             #print "Fecha", k
             f = []
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
                         f.append("{}, {}".format(i, j))
-                        print (i, "-", j)
+                        print i, "-", j
                         #print i, "-", j
             fecha = Fecha(k,f)
             CALENDARIO.append(fecha)

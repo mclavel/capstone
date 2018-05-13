@@ -36,7 +36,7 @@ def modelo():
  
 
     #problems here Houston
-    terceras_5_fechas = min_var(5,s.calendario, sim2,prob_matrix(s))
+    terceras_5_fechas = min_var(3, s.calendario, sim2, prob_matrix(s))
     s.agregar_fechas(terceras_5_fechas)
     sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,s)
 

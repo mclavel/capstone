@@ -8,7 +8,6 @@ class Partido:
     def __init__(self, local, visita):
         self.local = local
         self.visita = visita
-    
    
         
 class Fecha:
@@ -20,12 +19,33 @@ class Fecha:
     def __repr__(self):
         return str(self.numero)
 
+
 def aux(jugados): #funcion sin importancia
     p_jugados = []
     for fecha in jugados:
         for partido in fecha.partidos:
             p_jugados.append([partido.split(",")[0], partido.split(",")[1][1:]])
     return p_jugados
+
+def local_ult_2(jugados):
+    equipos_1 = set(partido.split(",")[0] for partido in jugados[-2:][0].partidos) #penultima
+    equipos_2 = set(partido.split(",")[0] for partido in jugados[-2:][1].partidos) #ultima
+    return list(equipos_1.intersection(equipos_2))
+
+def visita_ult_2(jugados):
+    equipos_1 = set(partido.split(",")[1][1:] for partido in jugados[-2:][0].partidos)
+    equipos_2 = set(partido.split(",")[1][1:] for partido in jugados[-2:][1].partidos)
+    return list(equipos_1.intersection(equipos_2))
+
+def local_solo_ult(jugados):
+    equipos_1 = set(partido.split(",")[0] for partido in jugados[-2:][0].partidos)
+    equipos_2 = set(partido.split(",")[0] for partido in jugados[-2:][1].partidos)
+    return list(equipos_2.difference(equipos_1))
+
+def visita_solo_ult(jugados):
+    equipos_1 = set(partido.split(",")[1][1:] for partido in jugados[-2:][0].partidos)
+    equipos_2 = set(partido.split(",")[1][1:] for partido in jugados[-2:][1].partidos)
+    return list(equipos_2.difference(equipos_1))
 
 def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
     fechas = [i for i in range(1, n_fechas + 1)]
@@ -34,14 +54,6 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
 
     #1 si juega el equipo i de local contra j en la fecha k
     match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
-
-    if jugados is None:
-        #Todos jueguen con todos y solo una vez en cada fecha
-        m.addConstrs((quicksum(match[i, j, k] + match[j, i, k] for j in equipos)
-                      == 1 for i in equipos for k in fechas))
-
-        m.addConstrs(quicksum(match[i, j, k] + match[j, i, k] for k in fechas)
-                 == 1 for i in equipos for j in equipos if i != j)
 
     #No jueguen contra si mismos
     m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
@@ -61,16 +73,48 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
 
     # No mas de 1 en BioBio
     m.addConstrs(
-        (quicksum(match[i, j, k] for i in equipos_biobio) <= 1 for j in equipos for
-         k in fechas))
+        (quicksum(match[i, j, k] for i in equipos_biobio) <= 1 for j in equipos
+         for k in fechas))
 
-    if jugados is not None:
-        m.addConstrs(quicksum(match[i, j, k] for i, j in aux(jugados)) == 0 for k in fechas)
+    if jugados is None:
+        # Todos jueguen con todos y solo una vez en cada fecha
+        m.addConstrs(
+            (quicksum(match[i, j, k] + match[j, i, k] for j in equipos)
+             == 1 for i in equipos for k in fechas))
+
+        m.addConstrs(
+            quicksum(match[i, j, k] + match[j, i, k] for k in fechas)
+            == 1 for i in equipos for j in equipos if i != j)
+    else:
+        m.addConstrs(
+            quicksum(match[i, j, k] for i, j in aux(jugados)) == 0 for k in
+            fechas)
+
         m.addConstrs(quicksum(match[i, j, k] + match[j, i, k] for j in equipos)
-                      == 1 for i in equipos for k in fechas)
+                     == 1 for i in equipos for k in fechas)
+
         m.addConstrs(quicksum(match[i, j, k] for k in fechas)
                      <= 1 for i in equipos for j in equipos if i != j)
 
+        if len(local_ult_2(jugados)) != 0:
+            print "local_ult_2: ", local_ult_2(jugados)
+            m.addConstrs(quicksum(match[i, j, 1] for j in equipos) == 0
+                         for i in local_ult_2(jugados))
+
+        if len(visita_ult_2(jugados)) != 0:
+            print "visita_ult_2: ", visita_ult_2(jugados)
+            m.addConstrs(quicksum(match[i, j, 1] for i in equipos) == 0
+                         for j in visita_ult_2(jugados))
+
+        if len(local_solo_ult(jugados)) != 0:
+            print "local_solo_ult: ", local_solo_ult(jugados)
+            m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for j in
+                         equipos) <= 1 for i in local_solo_ult(jugados))
+
+        if len(visita_solo_ult(jugados)) != 0:
+            print "visita_solo_ult: ", visita_solo_ult(jugados)
+            m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for i in
+                         equipos) <= 1 for j in visita_solo_ult(jugados))
 
 
     if tabla is not None:

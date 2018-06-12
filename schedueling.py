@@ -95,24 +95,24 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
 
         m.addConstrs(quicksum(match[i, j, k] for k in fechas)
                      <= 1 for i in equipos for j in equipos if i != j)
-
+        print(jugados)
         if len(local_ult_2(jugados)) != 0:
-            print "local_ult_2: ", local_ult_2(jugados)
+            print ("local_ult_2: ", local_ult_2(jugados))
             m.addConstrs(quicksum(match[i, j, 1] for j in equipos) == 0
                          for i in local_ult_2(jugados))
 
         if len(visita_ult_2(jugados)) != 0:
-            print "visita_ult_2: ", visita_ult_2(jugados)
+            print ("visita_ult_2: ", visita_ult_2(jugados))
             m.addConstrs(quicksum(match[i, j, 1] for i in equipos) == 0
                          for j in visita_ult_2(jugados))
 
         if len(local_solo_ult(jugados)) != 0:
-            print "local_solo_ult: ", local_solo_ult(jugados)
+            print ("local_solo_ult: ", local_solo_ult(jugados))
             m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for j in
                          equipos) <= 1 for i in local_solo_ult(jugados))
 
         if len(visita_solo_ult(jugados)) != 0:
-            print "visita_solo_ult: ", visita_solo_ult(jugados)
+            print ("visita_solo_ult: ", visita_solo_ult(jugados))
             m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for i in
                          equipos) <= 1 for j in visita_solo_ult(jugados))
 

@@ -11,6 +11,7 @@ def sigma_dispersion(tabla):
         
 
 def potencialmente_interesante(a):
+    """Metrica para medir partidos interesantes"""
     interesantes = []
     for j in range(1, len(a)):
         if 1 < a[0].puntaje - a[j].puntaje <= 3:
@@ -40,9 +41,10 @@ def potencialmente_interesante(a):
 
 
 class Simulacion:
-    def __init__(self, calendario,equipos):
+    def __init__(self, calendario,equipos,color= None):
         self.calendario = calendario
         self.tabla = []
+        self.color = color
         self.equipos = copy.deepcopy(equipos)
         self.fecha = 0
         self._results = {}
@@ -53,6 +55,7 @@ class Simulacion:
         self.plot = []
         
     def attr_funcion(self,tipo,num):
+        """Pondera la atractividad en el tiempo"""
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
         if tipo in data_dic:
             return data_dic[tipo]*num
@@ -159,6 +162,7 @@ class Simulacion:
             return "D"
     
     def publico(self,local,visita):
+        #Esto no se implemento
         return round(min(local.capacidad*1000
                    ,(local.espectadores + min(0.3*local.capacidad*1000
                                          ,visita.espectadores))))
@@ -175,6 +179,7 @@ class Simulacion:
         return resultado
     
     def run(self):
+        #Corre la simulación.
         x = int(self.fecha)
         for fechas in self.calendario[x:]:
             self.fecha += 1
@@ -190,7 +195,7 @@ class Simulacion:
         #If simulation finishes then we plot a nice graph
         if self.fecha == 30:
             for elems in self.plot:
-               plt.scatter(*elems)
+                plt.scatter(*elems,color=self.color)
             plt.show()
 
         
@@ -198,12 +203,11 @@ class Simulacion:
 
         
     def show_results(self):
+        #Se muestra la tabla
         for x in self.equipos:
             print(x)
             #print x
         print("-"*50)
-        #print "-"*50 
-        #potencialmente_interesante(self.equipos)
         return self.equipos
     
 def crear_simulacion(calendario,equipos):
@@ -215,7 +219,8 @@ def crear_simulacion(calendario,equipos):
         result_dict[teams.nombre] = teams.puntaje
     return result_dict, simulation
 
-def simulacion_unica(simulation):
+def simulacion_unica(simulation, color = "blue"):
+    simulation.color = color
     simulation.run()
     simulation.show_results()
     result_dict = {}

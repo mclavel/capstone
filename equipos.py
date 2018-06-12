@@ -6,6 +6,9 @@ import os
 class Equipo:
     def __init__(self, nombre, localia, presupuesto, ranking, capacidad,
                  espectadores):
+        """Clase que guarda información crucial acerca del equipo, los 
+        parametros self._fake son para trabajar con la simulación de monte
+        carlo. la funcion fake show muestra el puntaje acumulado en montecarlo"""
         self.nombre = nombre
         self.goles = 0
         self.presupuesto =  presupuesto
@@ -68,6 +71,7 @@ equipos_grandes = ["U. de Chile", "Colo Colo", "U. Catolica"]
 
 
 def reader(file,row1,column1):
+    "Funcion lectora"
     data = {}   
     path = os.path.join(os.getcwd(),"data",file)
     with open(path) as csvfile:

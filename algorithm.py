@@ -27,22 +27,20 @@ def modelo():
     #sim_m = simulacion_montecarlo(primeras_15_fechas, True)
     resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS)
     instancia = copy.deepcopy(instancia_inicial)
-    fechas_15_22 = calendarizacion(7, primeras_15_fechas, resultados)
+    calendario_factible = calendarizacion(7, primeras_15_fechas, resultados)
+    fechas_15_22 = calendario_factible[:8]
     instancia.agregar_fechas(fechas_15_22[:5])
     fechas_21_22 = fechas_15_22[5:]
     resultados, instancia = simulacion_unica(instancia)
-    fechas_23_25 = min_var(3, instancia.calendario, resultados,
-                           prob_matrix(instancia))
+    fechas_23_25 = min_var(3, instancia.calendario, resultados, prob_matrix(instancia))
     fechas_23_24 = fechas_23_25[:2]
     instancia.agregar_fechas(fechas_21_22+fechas_23_24)
     resultados, instancia = simulacion_unica(instancia)
-    fechas_26_28 = min_var(3, instancia.calendario, resultados,
-                           prob_matrix(instancia))
+    fechas_26_28 = min_var(3, instancia.calendario, resultados, prob_matrix(instancia))
     fechas_25_27 = fechas_23_25[2:] + fechas_26_28[:2]
     instancia.agregar_fechas(fechas_25_27)
     resultados, instancia = simulacion_unica(instancia)
-    fechas_29_30 = min_var(2, instancia.calendario, resultados,
-                           prob_matrix(instancia),0.03)
+    fechas_29_30 = min_var(2, instancia.calendario, resultados, prob_matrix(instancia), 0.03)
     fechas_28_30 = fechas_26_28[2:] + fechas_29_30 
     instancia.agregar_fechas(fechas_28_30)
     resultados, instancia = simulacion_unica(instancia)

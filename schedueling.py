@@ -2,7 +2,6 @@ from gurobipy import *
 from equipos import equipos_santiago, equipos_biobio, equipos_valparaiso, \
     equipos_grandes
 from equipos import nombres as equipos
-import operator
 
 class Partido:
     def __init__(self, local, visita):
@@ -48,21 +47,24 @@ def visita_solo_ult(jugados):
     return list(equipos_2.difference(equipos_1))
 
 def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
-    fechas = [i for i in range(1, n_fechas + 1)]
+    if n_fechas == 7: # calendarizo todas para tener un calendario factible
+        fechas = [i for i in range(1, 16)]
+    else:
+        fechas = [i for i in range(1, n_fechas + 1)]
 
     m = Model("Tournament")
 
-    #1 si juega el equipo i de local contra j en la fecha k
+    # 1 si juega el equipo i de local contra j en la fecha k
     match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
 
-    #No jueguen contra si mismos
+    # No jueguen contra si mismos
     m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
 
-    #No mas de 2 partidos consecutivos de local o visita
+    # No mas de 2 partidos consecutivos de local o visita
     m.addConstrs((quicksum(match[i, j, k + l] for j in equipos for l in [0, 1,
                  2]) <= 2 for i in equipos for k in fechas[:n_fechas - 2]))
 
-    #No mas de 3 en Santiago
+    # No mas de 3 en Santiago
     m.addConstrs((quicksum(match[i, j, k] for i in equipos_santiago) <= 3 for j
                   in equipos for k in fechas))
 
@@ -118,17 +120,17 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
 
 
     if tabla is not None:
-        print(tabla)
+        #print(tabla)
         # No pueden jugarse los clasicos
         #m.addConstrs((quicksum(match[i, j, k] for i in equipos_grandes for j in
                       #equipos_grandes) == 0 for k in fechas))
         # No jueguen contra equipos del mismo cluster
-        m.addConstrs(match[i, j, k] == 0 for k in fechas for
-                     i in [x for x in tabla][:7] for j in [x for x in tabla][:7]
+        m.addConstrs(match[i, j, k] == 0 for k in fechas[:8] for
+                     i in [x for x in tabla][:8] for j in [x for x in tabla][:7]
                      if i != j)
 
-        m.addConstrs(match[i, j, k] == 0 for k in fechas for
-                     i in [x for x in tabla][9:] for j in [x for x in tabla][9:] if i != j)
+        m.addConstrs(match[i, j, k] == 0 for k in fechas[:8] for
+                     i in [x for x in tabla][8:] for j in [x for x in tabla][9:] if i != j)
 
 
     m.setObjective(quicksum(match[i, j, k] for i in equipos for j in equipos for
@@ -167,6 +169,7 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
                 fecha = Fecha(k+15,f)
                 CALENDARIO_INV.append(fecha)
             return CALENDARIO, CALENDARIO_INV
+
     return CALENDARIO
 
 

@@ -4,20 +4,18 @@ from schedueling import Fecha, aux
 p = 10
 
 def min_var(n_fechas, jugados, puntaje_inicial,matriz_p, gap = None):
-    #print "\n Minimizando la varianza a lo loco"
     p0 = puntaje_inicial
-    #print p0
     fechas = [i for i in range(1, n_fechas + 1)]
     m = Model("Tournament")
 
-    match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match") #1 si el partido se juega (es factible)
-    x = m.addVars(equipos, fechas, vtype=GRB.BINARY, name="x") #1 si el equipo i gana
+    match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match") # 1 si el partido se juega (es factible)
+    x = m.addVars(equipos, fechas, vtype=GRB.BINARY, name="x") # 1 si el equipo i gana
     p_x = m.addVars(fechas, name="px")
-    y = m.addVars(equipos, fechas, vtype=GRB.BINARY, name="y") #1 si el equipo j gana
+    y = m.addVars(equipos, fechas, vtype=GRB.BINARY, name="y") # 1 si el equipo j gana
     p = m.addVars(equipos, name="p") #puntos equipo i
-    a = m.addVar(name="a") #mayor puntaje
-    b = m.addVar(name="b") #menor puntaje
-    m.setObjective((a - b) - 100 * quicksum(p_x[k] for k in fechas), GRB.MINIMIZE) #FO
+    a = m.addVar(name="a") # mayor puntaje
+    b = m.addVar(name="b") # menor puntaje
+    m.setObjective((a - b) - 100 * quicksum(p_x[k] for k in fechas), GRB.MINIMIZE) # FO
 
 
     #RESTRICCIONES

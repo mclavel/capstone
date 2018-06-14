@@ -6,7 +6,7 @@ __author__ = 'cilopez'
 
 
 
-def reader(url):
+def reader(url,num):
         req = urllib.request.Request(
             url,
             headers={'User-Agent': 'Mozilla/5.0'})
@@ -14,7 +14,11 @@ def reader(url):
         soup = BeautifulSoup(webpage, "html.parser")
         fecha = soup.find('h2',
                                 attrs={'class': 'tit-modulo'})
-        final_score = soup.find_all('div',
+        if num > 15:
+            final_score = soup.find_all('div',
+                                attrs = {'class': 'cont-resultado no-comenzado'})
+        else:   
+            final_score = soup.find_all('div',
                                 attrs = {'class': 'cont-resultado finalizado'})
         local_team = soup.find_all('div',
                              attrs={'class': 'equipo-local'})
@@ -24,6 +28,7 @@ def reader(url):
         i = 0
         for elems in final_score:
             result = elems.text.strip().split('-')
+            
             data = ([unidecode.unidecode(local_team[i].text.strip()).replace("'"," "), result[0], result[1]
                         , unidecode.unidecode(vis_team[i].text.strip()).replace("'"," ")])
             with open("campeonato.csv", "a") as db:
@@ -41,5 +46,5 @@ if __name__ == '__main__':
     y = 2018
     for i in range(1, 31):
                 reader('https://chile.as.com/resultados/futbol/chile/'
-                   '{}/jornada/regular_a_{}/'.format(y, i))
+                   '{}/jornada/regular_a_{}/'.format(y, i),i)
 

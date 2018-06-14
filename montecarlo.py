@@ -26,28 +26,27 @@ class Montecarlo:
             teams._fake = y
         return self.tabla
 
-def simulacion_montecarlo(calendario, puntajes=False):
+def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000):
     m = Montecarlo()
     start_time = time.time()
-    n = 1000
-    for x in range(n):
+    for x in range(cantidad):
         s = None
-        s = simulation.Simulacion(calendario,EQUIPOS)
+        s = simulation.Simulacion(calendario,EQUIPOS,montecarlo=True)
         s.run()
         m.agregar_simulacion(s)
     final = (m.tabla_esperada())
     tabla = []
     final.sort(key=lambda x: x._fake, reverse=True)
     print("\n {} seconds to {} simulations".format
-          (round(time.time() - start_time, 2), n))
+          (round(time.time() - start_time, 2), cantidad))
     if puntajes:
         tabla = dict()
         for teams in final:
             tabla[teams.nombre] = teams._fake
-            print(teams.fake_show(n))
+            print(teams.fake_show(cantidad))
 
     else:
         for teams in final:
             tabla.append(teams.nombre)
-            print(teams.fake_show(n))
+            print(teams.fake_show(cantidad))
     return tabla

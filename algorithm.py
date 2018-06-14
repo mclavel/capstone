@@ -21,12 +21,14 @@ def prob_matrix(simulation):
         prob_matrix[team.nombre] = match_probs(simulation,team)
     return prob_matrix
         
+def simular_campeonato_actual(cantidad_s = 1000):
+    anfp_30_fechas = cargar_calendario(archivo_csv='campeonato.csv')
+    #resultados, instancia_inicial = crear_simulacion(anfp_30_fechas,EQUIPOS)
+    sim_m = simulacion_montecarlo(anfp_30_fechas,True,cantidad=cantidad_s)
+
 
 def modelo(cargar):
-    if cargar:
-        primeras_15_fechas = cargar_calendario(archivo_csv='campeonato.csv')
-    else:
-        primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
+    primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
     #sim_m = simulacion_montecarlo(primeras_15_fechas, True)
     resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS,cargar= cargar)
     instancia = copy.deepcopy(instancia_inicial)
@@ -52,32 +54,10 @@ def modelo(cargar):
     resultadosG, instanciaG = simulacion_unica(instancia_inicial)
     
     
-    
-    """
-    fechas_15_22 = calendarizacion(7, primeras_15_fechas, resultados)
-    instancia.agregar_fechas(fechas_15_22)
-    
-    fechas_22_25 = min_var(3, instancia2.calendario, resultados,
-                           prob_matrix(instancia2))
-    instancia2.agregar_fechas(fechas_22_25)
-    resultados, instancia3 = simulacion_unica(instancia2)
-    fechas_25_28 = min_var(3, instancia3.calendario, resultados, prob_matrix(instancia3))
-    instancia3.agregar_fechas(fechas_25_28)
-    print(instancia3.no_jugados(instancia3.buscar_equipo('Colo Colo')))
-    fdfdf
-    #Chequear por que uso [2:]
-    resultados, instancia4 = simulacion_unica(instancia3)
-    fechas_28_30 = min_var(2, instancia.calendario, resultados, prob_matrix(instancia4))
-    instancia.agregar_fechas(fechas_28_30[3:])
-    resultados, instancia = simulacion_unica(instancia)"""
-  
-    
-    #tercerae_3_fechas = min_var(3, s.calendario, sim2, prob_matrix(s))
-    #s.agregar_fechas(terceras_5_fechas)
-    #sim2, s = simulacion_unica(primeras_15_fechas,None,EQUIPOS,s)
 
 
 if __name__ == "__main__" :
-    modelo(True)
+    simular_campeonato_actual()
+    #modelo(True)
 
 

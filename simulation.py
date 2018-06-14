@@ -41,18 +41,18 @@ def potencialmente_interesante(a):
 
 
 class Simulacion:
-    def __init__(self, calendario,equipos,cargar):
+    def __init__(self, calendario,equipos,montecarlo=False):
         self.calendario = calendario
         self.tabla = []
         self.equipos = copy.deepcopy(equipos)
         self.fecha = 0
         self._results = {}
         self.first_leg = True
+        self.montecarlo = montecarlo
         self._pdraw = 0.26 #Dato historico de empates | analisis sensibilidad
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
         self.plot = []
-        self.cargar= cargar
         
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
@@ -148,10 +148,7 @@ class Simulacion:
     def evento(self,local,visita):
         empate = self.p_empate()
         victoria_local = self.p_local(local,visita)
-        if self.cargar:
-            r = cargar_calendario(breader=True,local = local.nombre, visita = visita.nombre)
-        else:
-            r = self.match_ending(victoria_local,empate)
+        r = self.match_ending(victoria_local,empate)
         
         if r == "LW":
             self.add_victoria(local,visita)
@@ -173,7 +170,7 @@ class Simulacion:
     def results(self,match):
         local, away = match.split(",")
         
-        eqlocal = [x for x in self.equipos if x.nombre == local.strip().replace("'"," ")]
+        eqlocal = [x for x in self.equipos if x.nombre == local.strip()]
         eqvis = [x for x in self.equipos if x.nombre == away.strip()]
         resultado = self.evento(*(eqlocal + eqvis))
         eqlocal[0].partidos_local.append(*eqvis)
@@ -181,19 +178,19 @@ class Simulacion:
         return resultado
     
     def run(self):
-        x = int(self.fecha)
-        for fechas in self.calendario[x:]:
+        n = int(self.fecha)
+        for fechas in self.calendario[n:]:
             self.fecha += 1
             if self.fecha == 16:
-                cargar= False
                 self.first_leg = False
             self._results[fechas.numero]= []
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
             self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
-            y = np.float((sigma_dispersion(self.equipos)))
-            x = np.int(self.fecha)
-            self.plot.append((x, y))
+            if not self.montecarlo:
+                y = np.float((sigma_dispersion(self.equipos)))
+                x = np.int(self.fecha)
+                self.plot.append((x, y))
         #If simulation finishes then we plot a nice graph
         if self.fecha == 30:
             for elems in self.plot:
@@ -213,8 +210,8 @@ class Simulacion:
         #potencialmente_interesante(self.equipos)
         return self.equipos
     
-def crear_simulacion(calendario,equipos,cargar=False):
-    simulation = Simulacion(calendario,equipos,cargar)
+def crear_simulacion(calendario,equipos):
+    simulation = Simulacion(calendario,equipos)
     simulation.run()
     simulation.show_results()
     result_dict = {}

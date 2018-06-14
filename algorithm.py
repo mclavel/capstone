@@ -28,7 +28,7 @@ def simular_campeonato_actual(cantidad_s = 1000):
 
 
 def modelo():
-    primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
+    primeras_15_fechas = calendarizacion(15)
     #sim_m = simulacion_montecarlo(primeras_15_fechas, True)
     resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS)
     instancia = copy.deepcopy(instancia_inicial)
@@ -37,27 +37,23 @@ def modelo():
     instancia.agregar_fechas(fechas_15_22[:5])
     fechas_21_22 = fechas_15_22[5:]
     resultados, instancia = simulacion_unica(instancia)
-    fechas_23_25 = min_var(3, instancia.calendario, resultados, prob_matrix(instancia))
+    fechas_23_25 = min_var(3, instancia.calendario, resultados, prob_matrix(instancia),True,0.02)
     fechas_23_24 = fechas_23_25[:2]
     instancia.agregar_fechas(fechas_21_22+fechas_23_24)
     resultados, instancia = simulacion_unica(instancia)
-    fechas_26_28 = min_var(3, instancia.calendario, resultados, prob_matrix(instancia))
+    fechas_26_28 = min_var(3, instancia.calendario, resultados, prob_matrix(instancia),True,0.02)
     fechas_25_27 = fechas_23_25[2:] + fechas_26_28[:2]
     instancia.agregar_fechas(fechas_25_27)
     resultados, instancia = simulacion_unica(instancia)
-    fechas_29_30 = min_var(2, instancia.calendario, resultados, prob_matrix(instancia), 0.03)
+    fechas_29_30 = min_var(2, instancia.calendario, resultados, prob_matrix(instancia),True, 0.03)
     fechas_28_30 = fechas_26_28[2:] + fechas_29_30 
     instancia.agregar_fechas(fechas_28_30)
     resultados, instancia = simulacion_unica(instancia)
-    #Comparo
-    instancia_inicial.agregar_fechas(calendario_16_30)
-    resultadosG, instanciaG = simulacion_unica(instancia_inicial)
     
     
 
 
 if __name__ == "__main__" :
+    modelo()
     simular_campeonato_actual()
-    #modelo()
-
 

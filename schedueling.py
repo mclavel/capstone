@@ -147,7 +147,7 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
     # Print solution
     if m.status == GRB.Status.OPTIMAL:
         solution = m.getAttr('x', match)
-        for k in fechas:
+        for k in range(1,n_fechas + 1):
             print ("\n", "Fecha", k)
             #print "Fecha", k
             f = []

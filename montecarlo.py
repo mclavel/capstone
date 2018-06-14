@@ -1,7 +1,8 @@
 from equipos import EQUIPOS
 import simulation
 import time
-
+import numpy as np
+import matplotlib.pyplot as plt
 
 class Montecarlo:
     def __init__(self):
@@ -10,6 +11,26 @@ class Montecarlo:
 
     def agregar_simulacion(self, simulacion):
         self.simulaciones.append(simulacion)
+        
+    def grafico_atractividad(self):
+        plot_data = {}
+        plot = []
+        for x in self.simulaciones:
+            for i in x.atractividad_por_fecha:
+                try:
+                    plot_data[str(i)] += x.atractividad_por_fecha[i]
+                except KeyError as err:
+                    plot_data[str(i)] = x.atractividad_por_fecha[i]
+        for f in plot_data:
+            plot_data[f] = plot_data[f]/len(self.simulaciones)
+            y = np.float(plot_data[f])
+            x = np.int(f)
+            plot.append((x, y))
+        for elems in plot:
+               plt.scatter(*elems,color = 'red')
+               plt.ylabel('Atrractividad acumulada')
+               plt.title('Campeonato actual')
+        plt.show()
 
     def tabla_esperada(self):
         #Esto funciona pero esta mal 
@@ -37,6 +58,7 @@ def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000):
     final = (m.tabla_esperada())
     tabla = []
     final.sort(key=lambda x: x._fake, reverse=True)
+    m.grafico_atractividad()
     print("\n {} seconds to {} simulations".format
           (round(time.time() - start_time, 2), cantidad))
     if puntajes:
@@ -49,4 +71,6 @@ def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000):
         for teams in final:
             tabla.append(teams.nombre)
             print(teams.fake_show(cantidad))
+    
+
     return tabla

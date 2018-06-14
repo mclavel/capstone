@@ -53,14 +53,15 @@ class Simulacion:
         self._localwin = 0.4396 #Probabilidad de que un equipo local gane
         self.epsilon = 1 #Factor que le da mas chances de ganar a A
         self.plot = []
+        self.suma_atractividad = 0
+        self.atractividad_por_fecha ={}
         
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
         if tipo in data_dic:
             return data_dic[tipo]*num
-        else:
-            return 0
     
+    @property
     def atractividad(self):
         self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
         interesantes = potencialmente_interesante(self.equipos)
@@ -187,15 +188,20 @@ class Simulacion:
             for x in fechas.partidos:
                 self._results[fechas.numero].append(self.results(x))
             self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
+            self.suma_atractividad += int(self.atractividad)
+            self.atractividad_por_fecha[str(self.fecha)] = self.suma_atractividad
             if not self.montecarlo:
-                y = np.float((sigma_dispersion(self.equipos)))
+                y = np.float(self.suma_atractividad)
                 x = np.int(self.fecha)
                 self.plot.append((x, y))
         #If simulation finishes then we plot a nice graph
         if self.fecha == 30:
             for elems in self.plot:
-               plt.scatter(*elems)
+               plt.scatter(*elems,color = 'blue')
+               plt.ylabel('Atrractividad acumulada')
+               plt.title('Instancia')
             plt.show()
+            
 
         
         

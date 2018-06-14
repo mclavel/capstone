@@ -1,10 +1,12 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import unidecode
 import os
 __author__ = 'cilopez'
 
 
-def reader(url, year, fase):
+
+def reader(url):
         req = urllib.request.Request(
             url,
             headers={'User-Agent': 'Mozilla/5.0'})
@@ -22,23 +24,22 @@ def reader(url, year, fase):
         i = 0
         for elems in final_score:
             result = elems.text.strip().split('-')
-            data = ([local_team[i].text.strip(), result[0], result[1]
-                        , vis_team[i].text.strip()])
-            with open("chilean_db.csv", "a") as db:
-                db.write('{},{},{},{},{},{},{}\n'.format(year, fase, fecha,
+            data = ([unidecode.unidecode(local_team[i].text.strip()).replace("'"," "), result[0], result[1]
+                        , unidecode.unidecode(vis_team[i].text.strip()).replace("'"," ")])
+            with open("campeonato.csv", "a") as db:
+                db.write('{},{},{},{},{}\n'.format(fecha,
                                                        *data))
             i += 1
 
 if __name__ == '__main__':
     b_path = os.getcwd()
-    path = os.path.join(b_path,'data','chilean_db.csv')
-    with open(path,"w") as db :
-                db.write("AÑO,FASE,FECHA,,LOCAL,GOLESLOCAL,GOLESVIS,VISITA\n")
+    path = os.path.join(b_path,'campeonato.csv')
+    with open(path,"w") as db:
+                db.write("FECHA,LOCAL,GOLESLOCAL,GOLESVIS,VISITA\n")
     fase = ['clausura','apertura']
     years = ['2017','2015_2016','2014_2015']
-    for y in years:
-        for x in fase:
-            for i in range(1, 16):
-                reader('https://chile.as.com/resultados/futbol/chile_{}/'
-                   '{}/jornada/regular_a_{}/'.format(x, y, i), y, x)
+    y = 2018
+    for i in range(1, 31):
+                reader('https://chile.as.com/resultados/futbol/chile/'
+                   '{}/jornada/regular_a_{}/'.format(y, i))
 

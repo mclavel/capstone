@@ -22,10 +22,13 @@ def prob_matrix(simulation):
     return prob_matrix
         
 
-def modelo():
-    primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
+def modelo(cargar):
+    if cargar:
+        primeras_15_fechas = cargar_calendario(archivo_csv='campeonato.csv')
+    else:
+        primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
     #sim_m = simulacion_montecarlo(primeras_15_fechas, True)
-    resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS)
+    resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS,cargar= cargar)
     instancia = copy.deepcopy(instancia_inicial)
     calendario_factible = calendarizacion(7, primeras_15_fechas, resultados)
     fechas_15_22 = calendario_factible[:8]
@@ -75,6 +78,6 @@ def modelo():
 
 
 if __name__ == "__main__" :
-    modelo()
+    modelo(True)
 
 

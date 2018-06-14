@@ -2,11 +2,15 @@ from gurobipy import *
 from equipos import equipos_santiago, equipos_biobio, equipos_valparaiso, \
     equipos_grandes
 from equipos import nombres as equipos
+import csv
+import copy
 
 class Partido:
-    def __init__(self, local, visita):
+    def __init__(self, local, visita, goles_local=None, goles_visita=None):
         self.local = local
         self.visita = visita
+        self.g_local= goles_local
+        self.g_visita = goles_visita
    
         
 class Fecha:
@@ -99,22 +103,22 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
                      <= 1 for i in equipos for j in equipos if i != j)
 
         if len(local_ult_2(jugados)) != 0:
-            print "local_ult_2: ", local_ult_2(jugados)
+            print ("local_ult_2: ", local_ult_2(jugados))
             m.addConstrs(quicksum(match[i, j, 1] for j in equipos) == 0
                          for i in local_ult_2(jugados))
 
         if len(visita_ult_2(jugados)) != 0:
-            print "visita_ult_2: ", visita_ult_2(jugados)
+            print ("visita_ult_2: ", visita_ult_2(jugados))
             m.addConstrs(quicksum(match[i, j, 1] for i in equipos) == 0
                          for j in visita_ult_2(jugados))
 
         if len(local_solo_ult(jugados)) != 0:
-            print "local_solo_ult: ", local_solo_ult(jugados)
+            print ("local_solo_ult: ", local_solo_ult(jugados))
             m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for j in
                          equipos) <= 1 for i in local_solo_ult(jugados))
 
         if len(visita_solo_ult(jugados)) != 0:
-            print "visita_solo_ult: ", visita_solo_ult(jugados)
+            print ("visita_solo_ult: ", visita_solo_ult(jugados))
             m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for i in
                          equipos) <= 1 for j in visita_solo_ult(jugados))
 
@@ -172,5 +176,34 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
 
     return CALENDARIO
 
+def cargar_calendario(archivo_csv=None,breader=None,local=None,visita=None):
+    CALENDARIO = []
+    if breader:
+        archivo_csv = 'campeonato.csv'
+    with open(archivo_csv,'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        if breader:
+             for x in reader:
+                if x["LOCAL"]== local and x["VISITA"]==visita:
+                    var = (int(x["GOLESLOCAL"])-int(x["GOLESVIS"]))
+                    if var < 0:
+                        return("AW")
+                    elif var > 0 :
+                        return("LW")
+                    elif var == 0:
+                        return("D")
+        i = 1
+        partidos = []
+        resultados= []
+        for x in reader:
+            if i % 8 == 0:
+                partidos.append("{}, {}".format(x['LOCAL'], x['VISITA']))
+                fecha = Fecha(i // 8 , partidos)
+                CALENDARIO.append(fecha)
+                partidos = []
 
+            else:
+                partidos.append("{}, {}".format(x['LOCAL'], x['VISITA']))
+            i += 1
+    return CALENDARIO
 

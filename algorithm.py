@@ -27,10 +27,10 @@ def simular_campeonato_actual(cantidad_s = 1000):
     sim_m = simulacion_montecarlo(anfp_30_fechas,True,cantidad=cantidad_s)
 
 
-def modelo(cargar):
+def modelo():
     primeras_15_fechas,calendario_16_30 = calendarizacion(15,invertir=True)
     #sim_m = simulacion_montecarlo(primeras_15_fechas, True)
-    resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS,cargar= cargar)
+    resultados, instancia_inicial = crear_simulacion(primeras_15_fechas,EQUIPOS)
     instancia = copy.deepcopy(instancia_inicial)
     calendario_factible = calendarizacion(7, primeras_15_fechas, resultados)
     fechas_15_22 = calendario_factible[:8]
@@ -58,6 +58,6 @@ def modelo(cargar):
 
 if __name__ == "__main__" :
     simular_campeonato_actual()
-    #modelo(True)
+    #modelo()
 
 

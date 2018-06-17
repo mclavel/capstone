@@ -1,6 +1,6 @@
 # Capstone
 **ICS2122 - Grupo 5**
-
+2018-01
 #Indicaciones
 El código fue realizado y utilizado en Python 2.7 y 3.6.(Recomendamos correrlo en 3.6)
  Las Librerías utilizadas fueron:
@@ -13,7 +13,10 @@ El código fue realizado y utilizado en Python 2.7 y 3.6.(Recomendamos correrlo 
 -time
 -os
 ````
-
+Para clonar el repositorio:
+````
+-git clone https://github.com/nlvargas/capstone.git
+````
 Para instalar una librería:
 ````
 -pip install #libreria

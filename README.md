@@ -21,12 +21,17 @@ Para instalar una librería:
 ````
 -pip install #libreria
 ````
-Para ejecutar una instancia de simulación:
+Para ejecutar una instancia de simulación, en la linea de comando:
 ````
 -py algorithm.py
 ````
-Al correr el comando se escribirá el archivo ````calendario.csv```` en la carpeta donde está ubicado el código, el documento  consiste en un excel, en donde
-estan todos los partidos calendarizados. Para analizarlos recomendamos altamente usar el filtro  de datos de Excel
+Al correr el comando se escribirán los archivos ````calendario.csv```` y ````tabla_final.csv```` en la carpeta donde está ubicado el código, los documentos son excel,s en donde
+estan todos los partidos calendarizados con sus resultados y la tabla final. Para analizarlos recomendamos altamente usar el filtro  de datos de Excel
+
+Finalmente los outputs de gurobi están desabilitados para activarlos se deben comentar la linea 17 de ````min_var.py```` y la linea  61 de ````schedueling.py````. 
+````
+m.setParam('OutputFlag', 0)
+````
 # Módulos
 - Algorithm: Contiene el algortimo de calendarización de trabajo.
 - Data_scrapper: Código utilizado para extraer informacion de AS.com

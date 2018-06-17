@@ -35,18 +35,19 @@ def prob_matrix(simulation):
         prob_matrix[team.nombre] = match_probs(simulation,team)
     return prob_matrix
 
-def simular_campeonato_actual(cantidad_s = 10000):
+def simular_campeonato_actual(cantidad_s = 5000):
     #Se realiza una simulacion de montecarlo con el calendario actual
     #que tiene la ANFP para poder comparar
     anfp_30_fechas = cargar_calendario(archivo_csv='campeonato.csv')
     #resultados, instancia_inicial = crear_simulacion(anfp_30_fechas,EQUIPOS)
     sim_m,a = simulacion_montecarlo(anfp_30_fechas,True,cantidad=cantidad_s)
+    print(a)
 
 def imprimir(fecha):
     print ("Tabla de posiciones fecha {}".format(str(fecha)))
     print ("\n")
     
-def comparacion_rho(n_iteraciones = 200, rango_rho = 2, rho_inicial =100, rho_final = 101):
+def comparacion_rho(n_iteraciones = 100, rango_rho = 2, rho_inicial =100, rho_final = 101):
     #Se compara rho, el parametro utilizado en el modelo de opt: MIN_VAR
     start_time = time.time()
     comparacion_rho ={}
@@ -86,7 +87,7 @@ def modelo(rho=100):
     fechas_21_22 = fechas_15_22[5:]
     imprimir(20)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 3, fechas_21_22, instancia.calendario, resultados, prob_matrix(instancia), 20)
+    cal = min_var(rho, 3, fechas_21_22, instancia.calendario, resultados, prob_matrix(instancia), 20,clusters=True)
     if cal is not None:
         fechas_23_25, factible_26_30 = cal
     else:
@@ -98,7 +99,7 @@ def modelo(rho=100):
     instancia.agregar_fechas(fechas_21_22 + fechas_23_24)
     imprimir(24)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 3, fechas_23_25[1:], instancia.calendario, resultados, prob_matrix(instancia), 24)
+    cal = min_var(rho, 3, fechas_23_25[1:], instancia.calendario, resultados, prob_matrix(instancia), 24,clusters=True)
     if cal is not None:
         fechas_26_28, factible_29_30 = cal
     else:
@@ -110,7 +111,7 @@ def modelo(rho=100):
     instancia.agregar_fechas(fechas_25_27)
     imprimir(27)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 2, fechas_26_28[1:], instancia.calendario, resultados, prob_matrix(instancia), 27, False, 0.05)
+    cal = min_var(rho, 2, fechas_26_28[1:], instancia.calendario, resultados, prob_matrix(instancia), 27, True, 0.04)
     if cal is not None:
         fechas_29_30 = cal
     else:
@@ -127,7 +128,7 @@ def modelo(rho=100):
 
 
 if __name__ == "__main__" :
-    #comparacion_rho()
-    modelo()
+    comparacion_rho()
+    #modelo()
     #simular_campeonato_actual()
 

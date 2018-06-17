@@ -73,8 +73,10 @@ class Simulacion:
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
         if tipo in data_dic:
-            return data_dic[tipo]*num
-    
+            if self.fecha > 15:
+                return data_dic[tipo]*num
+            else:
+                return 0
     @property
     def atractividad(self):
         self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
@@ -209,7 +211,7 @@ class Simulacion:
                 x = np.int(self.fecha)
                 self.plot.append((x, y))
         #If simulation finishes then we plot a nice graph
-        if self.fecha == 30:
+        if self.fecha == 30 and not self.montecarlo and False :
             for elems in self.plot:
                plt.scatter(*elems,color = 'blue')
                plt.ylabel('Atrractividad acumulada')
@@ -223,11 +225,7 @@ class Simulacion:
                     print (partido)
             print ("\n")
             self.guardar_fechas()
-            
-
-        
-
-        
+                    
     def show_results(self):
         for x in self.equipos:
             print(x)

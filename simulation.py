@@ -55,7 +55,15 @@ class Simulacion:
         self.plot = []
         self.suma_atractividad = 0
         self.atractividad_por_fecha ={}
-        
+    
+    def guardar_fechas(self):
+        with open('calendario.csv','w') as archivo:
+            archivo.write('FECHA;LOCAL;VISITA;\n')
+        for fecha in self.calendario:
+            for partidos in fecha.partidos:
+                with open('calendario.csv','a') as archivo:
+                    archivo.write('{};{};{}\n'.format(fecha,*partidos.split(",")))
+                    
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
         if tipo in data_dic:
@@ -195,12 +203,20 @@ class Simulacion:
                 x = np.int(self.fecha)
                 self.plot.append((x, y))
         #If simulation finishes then we plot a nice graph
-        if self.fecha == 30:
+        if self.fecha == 30 and False:
             for elems in self.plot:
                plt.scatter(*elems,color = 'blue')
                plt.ylabel('Atrractividad acumulada')
                plt.title('Instancia')
+            
             plt.show()
+            for fecha in self.calendario:
+                print ("\n")
+                print (fecha)
+                for partido in fecha.partidos:
+                    print (partido)
+            print ("\n")
+            self.guardar_fechas()
             
 
         

@@ -31,6 +31,7 @@ class Montecarlo:
                plt.ylabel('Atrractividad acumulada')
                plt.title('Campeonato actual')
         plt.show()
+        return plot_data[len(f)+1]
 
     def tabla_esperada(self):
         #Esto funciona pero esta mal 
@@ -47,7 +48,7 @@ class Montecarlo:
             teams._fake = y
         return self.tabla
 
-def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000):
+def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000, atractividad = False):
     m = Montecarlo()
     start_time = time.time()
     for x in range(cantidad):
@@ -58,7 +59,7 @@ def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000):
     final = (m.tabla_esperada())
     tabla = []
     final.sort(key=lambda x: x._fake, reverse=True)
-    m.grafico_atractividad()
+    atractividad_promedio = m.grafico_atractividad()
     print("\n {} seconds to {} simulations".format
           (round(time.time() - start_time, 2), cantidad))
     if puntajes:
@@ -71,6 +72,6 @@ def simulacion_montecarlo(calendario, puntajes=False,cantidad = 1000):
         for teams in final:
             tabla.append(teams.nombre)
             print(teams.fake_show(cantidad))
-    
-
+    if atractividad:
+        return tabla,atractividad_promedio
     return tabla

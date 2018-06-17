@@ -50,22 +50,27 @@ def visita_solo_ult(jugados):
     equipos_2 = set(partido.split(",")[1][1:] for partido in jugados[-2:][1].partidos)
     return list(equipos_2.difference(equipos_1))
 
-def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
+def calendarizacion(n_fechas, jugados=None, tabla=None):
     if n_fechas == 7: # calendarizo todas para tener un calendario factible
         fechas = [i for i in range(1, 16)]
     else:
         fechas = [i for i in range(1, n_fechas + 1)]
 
     m = Model("Tournament")
-
+    #Desactivamos los prints de gurobi, si se desean ver simplemente se comenta
+    m.setParam('OutputFlag', 0)
     # 1 si juega el equipo i de local contra j en la fecha k
     match = m.addVars(equipos, equipos, fechas, vtype=GRB.BINARY, name="match")
 
     # No jueguen contra si mismos
     m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
 
-    # No mas de 2 partidos consecutivos de local o visita
+    # No mas de 2 partidos consecutivos de local
     m.addConstrs((quicksum(match[i, j, k + l] for j in equipos for l in [0, 1,
+                 2]) <= 2 for i in equipos for k in fechas[:n_fechas - 2]))
+
+    # No mas de 2 partidos consecutivos de visita
+    m.addConstrs((quicksum(match[j, i, k + l] for j in equipos for l in [0, 1,
                  2]) <= 2 for i in equipos for k in fechas[:n_fechas - 2]))
 
     # No mas de 3 en Santiago
@@ -103,22 +108,18 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
                      <= 1 for i in equipos for j in equipos if i != j)
 
         if len(local_ult_2(jugados)) != 0:
-            print ("local_ult_2: ", local_ult_2(jugados))
             m.addConstrs(quicksum(match[i, j, 1] for j in equipos) == 0
                          for i in local_ult_2(jugados))
 
         if len(visita_ult_2(jugados)) != 0:
-            print ("visita_ult_2: ", visita_ult_2(jugados))
             m.addConstrs(quicksum(match[i, j, 1] for i in equipos) == 0
                          for j in visita_ult_2(jugados))
 
         if len(local_solo_ult(jugados)) != 0:
-            print ("local_solo_ult: ", local_solo_ult(jugados))
             m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for j in
                          equipos) <= 1 for i in local_solo_ult(jugados))
 
         if len(visita_solo_ult(jugados)) != 0:
-            print ("visita_solo_ult: ", visita_solo_ult(jugados))
             m.addConstrs(quicksum(match[i, j, 1] + match[i, j, 2] for i in
                          equipos) <= 1 for j in visita_solo_ult(jugados))
 
@@ -130,11 +131,11 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
                       #equipos_grandes) == 0 for k in fechas))
         # No jueguen contra equipos del mismo cluster
         m.addConstrs(match[i, j, k] == 0 for k in fechas[:8] for
-                     i in [x for x in tabla][:8] for j in [x for x in tabla][:7]
+                     i in [x for x in tabla][:7] for j in [x for x in tabla][:7]
                      if i != j)
 
         m.addConstrs(match[i, j, k] == 0 for k in fechas[:8] for
-                     i in [x for x in tabla][8:] for j in [x for x in tabla][9:] if i != j)
+                     i in [x for x in tabla][9:] for j in [x for x in tabla][9:] if i != j)
 
 
     m.setObjective(quicksum(match[i, j, k] for i in equipos for j in equipos for
@@ -143,36 +144,26 @@ def calendarizacion(n_fechas, jugados=None, tabla=None, invertir =None):
     m.optimize()
 
     CALENDARIO = []
-    CALENDARIO_INV = []#Calendario inicial factible
     # Print solution
     if m.status == GRB.Status.OPTIMAL:
         solution = m.getAttr('x', match)
-        for k in range(1,n_fechas + 1):
-            print ("\n", "Fecha", k)
+        for k in range(1, n_fechas + 1):
+            print ("\n")
+            print ("Fecha", k)
             #print "Fecha", k
             f = []
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
                         f.append("{}, {}".format(i, j))
-                        print (i, "-", j)
+                        print (i, j)
                         #print i, "-", j
-            fecha = Fecha(k,f)
+            if n_fechas == 7:
+                fecha = Fecha(k + 15, f)
+            else:
+                fecha = Fecha(k,f)
             CALENDARIO.append(fecha)
-        if invertir is not None:    
-            for k in fechas:
-                print ("\n", "Fecha", k+15)
-                #print "Fecha", k
-                f = []
-                for i in equipos:
-                    for j in equipos:
-                        if solution[i, j, k] > 0:
-                                f.append("{}, {}".format(j, i))
-                                print (j, "-", i)
-                            #print i, "-", j
-                fecha = Fecha(k+15,f)
-                CALENDARIO_INV.append(fecha)
-            return CALENDARIO, CALENDARIO_INV
+        print ("\n")
 
     return CALENDARIO
 

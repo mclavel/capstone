@@ -138,17 +138,6 @@ def min_var(rho, n_fechas, jugados, u2_partidos, puntaje_inicial, matriz_p, fech
                 fe = Fecha(k + 22, f)
             CALENDARIO.append(fe)
         print ("\n")
-                        #print i, j
-                        #print "LW:", x[i, k].X, " D:", y[i, k].X
-        # print ("\n PUNTAJES teoricos")
-        # #print "\n PUNTAJES"
-        # dic = {}
-        # for i in equipos:
-        #     dic[i] = int(p[i].X)
-        # dic_sorted = sorted(dic.items(), key=operator.itemgetter(1),
-        #                       reverse=True)
-        # for i in dic_sorted:
-        #     print (i)
         if n_fechas == 3:
             return CALENDARIO[:n_fechas], CALENDARIO[n_fechas:]
         else:

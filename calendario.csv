@@ -1,197 +1,241 @@
 FECHA;LOCAL;VISITA;RESULTADO
-1;U. Catolica; Deportes Temuco;LW
-1;Antofagasta; Colo Colo;LW
-1;Palestino; U. La Calera;LW
-1;U. de Conce; O Higgins;LW
+1;Colo Colo; U. de Conce;AW
+1;O Higgins; Antofagasta;LW
 1;A. Italiano; Huachipato;LW
-1;Everton Vina; D. Iquique;AW
-1;U. de Chile; U. Espanola;LW
-1;CD San Luis; Curico Unido;LW
-2;U. La Calera; Antofagasta;LW
-2;D. Iquique; U. de Chile;AW
-2;Deportes Temuco; U. de Conce;AW
-2;U. Espanola; Palestino;AW
-2;Colo Colo; A. Italiano;LW
-2;Curico Unido; U. Catolica;AW
-2;Huachipato; CD San Luis;AW
-2;O Higgins; Everton Vina;LW
-3;U. de Chile; CD San Luis;LW
-3;Everton Vina; U. Catolica;D
-3;Palestino; Colo Colo;LW
-3;U. de Conce; Curico Unido;LW
-3;D. Iquique; U. La Calera;D
-3;O Higgins; Huachipato;LW
-3;U. Espanola; Antofagasta;AW
-3;A. Italiano; Deportes Temuco;D
-4;Colo Colo; O Higgins;D
-4;Huachipato; U. de Conce;LW
-4;CD San Luis; Palestino;LW
-4;U. Catolica; U. La Calera;LW
-4;Antofagasta; D. Iquique;AW
-4;A. Italiano; Everton Vina;LW
-4;Deportes Temuco; U. de Chile;AW
-4;Curico Unido; U. Espanola;AW
-5;Everton Vina; CD San Luis;LW
-5;Palestino; A. Italiano;D
-5;Colo Colo; Huachipato;LW
-5;U. Espanola; U. de Conce;D
-5;D. Iquique; U. Catolica;AW
-5;U. de Chile; Antofagasta;LW
-5;U. La Calera; Curico Unido;LW
-5;O Higgins; Deportes Temuco;D
-6;Deportes Temuco; Palestino;AW
-6;Curico Unido; A. Italiano;D
-6;Everton Vina; U. de Chile;LW
-6;Antofagasta; O Higgins;LW
-6;CD San Luis; D. Iquique;LW
-6;U. Catolica; U. Espanola;LW
-6;U. de Conce; Colo Colo;AW
-6;Huachipato; U. La Calera;D
-7;A. Italiano; U. de Chile;D
-7;Colo Colo; U. Catolica;LW
-7;Huachipato; Everton Vina;AW
-7;O Higgins; CD San Luis;AW
-7;Curico Unido; Deportes Temuco;LW
-7;D. Iquique; U. de Conce;AW
-7;Palestino; Antofagasta;LW
-7;U. La Calera; U. Espanola;D
-8;Antofagasta; Huachipato;LW
-8;Deportes Temuco; D. Iquique;LW
-8;Everton Vina; U. La Calera;D
-8;U. de Chile; Curico Unido;LW
-8;CD San Luis; Colo Colo;AW
-8;U. Catolica; Palestino;D
-8;U. de Conce; A. Italiano;AW
-8;U. Espanola; O Higgins;D
-9;Huachipato; Deportes Temuco;LW
+1;Everton Vina; Palestino;LW
+1;U. Espanola; U. de Chile;AW
+1;D. Iquique; CD San Luis;D
+1;U. Catolica; Deportes Temuco;LW
+1;U. La Calera; Curico Unido;AW
+2;CD San Luis; Antofagasta;AW
+2;O Higgins; Huachipato;AW
+2;Palestino; D. Iquique;LW
+2;A. Italiano; Colo Colo;LW
+2;U. Catolica; U. de Conce;LW
+2;U. La Calera; U. de Chile;AW
+2;Curico Unido; U. Espanola;AW
+2;Deportes Temuco; Everton Vina;LW
+3;U. de Chile; O Higgins;AW
+3;Colo Colo; U. Espanola;D
+3;CD San Luis; U. Catolica;LW
+3;Huachipato; U. La Calera;D
+3;Palestino; A. Italiano;AW
+3;Everton Vina; Curico Unido;LW
+3;U. de Conce; Deportes Temuco;D
+3;Antofagasta; D. Iquique;LW
+4;U. de Chile; Colo Colo;D
+4;Huachipato; Deportes Temuco;LW
+4;U. Espanola; A. Italiano;D
+4;D. Iquique; O Higgins;LW
+4;U. Catolica; Palestino;LW
+4;Antofagasta; U. de Conce;AW
+4;U. La Calera; Everton Vina;D
+4;Curico Unido; CD San Luis;AW
+5;Colo Colo; Huachipato;AW
+5;O Higgins; U. Espanola;LW
+5;Palestino; CD San Luis;AW
+5;A. Italiano; Curico Unido;LW
+5;U. de Conce; Everton Vina;D
+5;U. Catolica; Antofagasta;D
+5;U. La Calera; D. Iquique;D
+5;Deportes Temuco; U. de Chile;AW
+6;Colo Colo; Antofagasta;LW
+6;CD San Luis; U. de Chile;AW
+6;Huachipato; D. Iquique;D
+6;Palestino; U. de Conce;AW
+6;A. Italiano; O Higgins;LW
+6;Everton Vina; U. Espanola;AW
+6;Curico Unido; U. Catolica;LW
+6;Deportes Temuco; U. La Calera;AW
+7;U. de Chile; Palestino;D
+7;O Higgins; Colo Colo;LW
+7;U. Espanola; CD San Luis;D
+7;D. Iquique; Everton Vina;LW
+7;U. Catolica; Huachipato;LW
+7;Antofagasta; Deportes Temuco;LW
+7;U. La Calera; A. Italiano;LW
+7;Curico Unido; U. de Conce;AW
+8;CD San Luis; A. Italiano;AW
+8;Huachipato; Antofagasta;AW
+8;Palestino; Curico Unido;LW
+8;U. Espanola; D. Iquique;LW
+8;U. de Conce; U. de Chile;D
+8;U. Catolica; Everton Vina;AW
+8;U. La Calera; Colo Colo;AW
+8;Deportes Temuco; O Higgins;D
+9;Colo Colo; D. Iquique;LW
+9;CD San Luis; U. La Calera;LW
 9;O Higgins; U. Catolica;AW
-9;Palestino; Everton Vina;LW
-9;U. La Calera; U. de Conce;D
-9;Curico Unido; Antofagasta;D
-9;D. Iquique; U. Espanola;D
-9;U. de Chile; Colo Colo;AW
-9;A. Italiano; CD San Luis;LW
-10;Colo Colo; Deportes Temuco;LW
-10;D. Iquique; Palestino;AW
-10;U. Espanola; Huachipato;LW
-10;O Higgins; Curico Unido;LW
-10;U. Catolica; A. Italiano;D
-10;U. de Conce; Everton Vina;LW
-10;U. La Calera; U. de Chile;AW
-10;Antofagasta; CD San Luis;AW
-11;Curico Unido; Colo Colo;D
-11;Everton Vina; U. Espanola;LW
-11;Huachipato; D. Iquique;D
-11;A. Italiano; Antofagasta;D
-11;Deportes Temuco; U. La Calera;AW
-11;Palestino; O Higgins;LW
-11;U. de Chile; U. de Conce;D
-11;CD San Luis; U. Catolica;D
-12;Antofagasta; Deportes Temuco;D
-12;D. Iquique; Curico Unido;D
-12;U. Espanola; CD San Luis;LW
-12;U. La Calera; A. Italiano;LW
-12;Colo Colo; Everton Vina;AW
-12;O Higgins; U. de Chile;D
-12;Palestino; U. de Conce;LW
-12;U. Catolica; Huachipato;LW
-13;Colo Colo; D. Iquique;LW
-13;Huachipato; Palestino;AW
-13;CD San Luis; U. La Calera;D
-13;A. Italiano; O Higgins;D
-13;Deportes Temuco; U. Espanola;AW
-13;Everton Vina; Curico Unido;LW
-13;U. Catolica; U. de Chile;LW
-13;U. de Conce; Antofagasta;LW
-14;D. Iquique; A. Italiano;AW
-14;U. de Chile; Palestino;D
-14;U. Espanola; Colo Colo;AW
-14;U. La Calera; O Higgins;AW
-14;Antofagasta; Everton Vina;AW
-14;U. de Conce; U. Catolica;AW
-14;Curico Unido; Huachipato;LW
+9;A. Italiano; Deportes Temuco;D
+9;Everton Vina; U. de Chile;AW
+9;U. de Conce; U. Espanola;AW
+9;Antofagasta; Palestino;LW
+9;Curico Unido; Huachipato;LW
+10;U. de Chile; Antofagasta;LW
+10;Colo Colo; U. Catolica;AW
+10;Huachipato; U. Espanola;D
+10;Palestino; Deportes Temuco;LW
+10;A. Italiano; U. de Conce;AW
+10;Everton Vina; CD San Luis;D
+10;D. Iquique; Curico Unido;LW
+10;U. La Calera; O Higgins;LW
+11;U. de Chile; Curico Unido;LW
+11;CD San Luis; Colo Colo;AW
+11;O Higgins; Everton Vina;D
+11;U. Espanola; Palestino;AW
+11;U. de Conce; Huachipato;LW
+11;U. Catolica; A. Italiano;D
+11;Antofagasta; U. La Calera;AW
+11;Deportes Temuco; D. Iquique;D
+12;Colo Colo; Deportes Temuco;LW
+12;Huachipato; Palestino;AW
+12;A. Italiano; U. de Chile;LW
+12;U. de Conce; CD San Luis;AW
+12;U. Catolica; D. Iquique;LW
+12;Antofagasta; Everton Vina;LW
+12;U. La Calera; U. Espanola;AW
+12;Curico Unido; O Higgins;AW
+13;U. de Chile; Huachipato;LW
+13;CD San Luis; O Higgins;AW
+13;Palestino; Colo Colo;AW
+13;Everton Vina; A. Italiano;AW
+13;U. Espanola; Deportes Temuco;D
+13;D. Iquique; U. de Conce;LW
+13;U. La Calera; U. Catolica;AW
+13;Curico Unido; Antofagasta;AW
+14;Colo Colo; Curico Unido;D
+14;O Higgins; Palestino;LW
+14;Huachipato; Everton Vina;AW
+14;U. de Conce; U. La Calera;LW
+14;D. Iquique; U. de Chile;AW
+14;U. Catolica; U. Espanola;LW
+14;Antofagasta; A. Italiano;LW
 14;Deportes Temuco; CD San Luis;AW
-15;Huachipato; U. de Chile;AW
-15;O Higgins; D. Iquique;AW
-15;CD San Luis; U. de Conce;AW
-15;A. Italiano; U. Espanola;AW
-15;Everton Vina; Deportes Temuco;LW
-15;Palestino; Curico Unido;D
-15;U. Catolica; Antofagasta;LW
-15;Colo Colo; U. La Calera;D
-16;Curico Unido; CD San Luis;AW
-16;Deportes Temuco; Antofagasta;D
-16;Everton Vina; O Higgins;AW
-16;U. Catolica; D. Iquique;D
-16;U. de Chile; Huachipato;AW
-16;U. de Conce; Palestino;LW
-16;U. Espanola; A. Italiano;AW
-16;U. La Calera; Colo Colo;AW
-17;Antofagasta; U. de Chile;D
-17;A. Italiano; U. de Conce;AW
-17;Colo Colo; Curico Unido;LW
-17;D. Iquique; Everton Vina;LW
-17;Huachipato; U. Espanola;D
-17;O Higgins; U. La Calera;LW
-17;Palestino; U. Catolica;D
-17;CD San Luis; Deportes Temuco;LW
-18;Antofagasta; Curico Unido;LW
-18;Deportes Temuco; Colo Colo;LW
-18;CD San Luis; O Higgins;LW
-18;U. Catolica; Everton Vina;AW
-18;U. de Chile; A. Italiano;D
-18;U. de Conce; Huachipato;D
-18;U. Espanola; D. Iquique;AW
-18;U. La Calera; Palestino;D
-19;Colo Colo; CD San Luis;LW
-19;Curico Unido; D. Iquique;AW
-19;Everton Vina; U. de Conce;AW
-19;Huachipato; A. Italiano;AW
-19;O Higgins; Antofagasta;AW
-19;Palestino; Deportes Temuco;LW
-19;U. Espanola; U. de Chile;LW
-19;U. La Calera; U. Catolica;AW
-20;Antofagasta; U. La Calera;D
-20;A. Italiano; Palestino;AW
-20;D. Iquique; Colo Colo;LW
-20;Everton Vina; Huachipato;AW
-20;CD San Luis; U. Espanola;AW
-20;U. Catolica; Curico Unido;LW
-20;U. de Chile; O Higgins;LW
-20;U. de Conce; Deportes Temuco;LW
-21;A. Italiano; U. Catolica;AW
-21;Colo Colo; U. de Chile;AW
-21;Curico Unido; U. de Conce;LW
-21;Deportes Temuco; Everton Vina;D
-21;Huachipato; Antofagasta;LW
-21;O Higgins; U. Espanola;AW
-21;Palestino; CD San Luis;LW
-21;U. La Calera; D. Iquique;D
-22;Antofagasta; Palestino;LW
-22;D. Iquique; O Higgins;D
-22;Everton Vina; Colo Colo;AW
-22;Huachipato; Curico Unido;LW
-22;CD San Luis; A. Italiano;LW
-22;U. de Chile; Deportes Temuco;AW
-22;U. de Conce; U. La Calera;LW
-22;U. Espanola; U. Catolica;AW
-23;A. Italiano; D. Iquique;AW
-23;Colo Colo; Antofagasta;D
-23;Curico Unido; O Higgins;AW
-23;Deportes Temuco; Huachipato;AW
-23;Palestino; U. Espanola;D
-23;U. Catolica; CD San Luis;AW
-23;U. de Conce; U. de Chile;AW
-23;U. La Calera; Everton Vina;AW
-24;Antofagasta; U. de Conce;D
-24;D. Iquique; Deportes Temuco;D
-24;Everton Vina; A. Italiano;D
-24;O Higgins; Palestino;LW
-24;CD San Luis; Huachipato;D
-24;U. Catolica; Colo Colo;LW
-24;U. de Chile; U. La Calera;AW
-24;U. Espanola; Curico Unido;LW
-25;A. Italiano; U. La Calera;LW
-25;Colo Colo; U. Espanola;AW
-25;Curico Unido; Everton Vina;D
-25;Deportes Temuco; O Higgins;D
+15;U. de Chile; U. Catolica;LW
+15;CD San Luis; Huachipato;AW
+15;Palestino; U. La Calera;D
+15;A. Italiano; D. Iquique;AW
+15;Everton Vina; Colo Colo;LW
+15;U. Espanola; Antofagasta;AW
+15;U. de Conce; O Higgins;LW
+15;Curico Unido; Deportes Temuco;AW
+16;O Higgins; CD San Luis;LW
+16;Huachipato; U. de Chile;D
+16;Palestino; U. Espanola;AW
+16;Everton Vina; U. Catolica;LW
+16;D. Iquique; Antofagasta;AW
+16;U. La Calera; U. de Conce;AW
+16;Curico Unido; A. Italiano;D
+16;Deportes Temuco; Colo Colo;LW
+17;U. de Chile; Deportes Temuco;D
+17;Colo Colo; U. La Calera;LW
+17;Huachipato; O Higgins;LW
+17;A. Italiano; Palestino;LW
+17;U. Espanola; Everton Vina;AW
+17;U. de Conce; D. Iquique;AW
+17;U. Catolica; CD San Luis;AW
+17;Antofagasta; Curico Unido;AW
+18;U. de Chile; Everton Vina;LW
+18;CD San Luis; U. de Conce;AW
+18;Palestino; O Higgins;AW
+18;U. Espanola; Huachipato;D
+18;D. Iquique; U. Catolica;LW
+18;U. La Calera; Antofagasta;D
+18;Curico Unido; Colo Colo;LW
+18;Deportes Temuco; A. Italiano;LW
+19;Colo Colo; CD San Luis;AW
+19;O Higgins; Curico Unido;D
+19;Huachipato; U. de Conce;D
+19;Palestino; U. de Chile;LW
+19;A. Italiano; U. La Calera;D
+19;Everton Vina; Antofagasta;AW
+19;D. Iquique; U. Espanola;LW
+19;Deportes Temuco; U. Catolica;AW
+20;U. de Chile; U. La Calera;LW
+20;Colo Colo; Everton Vina;LW
+20;CD San Luis; Deportes Temuco;AW
+20;O Higgins; D. Iquique;D
+20;A. Italiano; U. Espanola;D
+20;U. de Conce; Palestino;AW
+20;U. Catolica; Curico Unido;AW
+20;Antofagasta; Huachipato;LW
+21;Huachipato; Colo Colo;AW
+21;Palestino; U. Catolica;AW
+21;Everton Vina; O Higgins;LW
+21;U. Espanola; U. de Conce;LW
+21;D. Iquique; A. Italiano;AW
+21;U. La Calera; CD San Luis;LW
+21;Curico Unido; U. de Chile;D
+21;Deportes Temuco; Antofagasta;D
+22;U. de Chile; D. Iquique;LW
+22;Colo Colo; Palestino;D
+22;CD San Luis; Curico Unido;LW
+22;O Higgins; Deportes Temuco;D
+22;Huachipato; A. Italiano;AW
+22;Everton Vina; U. de Conce;LW
+22;U. Catolica; U. La Calera;AW
+22;Antofagasta; U. Espanola;LW
+23;O Higgins; U. de Chile;LW
+23;Everton Vina; Palestino;AW
+23;A. Italiano; U. Espanola;LW
+23;Colo Colo; U. de Conce;AW
+23;Antofagasta; D. Iquique;D
+23;U. Catolica; U. La Calera;LW
+23;CD San Luis; Curico Unido;LW
+23;Huachipato; Deportes Temuco;AW
+24;U. de Chile; CD San Luis;AW
+24;U. La Calera; O Higgins;AW
+24;Antofagasta; Huachipato;LW
+24;Colo Colo; Palestino;AW
+24;Curico Unido; A. Italiano;LW
+24;U. Espanola; Everton Vina;LW
+24;Deportes Temuco; D. Iquique;LW
+24;U. de Conce; U. Catolica;LW
+25;U. Catolica; U. de Chile;D
+25;Everton Vina; Colo Colo;AW
+25;A. Italiano; CD San Luis;LW
+25;Curico Unido; Huachipato;AW
+25;U. Espanola; U. de Conce;LW
+25;O Higgins; Antofagasta;AW
+25;D. Iquique; U. La Calera;LW
+25;Palestino; Deportes Temuco;LW
+26;Curico Unido; U. de Chile;LW
+26;Colo Colo; CD San Luis;LW
+26;Deportes Temuco; O Higgins;LW
+26;A. Italiano; Huachipato;LW
+26;U. Espanola; Palestino;LW
+26;Antofagasta; U. de Conce;AW
+26;Everton Vina; D. Iquique;LW
+26;U. Catolica; U. La Calera;D
+27;U. La Calera; Colo Colo;AW
+27;O Higgins; Huachipato;AW
+27;D. Iquique; Palestino;AW
+27;U. de Conce; A. Italiano;LW
+27;U. de Chile; Everton Vina;AW
+27;CD San Luis; U. Catolica;LW
+27;U. Espanola; Antofagasta;D
+27;Curico Unido; Deportes Temuco;LW
+28;Deportes Temuco; Colo Colo;D
+28;Antofagasta; CD San Luis;D
+28;U. de Chile; A. Italiano;AW
+28;U. La Calera; Everton Vina;AW
+28;Huachipato; U. Espanola;AW
+28;Palestino; U. de Conce;LW
+28;O Higgins; D. Iquique;LW
+28;U. Catolica; Curico Unido;LW
+29;U. La Calera; Colo Colo;AW
+29;U. de Chile; CD San Luis;AW
+29;O Higgins; Huachipato;LW
+29;Curico Unido; Palestino;AW
+29;D. Iquique; A. Italiano;LW
+29;U. de Conce; Everton Vina;D
+29;U. Espanola; U. Catolica;LW
+29;Antofagasta; Deportes Temuco;D
+30;D. Iquique; U. de Chile;AW
+30;U. de Conce; Colo Colo;D
+30;U. La Calera; O Higgins;LW
+30;Curico Unido; A. Italiano;D
+30;Deportes Temuco; Everton Vina;D
+30;Huachipato; U. Espanola;AW
+30;CD San Luis; U. Catolica;D
+30;Palestino; Antofagasta;D

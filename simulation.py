@@ -211,7 +211,7 @@ class Simulacion:
                 x = np.int(self.fecha)
                 self.plot.append((x, y))
         #If simulation finishes then we plot a nice graph
-        if self.fecha == 30 and not self.montecarlo and False :
+        if self.fecha == 30 and not self.montecarlo:
             for elems in self.plot:
                plt.scatter(*elems,color = 'blue')
                plt.ylabel('Atrractividad acumulada')

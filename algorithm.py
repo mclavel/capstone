@@ -87,7 +87,7 @@ def modelo(rho=100):
     fechas_21_22 = fechas_15_22[5:]
     imprimir(20)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 3, fechas_21_22, instancia.calendario, resultados, prob_matrix(instancia), 20,clusters=True)
+    cal = min_var(rho, 3, fechas_21_22, instancia.calendario, resultados, prob_matrix(instancia), 20,clusters=False)
     if cal is not None:
         fechas_23_25, factible_26_30 = cal
     else:
@@ -99,7 +99,7 @@ def modelo(rho=100):
     instancia.agregar_fechas(fechas_21_22 + fechas_23_24)
     imprimir(24)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 3, fechas_23_25[1:], instancia.calendario, resultados, prob_matrix(instancia), 24,clusters=True)
+    cal = min_var(rho, 3, fechas_23_25[1:], instancia.calendario, resultados, prob_matrix(instancia), 24,clusters=False)
     if cal is not None:
         fechas_26_28, factible_29_30 = cal
     else:
@@ -111,7 +111,7 @@ def modelo(rho=100):
     instancia.agregar_fechas(fechas_25_27)
     imprimir(27)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 2, fechas_26_28[1:], instancia.calendario, resultados, prob_matrix(instancia), 27, True, 0.04)
+    cal = min_var(rho, 2, fechas_26_28[1:], instancia.calendario, resultados, prob_matrix(instancia), 27, False, 0.033)
     if cal is not None:
         fechas_29_30 = cal
     else:
@@ -128,7 +128,7 @@ def modelo(rho=100):
 
 
 if __name__ == "__main__" :
-    comparacion_rho()
-    #modelo()
+    #comparacion_rho()
+    modelo()
     #simular_campeonato_actual()
 

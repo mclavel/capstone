@@ -58,11 +58,17 @@ class Simulacion:
     
     def guardar_fechas(self):
         with open('calendario.csv','w') as archivo:
-            archivo.write('FECHA;LOCAL;VISITA;\n')
+            archivo.write('FECHA;LOCAL;VISITA;RESULTADO\n')
         for fecha in self.calendario:
             for partidos in fecha.partidos:
                 with open('calendario.csv','a') as archivo:
-                    archivo.write('{};{};{}\n'.format(fecha,*partidos.split(",")))
+                    archivo.write('{};{};{};{}\n'.format(fecha,*partidos.split(","),self._results[int(fecha.numero)][partidos]))
+        with open('tabla_final.csv','w') as file:
+            file.write('EQUIPO;PUNTAJE;VICTORIAS;EMPATES;DERROTAS\n')
+        for x in self.equipos:
+            with open('tabla_final.csv','a') as archivo:
+                archivo.write('{};{};{};{};{}\n'.format(x.nombre,x.puntaje,len(x.victorias),len(x.empates),len(x.derrotas)))
+            
                     
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}
@@ -192,9 +198,9 @@ class Simulacion:
             self.fecha += 1
             if self.fecha == 16:
                 self.first_leg = False
-            self._results[fechas.numero]= []
+            self._results[fechas.numero]= {}
             for x in fechas.partidos:
-                self._results[fechas.numero].append(self.results(x))
+                self._results[fechas.numero][x]=self.results(x)
             self.equipos.sort(key=lambda x: x.puntaje, reverse = True)
             self.suma_atractividad += int(self.atractividad)
             self.atractividad_por_fecha[str(self.fecha)] = self.suma_atractividad
@@ -203,7 +209,7 @@ class Simulacion:
                 x = np.int(self.fecha)
                 self.plot.append((x, y))
         #If simulation finishes then we plot a nice graph
-        if self.fecha == 30 and False:
+        if self.fecha == 30:
             for elems in self.plot:
                plt.scatter(*elems,color = 'blue')
                plt.ylabel('Atrractividad acumulada')
@@ -219,7 +225,6 @@ class Simulacion:
             self.guardar_fechas()
             
 
-        
         
 
         

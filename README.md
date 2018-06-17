@@ -25,7 +25,7 @@ Para ejecutar una instancia de simulación:
 ````
 -py algorithm.py
 ````
-Al correr el comando se escribirá el archivo ````calendario.csv```` que consiste en un excel, en donde
+Al correr el comando se escribirá el archivo ````calendario.csv```` en la carpeta donde está ubicado el código, el documento  consiste en un excel, en donde
 estan todos los partidos calendarizados. Para analizarlos recomendamos altamente usar el filtro  de datos de Excel
 # Módulos
 - Algorithm: Contiene el algortimo de calendarización de trabajo.

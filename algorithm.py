@@ -127,7 +127,7 @@ def modelo(rho=100):
 
 
 if __name__ == "__main__" :
-    comparacion_rho()
-    #modelo()
+    #comparacion_rho()
+    modelo()
     #simular_campeonato_actual()
 

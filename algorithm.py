@@ -31,32 +31,36 @@ def prob_matrix(simulation):
         prob_matrix[team.nombre] = match_probs(simulation,team)
     return prob_matrix
 
-def simular_campeonato_actual(cantidad_s = 1000):
+def simular_campeonato_actual(cantidad_s = 10000):
     anfp_30_fechas = cargar_calendario(archivo_csv='campeonato.csv')
     #resultados, instancia_inicial = crear_simulacion(anfp_30_fechas,EQUIPOS)
-    sim_m = simulacion_montecarlo(anfp_30_fechas,True,cantidad=cantidad_s)
+    sim_m,a = simulacion_montecarlo(anfp_30_fechas,True,cantidad=cantidad_s)
+    print(a)
 
 def imprimir(fecha):
     print ("\n")
     print ("Tabla de posiciones fecha {}".format(str(fecha)))
     print ("\n")
     
-def comparacion_rho(n_iteraciones = 100, rango_rho = 11, rho_inicial = 0, rho_final = 1000):
+def comparacion_rho(n_iteraciones = 200, rango_rho = 2, rho_inicial =100, rho_final = 101):
     start_time = time.time()
     comparacion_rho ={}
     for x in range(rango_rho):
         a = 0
         print("{}% done".format(round((x/rango_rho),2)*100))
-        with HiddenPrints():
-            for n in range(n_iteraciones):
-                try:
+        for n in range(n_iteraciones):
+            try:
+                with HiddenPrints():
                     a += modelo(rho_inicial+((rho_final-rho_inicial)/(rango_rho-1) * x))
-                except Exception as err:
-                    print(err)
+            except Exception as err:
+                print(err)
             comparacion_rho[str(rho_inicial+((rho_final-rho_inicial)/(rango_rho-1) * x))] = a/n_iteraciones
+        print(a/n_iteraciones)
+        print("\n {} seconds to 1 iteration".format
+                  (round(time.time() - start_time, 2)))
     print(comparacion_rho)
     print("\n {} seconds to {} simulations".format
-          (round(time.time() - start_time, 2), n_iteraciones * rango_ro))     
+          (round(time.time() - start_time, 2), n_iteraciones * rango_rho))     
         
 
 def modelo(rho=100):
@@ -100,7 +104,7 @@ def modelo(rho=100):
     instancia.agregar_fechas(fechas_25_27)
     imprimir(27)
     resultados, instancia = simulacion_unica(instancia)
-    cal = min_var(rho, 2, fechas_26_28[1:], instancia.calendario, resultados, prob_matrix(instancia), 27, False, 0.03)
+    cal = min_var(rho, 2, fechas_26_28[1:], instancia.calendario, resultados, prob_matrix(instancia), 27, False, 0.05)
     if cal is not None:
         fechas_29_30 = cal
     else:

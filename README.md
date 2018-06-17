@@ -1,7 +1,7 @@
 # Capstone
 **ICS2122 - Grupo 5**
 2018-01
-#Indicaciones
+# Indicaciones
 El código fue realizado y utilizado en Python 2.7 y 3.6.(Recomendamos correrlo en 3.6)
  Las Librerías utilizadas fueron:
 ````

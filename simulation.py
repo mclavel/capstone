@@ -55,7 +55,7 @@ class Simulacion:
         self.plot = []
         self.suma_atractividad = 0
         self.atractividad_por_fecha ={}
-    
+
     def guardar_fechas(self):
         with open('calendario.csv','w') as archivo:
             archivo.write('FECHA;LOCAL;VISITA;RESULTADO\n')
@@ -68,7 +68,7 @@ class Simulacion:
         for x in self.equipos:
             with open('tabla_final.csv','a') as archivo:
                 archivo.write('{};{};{};{};{}\n'.format(x.nombre,x.puntaje,len(x.victorias),len(x.empates),len(x.derrotas)))
-            
+
                     
     def attr_funcion(self,tipo,num):
         data_dic = {"descenso":2/15,"internacional":1/15,"campeonato":0.2}

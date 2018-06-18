@@ -27,7 +27,7 @@ def aux(jugados): #funcion sin importancia
     p_jugados = []
     for fecha in jugados:
         for partido in fecha.partidos:
-            p_jugados.append([partido.split(",")[0], partido.split(",")[1][1:]])
+            p_jugados.append((partido.split(",")[0], partido.split(",")[1][1:]))
     return p_jugados
 
 def local_ult_2(jugados):

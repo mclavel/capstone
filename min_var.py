@@ -57,7 +57,9 @@ def min_var(rho, n_fechas, u2_partidos, jugados, puntaje_inicial, matriz_p, fech
 
     m.addConstrs(match[i, i, k] == 0 for k in fechas for i in equipos)
 
-    m.addConstrs(match[i, j, k] == 0 for i, j in aux(jugados) for k in fechas)
+    m.addConstrs(match[i, j, k] == 0 for (i, j) in aux(jugados) for k in fechas)
+
+    m.addConstrs(quicksum(match[i, j, k] == 0 for k in fechas) for (i, j) in aux(jugados))
 
     m.addConstrs(p[i] == p0[i] + quicksum(3 * x[i, k] + y[i, k] for k in fechas[:n_fechas]) for i in equipos)
 
@@ -130,6 +132,8 @@ def min_var(rho, n_fechas, u2_partidos, jugados, puntaje_inicial, matriz_p, fech
             for i in equipos:
                 for j in equipos:
                     if solution[i, j, k] > 0:
+                        if [i, j] in aux(jugados):
+                            print "CTM", i, j
                         if l < n_fechas:
                             print (i ,"-", j, " -> ", "LW" if x[i, k].X == 1 else "D" if y[i, k].X == 1 else "AW") #matriz_p[i][j], matriz_p[j][i]
                         f.append("{}, {}".format(j, i))

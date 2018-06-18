@@ -3,9 +3,9 @@ from equipos import nombres as equipos, equipos_valparaiso, equipos_biobio, equi
 from schedueling import Fecha, aux
 from schedueling import local_solo_ult, local_ult_2, visita_solo_ult, visita_ult_2
 
-def min_var(rho, n_fechas, jugados, u2_partidos, puntaje_inicial, matriz_p, fecha,
+def min_var(rho, n_fechas, u2_partidos, jugados, puntaje_inicial, matriz_p, fecha,
             clusters=False, gap=None):
-
+    print "jugados", jugados
     p0 = puntaje_inicial
     if fecha == 20: #calendarizar 8 fechas (23, 24, 25 | 26, 27, 28, 29, 30)
         fechas = [i for i in range(1, 9)]
